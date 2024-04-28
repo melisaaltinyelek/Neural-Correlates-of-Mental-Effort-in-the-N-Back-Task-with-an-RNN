@@ -22,11 +22,20 @@ class NbackCreator():
         random.shuffle(self.consonants)
         self.chosen_letter = random.choice(self.consonants)
 
-        self.consonants.append(self.chosen_letter)
+        #self.consonants.append(self.chosen_letter)
 
+        # Access the index of the chosen letter in the original list
+        idx_chosen_letter = self.consonants.index(self.chosen_letter)
+        
+        # Access the last index of the list which represent the duplicate letter
+        #idx_duplicate_letter = len(self.consonants) - 1
 
-        return self.consonants
+        # Insert the chosen letter (its duplicaste) 3 indices after its first occurence
+        self.consonants.insert(idx_chosen_letter + 3, self.chosen_letter)
 
+        return idx_chosen_letter, self.consonants
+
+        
 
     def is_match(self, sequence):
         None
@@ -37,9 +46,13 @@ class NbackCreator():
     
 #%%
 
-n_back = NbackCreator()
+if __name__ == "__main__":
+    
+    n_back = NbackCreator()
 
-sequence = n_back.generate_sequence()
+    for _ in range(len(n_back.consonants)):
+        
+        sequence = n_back.generate_sequence()
 
-print(sequence)
+        print(sequence)
 # %%
