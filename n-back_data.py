@@ -1,7 +1,7 @@
 #%%
 
 import random
-from random import randrange
+from random import randrange, randint
 import numpy as np
 
 #%%
@@ -29,7 +29,7 @@ class NbackCreator():
             random.shuffle(match_consonants_copy)
             chosen_letter = random.choice(match_consonants_copy)
             idx_chosen_letter = match_consonants_copy.index(chosen_letter)
-            match_consonants_copy.insert(idx_chosen_letter + 3, chosen_letter)
+            match_consonants_copy.insert(idx_chosen_letter + randint(1, 3), chosen_letter)
             match_sequences.append((idx_chosen_letter, match_consonants_copy)) 
 
         return match_sequences
@@ -50,7 +50,7 @@ class NbackCreator():
             random.shuffle(mismatch_consonants_copy)
             chosen_letter = random.choice(mismatch_consonants_copy)
             idx_chosen_letter = mismatch_consonants_copy.index(chosen_letter)
-            mismatch_consonants_copy.insert(randrange(len(mismatch_consonants_copy)), chosen_letter)
+            mismatch_consonants_copy.insert(randrange(4, len(mismatch_consonants_copy) + 1), chosen_letter)
             mismatch_sequences.append((idx_chosen_letter, mismatch_consonants_copy))
         
         return mismatch_sequences
