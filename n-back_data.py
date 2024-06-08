@@ -50,7 +50,7 @@ class NbackCreator():
             random.shuffle(mismatch_consonants_copy)
             chosen_letter = random.choice(mismatch_consonants_copy)
             idx_chosen_letter = mismatch_consonants_copy.index(chosen_letter)
-            mismatch_consonants_copy.insert(randrange(4, len(mismatch_consonants_copy) + 1), chosen_letter)
+            mismatch_consonants_copy.insert(idx_chosen_letter + randrange(4, len(mismatch_consonants_copy) + 1), chosen_letter)
             mismatch_sequences.append((idx_chosen_letter, mismatch_consonants_copy))
         
         return mismatch_sequences
@@ -61,7 +61,7 @@ class NbackCreator():
 if __name__ == "__main__":
 
     n_back = NbackCreator()
-    num_sequences = 22
+    num_sequences = 50
      
     match_sequences = n_back.is_match(num_sequences)
     mismatch_sequences = n_back.is_mismatch(num_sequences)
