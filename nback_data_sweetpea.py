@@ -59,6 +59,7 @@ print_experiments(block, experiments)
 #tabulate_experiments(block, experiments, [curr_letter, response])
 
 save_experiments_csv(block, experiments, "n_back_sequence")
+
 # %%
 
 # Store all csv files in a list for the current directory
@@ -70,8 +71,8 @@ combined_df = pd.DataFrame()
 # Loop through each csv file and append its contents to the dataframe
 for csv_file in csv_files:
     df = pd.read_csv(csv_file)
-    combined_df = pd.concat([combined_df.fillna("response"), df])
-    
-combined_df
+    combined_df = pd.concat([combined_df.fillna("response"), df], ignore_index = True)
 
+combined_df.to_csv("data.csv", index = False)
 # %%
+

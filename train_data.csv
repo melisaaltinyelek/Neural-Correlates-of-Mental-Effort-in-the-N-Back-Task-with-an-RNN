@@ -1,0 +1,126 @@
+letter,response,one_hot_response
+B,response,0
+B,response,0
+B,target,1
+B,target,1
+A,no target,0
+B,target,1
+A,target,1
+F,no target,0
+F,no target,0
+F,target,1
+D,no target,0
+F,target,1
+D,target,1
+F,target,1
+E,no target,0
+F,target,1
+E,target,1
+B,no target,0
+C,no target,0
+F,no target,0
+B,no target,0
+A,no target,0
+B,target,1
+A,target,1
+D,no target,0
+D,no target,0
+B,no target,0
+D,target,1
+E,no target,0
+D,target,1
+E,target,1
+D,target,1
+A,no target,0
+E,no target,0
+C,no target,0
+E,target,1
+C,target,1
+B,no target,0
+C,target,1
+A,no target,0
+C,target,1
+A,target,1
+D,no target,0
+A,target,1
+F,no target,0
+E,no target,0
+C,no target,0
+E,target,1
+C,target,1
+C,no target,0
+B,response,0
+D,response,0
+C,no target,0
+D,target,1
+C,target,1
+A,no target,0
+C,target,1
+A,target,1
+A,no target,0
+A,target,1
+A,target,1
+F,no target,0
+D,no target,0
+F,target,1
+C,no target,0
+F,target,1
+C,target,1
+A,no target,0
+D,no target,0
+A,target,1
+D,target,1
+E,no target,0
+B,no target,0
+E,target,1
+B,target,1
+B,no target,0
+B,target,1
+D,no target,0
+E,no target,0
+D,target,1
+C,no target,0
+A,no target,0
+B,no target,0
+C,no target,0
+B,target,1
+C,target,1
+E,no target,0
+F,no target,0
+B,no target,0
+F,target,1
+B,target,1
+E,no target,0
+D,no target,0
+E,target,1
+D,target,1
+E,target,1
+F,no target,0
+E,target,1
+F,target,1
+F,no target,0
+A,response,0
+C,response,0
+A,target,1
+C,target,1
+C,no target,0
+B,no target,0
+B,no target,0
+E,no target,0
+B,target,1
+B,no target,0
+D,no target,0
+B,target,1
+D,target,1
+B,target,1
+D,target,1
+B,target,1
+F,no target,0
+A,no target,0
+A,no target,0
+A,target,1
+F,no target,0
+B,no target,0
+F,target,1
+C,no target,0
+F,target,1

@@ -1,51 +1,51 @@
 letter,response
 A,
-E,
+D,
 A,target
+D,target
+D,no target
+E,no target
+E,no target
 E,target
-E,no target
-D,no target
+E,target
 C,no target
-D,target
+E,target
 C,target
-A,no target
-A,no target
-F,no target
-A,target
+E,target
+C,target
 C,no target
-A,target
 C,target
-F,no target
-C,target
-F,target
-C,target
-F,target
-D,no target
 B,no target
-D,target
-E,no target
-A,no target
-F,no target
-B,no target
-F,target
-B,target
-C,no target
-B,target
-B,no target
-B,target
-C,no target
-B,target
 F,no target
 D,no target
-F,target
 E,no target
-A,no target
-E,target
-A,target
-E,target
-E,no target
+F,no target
+C,no target
 D,no target
-E,target
+C,target
+B,no target
+B,no target
+B,target
+B,target
+A,no target
+B,target
+D,no target
+B,target
+D,target
+A,no target
+D,target
+A,target
 D,target
 B,no target
-D,target
+A,no target
+A,no target
+E,no target
+A,target
+F,no target
+A,target
+F,target
+C,no target
+F,target
+F,no target
+F,target
+F,target
