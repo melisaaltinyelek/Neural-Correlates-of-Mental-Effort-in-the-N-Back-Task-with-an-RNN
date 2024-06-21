@@ -16,7 +16,7 @@ from sweetpea import *
 # PARAMETERS
 
 N = 3 # N = 3 for 3-back task
-num_sequences = 5 # Number of sequences
+num_sequences = 100 # Number of sequences
 num_minimum_trials = 50 # Minimum number of trials per sequence
 
 ### REGULAR FACTORS
@@ -31,13 +31,26 @@ curr_letter = Factor("letter", letters)
 # Response factor
 
 def is_target(letter):
-    return letter[0] == letter[-(N-1)] # If the letter N trials back matches the letter on the current trial, it's a target
-def is_no_target(letter):
-    return not is_target(letter)
+
+    # If the letter N trials back matches the letter on the current trial, it's a target
+
+    return letter[0] == letter[-N]
+
+def is_lure(letter):
+    
+    return (letter[0] == letter[-(N-1)] or letter[0] == letter[-(N-2)]) and not is_target(letter)
+
+def is_no_target(letter):   
+
+    return not is_target(letter) and not is_lure(letter)
+
+
+
 
 response = Factor("response", [
-    DerivedLevel("target", Window(is_target, [curr_letter], 3, 1)),
-    DerivedLevel("no target",  Window(is_no_target, [curr_letter], 3, 1)),
+    DerivedLevel("target", Window(is_target, [curr_letter], 4, 1)),
+    DerivedLevel("no target",  Window(is_no_target, [curr_letter], 4, 1)),
+    DerivedLevel("is lure", Window(is_lure, [curr_letter], 4, 1))
 ])
 
 ### EXPERIMENT

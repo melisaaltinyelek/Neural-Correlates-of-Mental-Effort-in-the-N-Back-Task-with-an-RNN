@@ -1,251 +1,5001 @@
 letter,response
-B,response
-B,response
-B,target
-B,target
-A,no target
-B,target
-A,target
-F,no target
-F,no target
-F,target
-D,no target
-F,target
-D,target
-F,target
-E,no target
-F,target
-E,target
-B,no target
-C,no target
-F,no target
-B,no target
-A,no target
-B,target
-A,target
-D,no target
-D,no target
-B,no target
-D,target
-E,no target
-D,target
-E,target
-D,target
-A,no target
-E,no target
-C,no target
-E,target
-C,target
-B,no target
-C,target
-A,no target
-C,target
-A,target
-D,no target
-A,target
-F,no target
-E,no target
-C,no target
-E,target
-C,target
-C,no target
-B,response
-D,response
-C,no target
-D,target
-C,target
-A,no target
-C,target
-A,target
-A,no target
-A,target
-A,target
-F,no target
-D,no target
-F,target
-C,no target
-F,target
-C,target
-A,no target
-D,no target
-A,target
-D,target
-E,no target
-B,no target
-E,target
-B,target
-B,no target
-B,target
-D,no target
-E,no target
-D,target
-C,no target
-A,no target
-B,no target
-C,no target
-B,target
-C,target
-E,no target
-F,no target
-B,no target
-F,target
-B,target
-E,no target
-D,no target
-E,target
-D,target
-E,target
-F,no target
-E,target
-F,target
-F,no target
-A,response
-C,response
-A,target
-C,target
-C,no target
-B,no target
-B,no target
-E,no target
-B,target
-B,no target
-D,no target
-B,target
-D,target
-B,target
-D,target
-B,target
-F,no target
-A,no target
-A,no target
-A,target
-F,no target
-B,no target
-F,target
-C,no target
-F,target
-F,no target
-F,target
-E,no target
-E,no target
-C,no target
-E,target
-C,target
-E,target
-C,target
-A,no target
-A,no target
-D,no target
-A,target
-D,target
-A,target
-E,no target
-D,no target
-E,target
-D,target
-E,target
-C,no target
-F,no target
-C,target
-F,target
-D,no target
+F,response
 C,response
 E,response
+E,is lure
 C,target
+F,no target
+C,is lure
+F,is lure
+C,is lure
+F,is lure
+B,no target
+C,target
+F,target
+C,is lure
+C,target
+B,no target
+A,no target
+F,no target
+A,is lure
+A,target
+D,no target
+A,target
+D,is lure
+E,no target
+A,target
+D,target
+E,target
+E,is lure
+D,target
+D,is lure
+D,is lure
+C,no target
+E,no target
+D,target
+E,is lure
+E,target
+B,no target
+B,is lure
+D,no target
+C,no target
+B,target
+A,no target
+B,is lure
+B,target
+D,no target
+C,no target
+B,target
+F,no target
+A,no target
+F,is lure
+A,response
+E,response
+A,response
+E,is lure
+A,is lure
+C,no target
+B,no target
+A,target
+B,is lure
+A,is lure
+E,no target
+D,no target
+B,no target
+D,is lure
+C,no target
+B,target
+C,is lure
+B,is lure
+C,is lure
+B,is lure
+F,no target
+E,no target
+B,target
+F,target
+E,target
+F,is lure
+F,target
+E,target
+A,no target
+F,target
+E,target
+A,target
+E,is lure
+A,is lure
+D,no target
+D,is lure
+A,target
+F,no target
+D,target
+D,is lure
+A,no target
+D,target
+C,no target
+E,no target
+E,is lure
+A,no target
+D,no target
+F,no target
+B,no target
+F,is lure
+A,response
+D,response
+B,response
+A,target
+B,is lure
+A,is lure
+C,no target
+C,is lure
+A,target
+E,no target
+E,is lure
+B,no target
+A,no target
+D,no target
+A,is lure
+D,is lure
+F,no target
+D,is lure
+B,no target
+F,target
+C,no target
+B,target
+D,no target
+C,target
+B,target
+A,no target
+C,target
+A,is lure
+D,no target
+C,target
+F,no target
+D,target
+E,no target
+F,target
+D,target
+E,target
+E,is lure
+D,target
+E,target
+E,target
+C,no target
+C,is lure
+B,no target
+B,is lure
+B,is lure
+E,no target
+A,no target
+F,no target
+F,is lure
+F,is lure
+A,response
+A,response
+E,response
+A,target
+A,target
+E,target
+F,no target
+F,is lure
+E,target
+E,is lure
+A,no target
+C,no target
+A,is lure
+B,no target
+F,no target
+F,is lure
+B,target
+F,target
+F,target
+F,is lure
+F,target
+E,no target
+A,no target
+D,no target
+A,is lure
+E,no target
+B,no target
+B,is lure
+C,no target
+A,no target
+C,is lure
+A,is lure
+C,is lure
+D,no target
+C,is lure
+D,is lure
+D,target
+C,target
+E,no target
+D,target
+E,is lure
+C,no target
+E,is lure
+D,no target
+B,no target
+E,target
+D,target
+B,target
+B,is lure
+B,is lure
+B,response
+F,response
+D,response
+B,target
+E,no target
+B,is lure
+E,is lure
 E,target
 D,no target
 E,target
-D,target
-C,no target
+B,no target
+B,is lure
+E,target
+B,target
+E,is lure
 F,no target
+C,no target
+D,no target
+F,target
+D,is lure
 A,no target
 F,target
+E,no target
+E,is lure
+A,no target
+C,no target
+A,is lure
 A,target
+F,no target
+E,no target
+A,target
+B,no target
+F,no target
+A,target
+B,target
+F,target
+C,no target
+F,is lure
+C,is lure
+F,is lure
+D,no target
+C,target
+B,no target
+B,is lure
+C,target
+C,is lure
+C,is lure
+A,no target
+A,is lure
+C,target
+B,response
+A,response
+A,response
+B,target
+B,is lure
+B,is lure
+C,no target
+C,is lure
+F,no target
+F,is lure
+E,no target
+F,target
+D,no target
+F,is lure
+D,is lure
+A,no target
+B,no target
+D,target
+F,no target
+A,no target
+B,no target
+F,target
+F,is lure
+B,target
+A,no target
+C,no target
+A,is lure
+C,is lure
+A,is lure
+A,target
+C,target
+D,no target
+F,no target
+D,is lure
+D,target
+D,is lure
+E,no target
+C,no target
+C,is lure
+E,target
+E,is lure
+B,no target
+B,is lure
+D,no target
+B,target
+E,no target
+D,target
+E,is lure
+E,target
+E,is lure
+E,response
+F,response
+E,response
+F,is lure
+F,target
+E,target
+E,is lure
+F,target
+B,no target
+A,no target
+B,is lure
+F,no target
+F,is lure
+B,target
+D,no target
+E,no target
+B,target
+A,no target
+A,is lure
+C,no target
+C,is lure
+A,target
+A,is lure
+C,target
+E,no target
+C,is lure
+E,is lure
+D,no target
+A,no target
+D,is lure
+A,is lure
+B,no target
+C,no target
+A,target
+C,is lure
+C,target
+A,target
+C,target
+F,no target
+D,no target
+D,is lure
+D,is lure
+B,no target
+F,no target
+F,is lure
+B,target
+E,no target
+F,target
+C,no target
+E,target
+F,response
+B,response
+C,response
+A,no target
+C,is lure
+A,is lure
+C,is lure
+E,no target
+A,target
+E,is lure
+C,no target
+B,no target
+C,is lure
+E,no target
+E,is lure
+D,no target
+F,no target
+E,target
+F,is lure
+F,target
+B,no target
+C,no target
+B,is lure
+A,no target
+A,is lure
+B,target
+D,no target
+F,no target
+B,target
+F,is lure
+F,target
+D,no target
+D,is lure
+B,no target
+B,is lure
+D,target
+B,target
+A,no target
+B,is lure
+A,is lure
+F,no target
+E,no target
+F,is lure
+C,no target
+E,target
+F,target
+C,target
+E,target
+E,is lure
+C,target
+C,response
+B,response
+D,response
+C,target
+B,target
+E,no target
+D,no target
+A,no target
+A,is lure
+D,target
+D,is lure
+F,no target
+B,no target
+C,no target
+B,is lure
+B,target
+C,target
+C,is lure
+C,is lure
+C,target
+F,no target
+F,is lure
+F,is lure
+E,no target
+A,no target
+F,target
+C,no target
+A,target
+F,target
+A,is lure
+F,is lure
+C,no target
+A,target
+F,target
+A,is lure
+E,no target
+E,is lure
+B,no target
+E,target
+B,is lure
+F,no target
+E,target
+A,no target
+D,no target
+D,is lure
+B,no target
+B,is lure
+D,target
+D,is lure
+B,target
+E,response
+C,response
+E,response
+C,is lure
+C,target
+C,is lure
+E,no target
+E,is lure
+F,no target
+F,is lure
+F,is lure
+B,no target
+F,target
+A,no target
+B,target
+A,is lure
+A,target
+D,no target
+D,is lure
+F,no target
+C,no target
+A,no target
+A,is lure
+A,is lure
+F,no target
+C,no target
+E,no target
+D,no target
+C,target
+E,target
+E,is lure
+C,target
+A,no target
+B,no target
+B,is lure
+A,target
+E,no target
+B,target
+A,target
+E,target
+E,is lure
+B,no target
+B,is lure
+B,is lure
+D,no target
+B,target
+D,is lure
+C,no target
+D,is lure
+C,is lure
+C,response
+B,response
+C,response
+C,target
+B,target
+B,is lure
+C,target
+C,is lure
+E,no target
+E,is lure
+F,no target
+A,no target
+E,target
+B,no target
+C,no target
+E,target
+E,is lure
+A,no target
+A,is lure
+E,target
+A,target
+E,is lure
+F,no target
+A,target
+A,is lure
+F,target
+D,no target
+F,is lure
+D,is lure
+F,is lure
+C,no target
+C,is lure
+D,no target
+C,target
 E,no target
 F,no target
 B,no target
+F,is lure
+B,is lure
+B,target
 F,target
+A,no target
+D,no target
+F,target
+A,target
+E,no target
+A,is lure
+C,no target
+C,is lure
+B,no target
+A,response
+B,response
+A,response
+A,target
+B,target
+B,is lure
+B,is lure
+E,no target
+A,no target
+E,is lure
+A,is lure
+D,no target
+A,is lure
+D,is lure
+A,is lure
+A,target
+D,target
+D,is lure
+C,no target
+D,target
+C,is lure
+D,is lure
+D,target
+C,target
+B,no target
+F,no target
+E,no target
+F,is lure
+F,target
+E,target
+D,no target
+C,no target
+E,target
+E,is lure
+E,is lure
+B,no target
+F,no target
+B,is lure
+A,no target
+E,no target
+C,no target
+B,no target
+D,no target
+C,target
+C,is lure
+C,is lure
+A,no target
+C,target
+F,no target
+F,is lure
+A,response
+E,response
+C,response
+E,is lure
+B,no target
+D,no target
+B,is lure
+A,no target
+B,is lure
+A,is lure
+F,no target
+A,is lure
+E,no target
+F,target
+F,is lure
+F,is lure
+C,no target
+D,no target
+D,is lure
+F,no target
+C,no target
+C,is lure
+F,target
+A,no target
+C,target
+A,is lure
+B,no target
+C,target
+A,target
+B,target
+C,target
+C,is lure
 B,target
 E,no target
+A,no target
+E,is lure
+D,no target
+A,target
+B,no target
+D,target
+A,target
+B,target
+D,target
+F,no target
+D,is lure
+D,target
+F,target
+C,no target
+E,no target
+E,is lure
+B,response
+D,response
+B,response
+D,is lure
+F,no target
+E,no target
+F,is lure
+A,no target
+E,target
+A,is lure
+B,no target
+B,is lure
+B,is lure
+B,target
+C,no target
+F,no target
+B,target
+C,target
+F,target
+D,no target
+C,target
+F,target
+C,is lure
+D,no target
+C,is lure
+D,is lure
+B,no target
+B,is lure
+D,target
+E,no target
+F,no target
+E,is lure
+E,target
+F,target
+A,no target
+D,no target
+B,no target
+A,target
+D,target
+D,is lure
+A,target
+D,target
+E,no target
+E,is lure
+A,no target
+C,no target
+E,target
+E,is lure
+C,target
+C,is lure
+A,response
+C,response
+B,response
+A,target
+C,target
+B,target
+A,target
+C,target
+B,target
+C,is lure
+A,no target
+C,is lure
+A,is lure
+B,no target
+A,is lure
+B,is lure
+F,no target
+E,no target
+B,target
+F,target
+B,is lure
+D,no target
+C,no target
+C,is lure
+F,no target
+F,is lure
+E,no target
+A,no target
+E,is lure
+E,target
+B,no target
+B,is lure
+F,no target
+D,no target
+F,is lure
+D,is lure
+D,target
+F,target
+D,target
+A,no target
+F,target
+A,is lure
+F,is lure
+C,no target
+B,no target
+E,no target
+D,no target
+E,is lure
+D,is lure
+C,no target
+A,response
+F,response
+A,response
+F,is lure
+A,is lure
+B,no target
+A,is lure
+C,no target
+C,is lure
+A,target
+B,no target
+C,target
+A,target
+C,is lure
+D,no target
+D,is lure
+E,no target
+D,target
+E,is lure
+D,is lure
+E,is lure
+D,is lure
+E,is lure
+F,no target
+A,no target
+F,is lure
+F,target
+A,target
+C,no target
+C,is lure
+F,no target
+C,target
+A,no target
+E,no target
+C,target
+F,no target
+E,target
+A,no target
+F,target
+A,is lure
+F,is lure
+D,no target
+B,no target
+F,target
+C,no target
+B,target
+B,is lure
+E,no target
+B,target
+D,no target
+D,response
+F,response
+A,response
+D,target
+F,target
+A,target
+A,is lure
+F,target
+C,no target
+A,target
+D,no target
+C,target
+D,is lure
+C,is lure
+F,no target
+E,no target
+C,target
+B,no target
+C,is lure
+B,is lure
+F,no target
+A,no target
+D,no target
+F,target
+F,is lure
+D,target
+B,no target
+C,no target
+C,is lure
+D,no target
+D,is lure
+C,target
+D,target
+A,no target
+E,no target
+E,is lure
+B,no target
+E,target
+E,target
+B,target
+F,no target
+E,target
+A,no target
+C,no target
+A,is lure
+A,target
+A,is lure
+E,no target
+E,is lure
+E,is lure
+B,response
+C,response
+F,response
+A,no target
+A,is lure
+F,target
+A,target
+D,no target
+D,is lure
+C,no target
+D,target
+F,no target
+D,is lure
+F,is lure
+F,target
+D,target
+C,no target
+F,target
+D,target
+C,target
+E,no target
+C,is lure
+E,is lure
+B,no target
+D,no target
+E,target
+D,is lure
+F,no target
+B,no target
+F,is lure
+E,no target
+B,target
+E,is lure
+C,no target
+C,is lure
+C,is lure
+A,no target
+C,target
+B,no target
+B,is lure
+B,is lure
+A,no target
+D,no target
+B,target
+A,target
+F,no target
+F,is lure
+A,target
+E,no target
+A,is lure
+A,response
+E,response
+A,response
+E,is lure
+D,no target
+A,target
+E,target
+E,is lure
+C,no target
+A,no target
+C,is lure
+E,no target
+B,no target
+D,no target
+E,target
+B,target
+D,target
+D,is lure
+D,is lure
+F,no target
+E,no target
+D,target
+E,is lure
+D,is lure
+B,no target
+B,is lure
+B,is lure
+B,target
+C,no target
+B,target
+C,is lure
+A,no target
+D,no target
+B,no target
+B,is lure
+A,no target
+F,no target
+F,is lure
+A,target
+A,is lure
+F,target
+A,target
+F,is lure
+A,is lure
+E,no target
+A,is lure
+C,no target
+F,no target
+C,is lure
+F,is lure
+D,response
+B,response
+E,response
+D,target
+E,is lure
+F,no target
+F,is lure
+B,no target
+B,is lure
+B,is lure
+B,target
+A,no target
+B,target
+D,no target
+A,target
+E,no target
+D,target
+D,is lure
+D,is lure
+A,no target
+C,no target
+C,is lure
+A,target
+A,is lure
+E,no target
+D,no target
+E,is lure
+E,target
+F,no target
+E,target
+B,no target
+E,is lure
+B,is lure
+C,no target
+E,target
+B,target
+C,target
+D,no target
+F,no target
+F,is lure
+D,target
+F,target
+F,target
+C,no target
+C,is lure
+E,no target
+B,no target
+C,target
+A,no target
+C,is lure
+E,response
+F,response
+D,response
+E,target
+F,target
+A,no target
+F,is lure
+C,no target
+A,target
+C,is lure
+A,is lure
+E,no target
+A,is lure
+A,target
+D,no target
+A,target
+B,no target
+D,target
+D,is lure
+B,target
+D,target
+B,is lure
+D,is lure
+C,no target
+B,target
+D,target
+F,no target
+B,target
+B,is lure
+B,is lure
+D,no target
+E,no target
+C,no target
+F,no target
+E,target
+C,target
+C,is lure
+C,is lure
+C,target
+A,no target
+C,target
+B,no target
+E,no target
+E,is lure
+D,no target
+A,no target
+E,target
+F,no target
+F,is lure
+B,no target
+A,response
+E,response
+B,response
+D,no target
+E,target
+D,is lure
+C,no target
+F,no target
+D,target
+D,is lure
+F,target
+D,target
+D,target
+B,no target
+F,no target
+F,is lure
+B,target
+B,is lure
+F,target
+E,no target
+B,target
+E,is lure
+E,target
+A,no target
+E,target
+C,no target
+A,target
+F,no target
+C,target
+F,is lure
+C,is lure
+F,is lure
+F,target
+C,target
+D,no target
+A,no target
+C,target
+C,is lure
+B,no target
+E,no target
+A,no target
+C,no target
+D,no target
+A,target
+D,is lure
+E,no target
+E,is lure
+E,is lure
+B,no target
+B,is lure
+F,response
+E,response
+F,response
+D,no target
+C,no target
+D,is lure
+E,no target
+C,target
+C,is lure
+A,no target
+B,no target
+B,is lure
+E,no target
+B,target
+A,no target
+E,target
+A,is lure
+E,is lure
+A,is lure
+A,target
+A,is lure
+B,no target
+B,is lure
+A,target
+B,target
+D,no target
+A,target
+B,target
+D,target
+F,no target
+E,no target
+E,is lure
+C,no target
+F,no target
+E,target
+E,is lure
+D,no target
+E,target
+D,is lure
+D,target
+C,no target
+C,is lure
+D,target
+C,target
+D,is lure
+C,is lure
+A,no target
+B,no target
+F,no target
+F,is lure
+A,response
+F,response
+C,response
+F,is lure
+F,target
+F,is lure
+F,target
+C,no target
+B,no target
+B,is lure
+A,no target
+D,no target
+E,no target
+A,target
+D,target
+E,target
+E,is lure
+D,target
+B,no target
+E,target
+B,is lure
+E,is lure
+F,no target
+C,no target
+C,is lure
+E,no target
+E,is lure
+C,target
+D,no target
+C,is lure
+A,no target
+A,is lure
+C,target
+F,no target
+E,no target
+D,no target
+F,target
+E,target
+A,no target
+A,is lure
+A,is lure
+A,target
+A,target
+C,no target
+F,no target
+B,no target
+C,target
+C,is lure
+B,target
+B,is lure
+A,response
+C,response
+C,response
+A,target
+D,no target
+A,is lure
+C,no target
+A,is lure
+A,target
+D,no target
+D,is lure
+C,no target
+D,target
+A,no target
+C,target
+D,target
+D,is lure
+E,no target
+F,no target
+D,target
+B,no target
+D,is lure
+B,is lure
+C,no target
+C,is lure
+B,target
+F,no target
+C,target
+F,is lure
+B,no target
+A,no target
+B,is lure
 B,target
 F,no target
 A,no target
+F,is lure
+E,no target
+E,is lure
+F,target
+E,target
+F,is lure
+F,target
+E,target
+B,no target
+F,target
+B,is lure
+E,no target
+E,is lure
+B,target
+D,no target
+A,response
+B,response
+B,response
+B,is lure
+B,target
+D,no target
+A,no target
 C,no target
+D,target
+C,is lure
+D,is lure
+E,no target
+E,is lure
+E,is lure
+B,no target
+F,no target
+E,target
+A,no target
+C,no target
+A,is lure
+B,no target
+A,is lure
+E,no target
+B,target
+A,target
+B,is lure
+B,target
+B,is lure
+C,no target
+D,no target
+F,no target
+C,target
+F,is lure
+C,is lure
+C,target
+C,is lure
+F,no target
+C,target
+F,is lure
+D,no target
+B,no target
+F,target
+D,target
+D,is lure
+F,target
+F,is lure
+D,target
+E,no target
+D,is lure
+A,no target
+F,response
+E,response
+A,response
+B,no target
+C,no target
+C,is lure
+F,no target
+E,no target
+C,target
+C,is lure
+E,target
+E,is lure
+D,no target
+F,no target
+D,is lure
+F,is lure
+B,no target
+D,target
+C,no target
+B,target
+C,is lure
+C,target
+A,no target
+E,no target
+E,is lure
+D,no target
+C,no target
+E,target
+E,is lure
+A,no target
+A,is lure
+E,target
+F,no target
+A,target
+F,is lure
+F,target
+D,no target
+D,is lure
+F,target
+D,target
+D,target
+D,is lure
+B,no target
+B,is lure
+B,is lure
+E,no target
+B,target
+A,no target
+A,is lure
+A,is lure
+C,response
+C,response
+D,response
+E,no target
+D,is lure
+F,no target
+D,is lure
+F,is lure
+E,no target
+D,target
+F,target
+E,target
+E,is lure
+F,target
+D,no target
+E,target
+F,target
+D,target
+C,no target
+A,no target
+F,no target
+C,target
+B,no target
+C,is lure
+B,is lure
+C,is lure
+A,no target
+B,target
+A,is lure
+A,target
+D,no target
+C,no target
+A,target
+D,target
+A,is lure
+E,no target
+C,no target
+C,is lure
+F,no target
+B,no target
+C,target
+B,is lure
+B,target
+C,target
+A,no target
+B,target
+D,no target
+A,target
+A,is lure
+B,no target
+B,response
+A,response
+D,response
+D,is lure
+A,target
+A,is lure
+D,target
+C,no target
+F,no target
+D,target
+B,no target
+F,target
+F,is lure
+B,target
+B,is lure
+F,target
+A,no target
+A,is lure
+E,no target
+F,no target
+F,is lure
+E,target
+C,no target
+D,no target
+C,is lure
+B,no target
+A,no target
+C,target
+D,no target
+F,no target
+E,no target
+F,is lure
+E,is lure
+B,no target
+E,is lure
+B,is lure
+C,no target
+C,is lure
+B,target
+A,no target
+C,target
+B,target
+A,target
+B,is lure
+D,no target
+A,target
+D,is lure
+D,target
+E,no target
+E,is lure
+B,response
+A,response
+F,response
+A,is lure
+A,target
+D,no target
+D,is lure
+C,no target
+B,no target
+E,no target
+A,no target
+E,is lure
+D,no target
+A,target
+E,target
+D,target
+F,no target
+A,no target
+F,is lure
+E,no target
+F,is lure
+F,target
+F,is lure
+F,target
+F,target
+C,no target
+C,is lure
+B,no target
+A,no target
+C,target
+B,target
+A,target
+B,is lure
+A,is lure
+E,no target
+B,target
+D,no target
+E,target
+D,is lure
+C,no target
+F,no target
+D,target
+C,target
+B,no target
+F,no target
+C,target
+B,target
+C,is lure
+B,is lure
+C,is lure
+B,response
+C,response
+A,response
+B,target
+F,no target
+A,target
+F,is lure
+B,no target
+C,no target
+D,no target
+C,is lure
+D,is lure
+D,target
+C,target
+C,is lure
+D,target
+D,is lure
+A,no target
+F,no target
+D,target
+F,is lure
+A,no target
+C,no target
+E,no target
+A,target
+D,no target
+A,is lure
+D,is lure
+B,no target
+E,no target
+C,no target
+F,no target
+C,is lure
+F,is lure
+F,target
+B,no target
+B,is lure
+D,no target
+B,target
+B,target
+B,is lure
+E,no target
+E,is lure
+A,no target
+E,target
+A,is lure
+E,is lure
+A,is lure
+E,is lure
+E,target
+C,response
+E,response
+F,response
+C,target
+E,target
+F,target
+A,no target
+D,no target
+A,is lure
+A,target
+D,target
+C,no target
+A,target
+A,is lure
+E,no target
+B,no target
+B,is lure
+C,no target
+E,no target
+C,is lure
+E,is lure
+C,is lure
+E,is lure
+A,no target
+C,target
+B,no target
+F,no target
+B,is lure
+B,target
+C,no target
+B,target
+D,no target
+E,no target
+E,is lure
+F,no target
+F,is lure
+E,target
+F,target
+D,no target
+E,target
+F,target
+D,target
+D,is lure
+D,is lure
+F,no target
+A,no target
+D,target
+B,no target
+A,target
+A,is lure
+D,response
+A,response
+E,response
+D,target
+A,target
+E,target
+A,is lure
+E,is lure
+D,no target
+E,is lure
+D,is lure
+E,is lure
+A,no target
+D,target
+B,no target
+A,target
+A,is lure
+B,target
+D,no target
+E,no target
+A,no target
+D,target
+F,no target
+B,no target
+E,no target
+F,target
+C,no target
+E,target
+C,is lure
+C,target
+F,no target
+F,is lure
+B,no target
+F,target
+C,no target
+F,is lure
+C,is lure
+E,no target
+D,no target
+C,target
+D,is lure
+C,is lure
+C,target
+F,no target
+A,no target
+F,is lure
+C,no target
+A,target
+F,target
+A,is lure
+A,response
+E,response
+B,response
+A,target
+E,target
+B,target
+C,no target
+B,is lure
+F,no target
+E,no target
+E,is lure
+E,is lure
+B,no target
+A,no target
+E,target
+A,is lure
+E,is lure
+C,no target
+A,target
+C,is lure
+C,target
+D,no target
+C,target
+D,is lure
+B,no target
+D,is lure
+D,target
+B,target
+F,no target
+B,is lure
+F,is lure
+F,target
+B,target
+D,no target
+F,target
+E,no target
+A,no target
+C,no target
+C,is lure
+D,no target
+E,no target
+C,target
+D,target
+E,target
+B,no target
+D,target
+B,is lure
+F,no target
+A,no target
+F,is lure
+D,response
+C,response
+E,response
+D,target
+D,is lure
+A,no target
+B,no target
+B,is lure
+A,target
+E,no target
+F,no target
+D,no target
+F,is lure
+B,no target
+B,is lure
+F,target
+F,is lure
+B,target
+C,no target
+D,no target
+C,is lure
+D,is lure
+C,is lure
+D,is lure
+D,target
+C,target
+D,target
+F,no target
+F,is lure
+E,no target
+F,target
+F,target
+E,target
+A,no target
+E,is lure
+A,is lure
+B,no target
+D,no target
+C,no target
+B,target
+C,is lure
+B,is lure
+B,target
+A,no target
+A,is lure
+F,no target
+E,no target
+E,is lure
+E,is lure
+C,no target
+D,response
+B,response
+B,response
+D,target
+E,no target
+B,target
+F,no target
+D,no target
+D,is lure
+D,is lure
+C,no target
+B,no target
+D,target
+C,target
+F,no target
+A,no target
+F,is lure
+F,target
+E,no target
+F,target
+E,is lure
+E,target
+E,is lure
+A,no target
+A,is lure
+E,target
+E,is lure
+D,no target
+E,target
+A,no target
+A,is lure
+D,no target
+B,no target
+D,is lure
+B,is lure
+C,no target
+D,target
+B,target
+B,is lure
+B,is lure
+B,target
+C,no target
+F,no target
+F,is lure
+C,target
+F,target
+C,is lure
+E,no target
+C,is lure
+B,no target
+B,response
+A,response
+D,response
+D,is lure
+A,target
+B,no target
+A,is lure
+A,target
+C,no target
+C,is lure
+B,no target
+F,no target
+C,target
+B,target
+C,is lure
+C,target
+B,target
+B,is lure
+A,no target
+E,no target
+D,no target
+E,is lure
+D,is lure
+F,no target
+F,is lure
+D,target
+B,no target
+B,is lure
+D,target
+B,target
+C,no target
+B,is lure
+D,no target
+E,no target
+D,is lure
+A,no target
+A,is lure
+A,is lure
+D,no target
+A,target
+F,no target
+E,no target
+E,is lure
+A,no target
+C,no target
+E,target
+E,is lure
+C,target
+E,target
+E,target
+A,response
+D,response
+C,response
+B,no target
+B,is lure
+B,is lure
+B,target
+C,no target
+A,no target
+C,is lure
+A,is lure
+A,target
+F,no target
+D,no target
+C,no target
+C,is lure
+D,target
+C,target
+E,no target
+B,no target
+C,target
+E,target
+B,target
+B,is lure
+E,target
+B,target
+D,no target
+E,target
+D,is lure
+E,is lure
+D,is lure
+D,target
+F,no target
+D,target
+E,no target
+B,no target
+E,is lure
+C,no target
+D,no target
+A,no target
+C,target
+C,is lure
+A,target
+E,no target
+F,no target
+E,is lure
+A,no target
+A,is lure
+A,is lure
+A,target
+D,response
+F,response
+C,response
+D,target
+C,is lure
+D,is lure
+F,no target
+F,is lure
+F,is lure
+A,no target
+D,no target
+A,is lure
+B,no target
+B,is lure
+A,target
+E,no target
+A,is lure
+E,is lure
+E,target
+A,target
+C,no target
+C,is lure
+E,no target
+E,is lure
+C,target
+F,no target
+B,no target
+D,no target
+F,target
+F,is lure
+C,no target
+D,no target
+F,target
+E,no target
+D,target
+F,target
+B,no target
+B,is lure
+C,no target
+A,no target
+B,target
+C,target
+C,is lure
+B,target
+C,target
+F,no target
+B,target
+A,no target
+B,is lure
+A,is lure
+F,response
+E,response
+A,response
+F,target
+D,no target
+D,is lure
+D,is lure
+C,no target
+D,target
+C,is lure
+E,no target
+D,target
+E,is lure
+C,no target
+E,is lure
+B,no target
+D,no target
+F,no target
+B,target
+D,target
+B,is lure
+D,is lure
+B,is lure
+B,target
+F,no target
+F,is lure
+B,target
+A,no target
+A,is lure
+E,no target
+F,no target
+F,is lure
+F,is lure
+C,no target
+C,is lure
+F,target
+C,target
+E,no target
+B,no target
+E,is lure
+E,target
+A,no target
+B,no target
+E,target
+B,is lure
+D,no target
+E,target
+A,no target
+A,is lure
+A,is lure
+D,response
+B,response
+F,response
+B,is lure
+F,is lure
+B,is lure
+B,target
+D,no target
+B,target
+A,no target
+A,is lure
+A,is lure
+A,target
+D,no target
+D,is lure
+D,is lure
+F,no target
+B,no target
+F,is lure
+F,target
+B,target
+E,no target
+E,is lure
+E,is lure
+C,no target
+E,target
+C,is lure
+F,no target
+C,is lure
+C,target
+E,no target
+C,target
+C,target
+E,target
+B,no target
+B,is lure
+E,target
+A,no target
+E,is lure
+A,is lure
+D,no target
+B,no target
+A,target
+F,no target
+C,no target
+F,is lure
+F,target
+E,no target
+A,no target
+F,target
+F,response
+C,response
+A,response
+F,target
+F,is lure
+A,target
+F,target
+D,no target
+F,is lure
+D,is lure
+D,target
+D,is lure
+E,no target
+E,is lure
+E,is lure
+B,no target
+E,target
+A,no target
+A,is lure
+A,is lure
+A,target
+C,no target
+A,target
+D,no target
+C,target
+D,is lure
+D,target
+F,no target
+F,is lure
+B,no target
+C,no target
+B,is lure
+F,no target
+B,is lure
+C,no target
+C,is lure
+E,no target
+C,target
+A,no target
+A,is lure
+C,target
+D,no target
+E,no target
+B,no target
+D,target
+F,no target
+B,target
+A,no target
+B,is lure
+B,target
+E,response
+E,response
+A,response
+E,target
+E,target
+E,is lure
+E,target
+D,no target
+D,is lure
+B,no target
+D,target
+C,no target
+F,no target
+D,target
+A,no target
+A,is lure
+D,target
+D,is lure
+E,no target
+B,no target
+B,is lure
+B,is lure
+A,no target
+B,target
+F,no target
+F,is lure
+B,target
+C,no target
+F,target
+E,no target
+C,target
+E,is lure
+C,is lure
+C,target
+D,no target
+B,no target
+C,target
+C,is lure
+B,target
+E,no target
+B,is lure
+F,no target
+F,is lure
+A,no target
+F,target
+F,target
+F,is lure
+C,no target
+C,is lure
+D,no target
+A,response
+B,response
+B,response
+A,target
+B,target
+D,no target
+A,target
+A,is lure
+B,no target
+A,target
+F,no target
+C,no target
+C,is lure
+C,is lure
+E,no target
+E,is lure
+E,is lure
+A,no target
+E,target
+D,no target
+E,is lure
+B,no target
+D,target
+B,is lure
+D,is lure
+B,is lure
+C,no target
+D,target
+B,target
+D,is lure
+A,no target
+B,target
+D,target
+B,is lure
+E,no target
+F,no target
+D,no target
+C,no target
+F,target
+B,no target
+C,target
+E,no target
+C,is lure
+C,target
+E,target
+C,target
+F,no target
+E,target
+F,is lure
+A,no target
+B,response
+F,response
+E,response
+B,target
+E,is lure
+B,is lure
+C,no target
+C,is lure
+C,is lure
+A,no target
+A,is lure
+A,is lure
+A,target
+F,no target
+A,target
+C,no target
+D,no target
+B,no target
+C,target
+F,no target
+C,is lure
+F,is lure
+F,target
+B,no target
+B,is lure
+E,no target
+E,is lure
+B,target
+B,is lure
+E,target
+A,no target
+B,target
+D,no target
+D,is lure
+D,is lure
+D,target
+A,no target
+E,no target
+A,is lure
+E,is lure
+E,target
+A,target
+F,no target
+F,is lure
+D,no target
+F,target
+C,no target
+D,target
+E,no target
+B,no target
+F,response
+D,response
+A,response
+F,target
+D,target
+B,no target
+B,is lure
+D,target
+B,target
+D,is lure
+C,no target
+A,no target
+B,no target
+A,is lure
+B,is lure
+A,is lure
+F,no target
+B,target
+D,no target
+C,no target
+B,target
+D,target
+C,target
+E,no target
+C,is lure
+E,is lure
+C,is lure
+F,no target
+C,is lure
+F,is lure
+E,no target
+C,target
+E,is lure
+A,no target
+A,is lure
+E,target
+A,target
+B,no target
+E,target
+A,target
+E,is lure
+D,no target
+D,is lure
+D,is lure
+F,no target
+E,no target
+A,no target
+D,no target
+C,no target
+A,target
+D,response
+B,response
+D,response
+B,is lure
+D,is lure
+B,is lure
+B,target
+B,is lure
+B,target
+C,no target
+A,no target
+F,no target
+A,is lure
+B,no target
+D,no target
+E,no target
+D,is lure
+E,is lure
+E,target
+E,is lure
+A,no target
+A,is lure
+F,no target
+A,target
+F,is lure
+A,is lure
+F,is lure
+D,no target
+F,is lure
+F,target
+D,target
+B,no target
+C,no target
+D,target
+B,target
+C,target
+D,target
+E,no target
+A,no target
+B,no target
+C,no target
+A,target
+C,is lure
+E,no target
+D,no target
+C,target
+E,target
+E,is lure
+C,target
+C,is lure
+D,response
+F,response
+D,response
+F,is lure
+B,no target
+D,target
+C,no target
+B,target
+D,target
+D,is lure
+B,target
+E,no target
+A,no target
+A,is lure
+F,no target
+A,target
+A,target
+F,target
+F,is lure
+A,target
+C,no target
+C,is lure
+C,is lure
+C,target
+C,target
+D,no target
+D,is lure
+A,no target
+F,no target
+D,target
+D,is lure
+F,target
+B,no target
+E,no target
+B,is lure
+B,target
+E,target
+E,is lure
+E,is lure
+E,target
+F,no target
+D,no target
+A,no target
+E,no target
+E,is lure
+C,no target
+D,no target
+E,target
+B,no target
+B,is lure
+E,response
+F,response
+C,response
+E,target
+F,target
+C,target
+E,target
+C,is lure
+A,no target
+B,no target
+F,no target
+E,no target
+B,target
+D,no target
+D,is lure
+E,no target
+F,no target
+E,is lure
+E,target
+C,no target
+A,no target
+A,is lure
+C,target
+C,is lure
+A,target
+C,target
+D,no target
+A,target
+F,no target
+D,target
+F,is lure
+D,is lure
+F,is lure
+A,no target
+D,target
+B,no target
+A,target
+D,target
+B,target
+B,is lure
+E,no target
+C,no target
+C,is lure
+B,no target
+B,is lure
+D,no target
+D,is lure
+B,target
+C,no target
+B,is lure
+F,response
+C,response
+D,response
+F,target
+F,is lure
+B,no target
+F,target
+B,is lure
+A,no target
+E,no target
+B,target
+E,is lure
+B,is lure
+F,no target
+E,target
+E,is lure
+C,no target
+C,is lure
+A,no target
+B,no target
+C,target
+A,target
+A,is lure
+C,target
+B,no target
+A,target
+B,is lure
+F,no target
+A,target
+F,is lure
+A,is lure
+E,no target
+C,no target
+D,no target
+D,is lure
+F,no target
+E,no target
+F,is lure
+D,no target
+E,target
+A,no target
+A,is lure
+D,no target
+C,no target
+D,is lure
+C,is lure
+D,is lure
+C,is lure
+C,target
+D,target
+E,response
+B,response
+B,response
+C,no target
+F,no target
+C,is lure
+A,no target
+B,no target
+C,target
+E,no target
+B,target
+F,no target
+F,is lure
+B,target
+B,is lure
+A,no target
+C,no target
+D,no target
+E,no target
+D,is lure
+E,is lure
+D,is lure
+E,is lure
+B,no target
+D,target
+C,no target
+A,no target
+C,is lure
+A,is lure
 A,target
 C,target
 A,target
+E,no target
+C,target
+A,target
+C,is lure
+A,is lure
 D,no target
-D,no target
+A,is lure
+D,is lure
 D,target
+F,no target
 B,no target
-D,target
+F,is lure
+B,is lure
+D,no target
+F,target
 B,target
+F,is lure
+B,is lure
+E,response
+C,response
+A,response
+C,is lure
+C,target
+A,target
+E,no target
+C,target
+C,is lure
 B,no target
 D,no target
-B,target
+C,target
+D,is lure
+A,no target
+F,no target
+D,target
+D,is lure
+A,no target
+C,no target
+F,no target
+A,target
+A,is lure
+B,no target
+A,target
+B,is lure
+C,no target
+B,is lure
+D,no target
+B,is lure
+D,is lure
 D,target
 C,no target
 E,no target
-C,target
+E,is lure
+D,no target
+E,target
+E,target
+E,is lure
 F,no target
 A,no target
+B,no target
+F,target
+F,is lure
+B,target
+E,no target
+F,target
+B,target
+F,is lure
+F,target
+F,is lure
+F,response
+B,response
+B,response
+F,target
+B,target
+D,no target
+F,target
+D,is lure
+F,is lure
+C,no target
+B,no target
+A,no target
+C,target
+A,is lure
+C,is lure
+D,no target
+A,target
+C,target
+C,is lure
+F,no target
+C,target
+A,no target
+F,target
+A,is lure
+E,no target
+E,is lure
+A,target
+E,target
+A,is lure
+B,no target
+E,target
+B,is lure
+E,is lure
+E,target
+B,target
+F,no target
+A,no target
+E,no target
+E,is lure
+C,no target
+F,no target
+D,no target
+E,no target
+D,is lure
+B,no target
+D,is lure
+B,is lure
+C,no target
+B,is lure
+B,target
+B,response
+E,response
+C,response
+B,target
+E,target
+C,target
+B,target
+E,target
+C,target
+E,is lure
+C,is lure
+A,no target
+F,no target
+A,is lure
+E,no target
+C,no target
+A,target
+E,target
+E,is lure
+A,target
+A,is lure
+D,no target
+D,is lure
+A,target
+D,target
+E,no target
+D,is lure
+B,no target
+F,no target
+F,is lure
+C,no target
+D,no target
+A,no target
+C,target
+A,is lure
+C,is lure
+B,no target
+C,is lure
+B,is lure
+F,no target
+F,is lure
+B,target
+A,no target
+D,no target
+D,is lure
+E,no target
+C,no target
+E,is lure
+B,no target
+B,is lure
+F,response
+B,response
+C,response
+F,target
+B,target
+D,no target
+B,is lure
+D,is lure
+A,no target
+D,is lure
+E,no target
+B,no target
+B,is lure
+B,is lure
+B,target
+D,no target
+D,is lure
+B,target
+A,no target
+D,target
+A,is lure
+F,no target
+D,target
+A,target
+F,target
+F,is lure
+E,no target
+E,is lure
+C,no target
+F,no target
+A,no target
+A,is lure
+C,no target
+B,no target
+A,target
+E,no target
+A,is lure
+A,target
+E,target
+B,no target
+E,is lure
+E,target
+C,no target
+E,target
+C,is lure
+F,no target
+D,no target
+F,is lure
+F,target
+D,target
+B,response
+F,response
+F,response
+C,no target
+F,target
+C,is lure
+C,target
+B,no target
+C,target
+B,is lure
+D,no target
+D,is lure
+B,target
+D,target
+A,no target
+B,target
+F,no target
+B,is lure
+A,no target
+F,target
+C,no target
+F,is lure
+D,no target
+C,target
+E,no target
+C,is lure
+F,no target
+E,target
+D,no target
+E,is lure
+E,target
+D,target
+B,no target
+B,is lure
+D,target
+B,target
+E,no target
+A,no target
+A,is lure
+A,is lure
+C,no target
+C,is lure
+A,target
+A,is lure
+F,no target
+F,is lure
+A,target
+E,no target
+E,is lure
+A,target
+C,response
+B,response
+A,response
+C,target
+A,is lure
+A,target
+A,is lure
+C,no target
+C,is lure
+A,target
+B,no target
+D,no target
+A,target
+B,target
+B,is lure
+B,is lure
+E,no target
+B,target
+F,no target
+C,no target
+F,is lure
+F,target
+C,target
+E,no target
+C,is lure
+E,is lure
+E,target
+C,target
+C,is lure
+B,no target
+F,no target
+F,is lure
+B,target
+B,is lure
+F,target
+A,no target
+D,no target
+B,no target
+D,is lure
+E,no target
+E,is lure
+D,target
+D,is lure
+D,is lure
+A,no target
+C,no target
+F,no target
+D,no target
+F,is lure
+A,no target
+D,response
+C,response
+B,response
+D,target
+D,is lure
+B,target
+F,no target
+B,is lure
+A,no target
+E,no target
+E,is lure
+A,target
+B,no target
+F,no target
+E,no target
+E,is lure
+F,target
+F,is lure
+E,target
+C,no target
+F,target
+C,is lure
+A,no target
+B,no target
+C,target
+A,target
+F,no target
+B,no target
+B,is lure
+F,target
+F,is lure
+B,target
+C,no target
+B,is lure
+B,target
+C,target
+D,no target
+D,is lure
+C,target
+C,is lure
+A,no target
+E,no target
+A,is lure
+E,is lure
+A,is lure
+A,target
+E,target
+C,no target
+D,no target
+D,is lure
+E,response
+E,response
+E,response
+E,target
+C,no target
+C,is lure
+E,target
+F,no target
+E,is lure
+C,no target
+F,target
+F,is lure
+C,target
+C,is lure
+D,no target
+A,no target
+A,is lure
+D,target
+E,no target
+A,target
+D,target
+B,no target
+D,is lure
+B,is lure
+C,no target
+B,is lure
+C,is lure
+C,target
+D,no target
+B,no target
+F,no target
+F,is lure
+B,target
+F,target
+E,no target
+A,no target
+B,no target
+B,is lure
+D,no target
+E,no target
+E,is lure
+D,target
+A,no target
+E,target
+A,is lure
+E,is lure
+A,is lure
+A,target
+F,no target
+F,is lure
+D,response
+F,response
+B,response
+D,target
+F,target
+F,is lure
+A,no target
+E,no target
+E,is lure
+E,is lure
+B,no target
+B,is lure
+E,target
+B,target
+B,target
+E,target
+E,is lure
+C,no target
+C,is lure
+D,no target
+C,target
+C,target
+B,no target
+D,no target
+D,is lure
+D,is lure
+A,no target
+F,no target
+E,no target
+F,is lure
+A,no target
+E,target
+F,target
+A,target
+C,no target
+C,is lure
+A,target
+C,target
+F,no target
+D,no target
+D,is lure
+B,no target
+D,target
+D,target
+F,no target
+F,is lure
+C,no target
+C,is lure
+F,target
+E,no target
+E,response
+C,response
+D,response
+E,target
+C,target
+D,target
+F,no target
+A,no target
+A,is lure
+A,is lure
+A,target
+B,no target
+B,is lure
+A,target
+A,is lure
+F,no target
+A,target
+F,is lure
+F,target
+D,no target
+D,is lure
+F,target
+B,no target
+F,is lure
+B,is lure
+E,no target
+E,is lure
+E,is lure
+D,no target
+C,no target
+D,is lure
+E,no target
+C,target
+D,target
+D,is lure
+C,target
+A,no target
+D,target
+F,no target
+C,no target
+A,no target
+F,target
+F,is lure
+C,no target
+B,no target
+D,no target
+B,is lure
+E,no target
+E,is lure
+B,target
+E,response
+E,response
+F,response
+C,no target
+A,no target
+E,no target
+A,is lure
+A,target
+C,no target
+A,target
+C,is lure
+F,no target
+D,no target
+C,target
+C,is lure
+C,is lure
+B,no target
+D,no target
+B,is lure
+D,is lure
+F,no target
+E,no target
+F,is lure
+B,no target
+E,target
+B,is lure
+E,is lure
+E,target
+B,target
+E,target
+F,no target
+F,is lure
+A,no target
+F,target
 F,target
 A,target
 F,target
+D,no target
+F,is lure
 B,no target
+D,target
+D,is lure
+D,is lure
 A,no target
 E,no target
+A,is lure
+E,is lure
+A,is lure
+E,is lure
 C,no target
+C,response
+C,response
+C,response
+F,no target
+A,no target
+F,is lure
+A,is lure
+D,no target
+B,no target
+C,no target
+D,target
+E,no target
+D,is lure
+D,target
+E,target
+B,no target
+F,no target
+E,target
+A,no target
+E,is lure
+D,no target
+A,target
+A,is lure
+D,target
+A,target
+D,is lure
+A,is lure
+C,no target
+F,no target
+F,is lure
+C,target
+F,target
+E,no target
+E,is lure
+F,target
+B,no target
+E,target
+C,no target
+B,target
+C,is lure
+B,is lure
+C,is lure
+B,is lure
+A,no target
+B,is lure
+B,target
+A,target
+D,no target
+E,no target
+E,is lure
+B,response
+F,response
+A,response
+B,target
+F,target
+A,target
+D,no target
+D,is lure
+A,target
+D,target
+A,is lure
+D,is lure
+A,is lure
+D,is lure
+D,target
+B,no target
+B,is lure
+B,is lure
+D,no target
+E,no target
+E,is lure
+C,no target
+A,no target
+C,is lure
+A,is lure
+F,no target
+E,no target
+D,no target
+B,no target
+C,no target
+F,no target
+F,is lure
+C,target
+C,is lure
+B,no target
+A,no target
+B,is lure
+B,target
+A,target
+B,target
+F,no target
+F,is lure
+F,is lure
+C,no target
+C,is lure
+F,target
+A,no target
+E,no target
+F,target
+E,is lure
+F,response
+D,response
+C,response
+F,target
+C,is lure
+C,target
+E,no target
+D,no target
+A,no target
+D,is lure
+D,target
+A,target
+A,is lure
+D,target
+A,target
+B,no target
+C,no target
+A,target
+B,target
+D,no target
+B,is lure
+D,is lure
+A,no target
+A,is lure
+D,target
+E,no target
+D,is lure
+F,no target
+E,target
+E,is lure
+E,is lure
+C,no target
+A,no target
+A,is lure
+C,target
+F,no target
+B,no target
+F,is lure
+B,is lure
+C,no target
+F,target
+C,is lure
+B,no target
+B,is lure
+C,target
+C,is lure
+B,target
+F,no target
+D,no target
+E,no target
+D,response
+F,response
+A,response
+D,target
+B,no target
+A,target
+A,is lure
+A,is lure
+D,no target
+C,no target
+A,target
+E,no target
+C,target
+C,is lure
+B,no target
+B,is lure
+F,no target
+B,target
+E,no target
+D,no target
+E,is lure
+D,is lure
+E,is lure
+E,target
+D,target
+E,target
+B,no target
+B,is lure
+E,target
+B,target
+B,target
+A,no target
+C,no target
+E,no target
+E,is lure
+F,no target
+C,no target
+A,no target
+A,is lure
+C,target
+D,no target
+D,is lure
+C,target
+C,is lure
+D,target
+A,no target
+D,is lure
+F,no target
+F,is lure
+F,is lure
+D,response
+B,response
+C,response
+D,target
+C,is lure
+F,no target
+D,target
+F,is lure
+C,no target
+E,no target
+F,target
+C,target
+F,is lure
+F,target
+F,is lure
+C,no target
+C,is lure
+F,target
+D,no target
+B,no target
+E,no target
+D,target
+D,is lure
+A,no target
+A,is lure
+C,no target
+D,no target
+F,no target
+C,target
+C,is lure
+A,no target
+F,no target
+C,target
+A,target
+E,no target
+B,no target
+A,target
+D,no target
+D,is lure
+A,target
+B,no target
+A,is lure
+B,is lure
+B,target
+B,is lure
+B,target
+A,no target
+B,target
+A,is lure
+B,is lure
+C,response
+B,response
+D,response
+D,is lure
+B,target
+D,target
+A,no target
+B,target
+C,no target
+F,no target
+C,is lure
+B,no target
+F,target
+F,is lure
+D,no target
+F,target
+D,is lure
+D,target
+A,no target
+E,no target
+A,is lure
+E,is lure
+A,is lure
+F,no target
+B,no target
+D,no target
+E,no target
+F,no target
+A,no target
+F,is lure
+D,no target
+A,target
+F,target
+C,no target
+A,target
+E,no target
+A,is lure
+A,target
+E,target
+C,no target
+E,is lure
 E,target
 C,target
 E,target
-A,
-D,
-A,target
-D,target
-D,no target
-E,no target
-E,no target
-E,target
-E,target
-C,no target
-E,target
+C,is lure
 C,target
-E,target
-C,target
-C,no target
-C,target
+C,is lure
 B,no target
-F,no target
-D,no target
-E,no target
+C,target
+B,is lure
+B,response
+C,response
+E,response
+B,target
+E,is lure
 F,no target
 C,no target
+E,target
+F,target
+E,is lure
+C,no target
+F,target
+A,no target
+A,is lure
 D,no target
-C,target
-B,no target
-B,no target
-B,target
-B,target
-A,no target
-B,target
-D,no target
-B,target
-D,target
-A,no target
-D,target
 A,target
-D,target
-B,no target
-A,no target
-A,no target
-E,no target
 A,target
+A,is lure
 F,no target
+E,no target
+C,no target
+C,is lure
+E,target
+A,no target
+C,target
+C,is lure
+A,target
+C,target
+A,is lure
+B,no target
+E,no target
+D,no target
+D,is lure
+D,is lure
+D,target
+A,no target
+B,no target
+B,is lure
+D,no target
+F,no target
+B,target
+D,target
+F,target
+E,no target
+B,no target
+B,is lure
+E,target
+E,is lure
+B,target
+B,is lure
+C,response
+B,response
+F,response
+C,target
+B,target
+F,target
+B,is lure
+D,no target
+D,is lure
+C,no target
+E,no target
+D,target
+C,target
+F,no target
+E,no target
+A,no target
+F,target
+F,is lure
+C,no target
+B,no target
+C,is lure
+B,is lure
+B,target
+C,target
+C,is lure
+E,no target
+D,no target
+A,no target
+D,is lure
+F,no target
+F,is lure
+C,no target
+F,target
+B,no target
+F,is lure
+B,is lure
+D,no target
+D,is lure
+B,target
+D,target
+A,no target
+A,is lure
+D,target
+A,target
+A,target
+A,is lure
+F,no target
+A,target
+B,no target
+A,is lure
+C,response
+E,response
+D,response
+C,target
+E,target
+B,no target
+E,is lure
+E,target
+A,no target
+F,no target
+A,is lure
+F,is lure
+F,target
+A,target
+F,target
+A,is lure
 A,target
 F,target
 C,no target
-F,target
+E,no target
+B,no target
+E,is lure
+B,is lure
+A,no target
+B,is lure
+D,no target
+D,is lure
+E,no target
+D,target
+A,no target
+E,target
+E,is lure
+A,target
+D,no target
 F,no target
+C,no target
+F,is lure
+E,no target
+C,target
+D,no target
+C,is lure
+C,target
+D,target
+D,is lure
+D,is lure
+C,no target
+D,target
+B,no target
+F,no target
+B,is lure
+F,response
+C,response
+D,response
+C,is lure
+E,no target
+D,target
+B,no target
+E,target
+B,is lure
+D,no target
+B,is lure
+D,is lure
+E,no target
+F,no target
+E,is lure
+F,is lure
+F,target
+E,target
+E,is lure
+F,target
+D,no target
+E,target
+C,no target
+E,is lure
+C,is lure
+B,no target
+F,no target
+C,target
+E,no target
+A,no target
+D,no target
+F,no target
+C,no target
+D,target
+D,is lure
+A,no target
+A,is lure
+D,target
+D,is lure
+A,target
+A,is lure
+B,no target
+B,is lure
+C,no target
+C,is lure
+A,no target
+A,is lure
+C,target
+A,target
+A,target
+F,response
+F,response
+D,response
 F,target
 F,target
+E,no target
+B,no target
+B,is lure
+F,no target
+D,no target
+B,target
+C,no target
+E,no target
+E,is lure
+D,no target
+C,no target
+A,no target
+A,is lure
+C,target
+A,target
+A,target
+E,no target
+F,no target
+F,is lure
+B,no target
+B,is lure
+D,no target
+B,target
+D,is lure
+D,target
+D,is lure
+A,no target
+A,is lure
+D,target
+D,is lure
+A,target
+A,is lure
+D,target
+F,no target
+F,is lure
+B,no target
+B,is lure
+F,target
+F,is lure
+C,no target
+A,no target
+C,is lure
+C,target
+C,is lure
+C,target
+B,response
+E,response
+A,response
+B,target
+E,target
+F,no target
+F,is lure
+B,no target
+F,target
+E,no target
+F,is lure
+F,target
+A,no target
+A,is lure
+F,target
+E,no target
+A,target
+E,is lure
+A,is lure
+C,no target
+E,target
+A,target
+A,is lure
+B,no target
+C,no target
+A,target
+B,target
+C,target
+D,no target
+E,no target
+B,no target
+F,no target
+B,is lure
+A,no target
+B,is lure
+C,no target
+D,no target
+B,target
+C,target
+D,target
+D,is lure
+C,target
+C,is lure
+A,no target
+D,no target
+D,is lure
+F,no target
+D,target
+F,is lure
+D,is lure
+B,response
+F,response
+C,response
+C,is lure
+F,target
+E,no target
+D,no target
+B,no target
+F,no target
+E,no target
+E,is lure
+F,target
+E,target
+E,target
+E,is lure
+D,no target
+E,target
+D,is lure
+B,no target
+D,is lure
+A,no target
+F,no target
+C,no target
+F,is lure
+D,no target
+F,is lure
+D,is lure
+D,target
+A,no target
+A,is lure
+C,no target
+E,no target
+F,no target
+E,is lure
+F,is lure
+B,no target
+B,is lure
+F,target
+C,no target
+B,target
+B,is lure
+C,target
+B,target
+C,is lure
+B,is lure
+A,no target
+A,is lure
+A,is lure
+A,target
+A,target
+B,response
+E,response
+A,response
+C,no target
+E,target
+C,is lure
+A,no target
+F,no target
+A,is lure
+A,target
+F,target
+C,no target
+F,is lure
+C,is lure
+C,target
+F,target
+C,target
+A,no target
+B,no target
+B,is lure
+B,is lure
+B,target
+B,target
+F,no target
+B,target
+C,no target
+F,target
+C,is lure
+E,no target
+E,is lure
+C,target
+D,no target
+F,no target
+D,is lure
+D,target
+B,no target
+D,target
+E,no target
+E,is lure
+D,target
+E,target
+E,target
+A,no target
+D,no target
+A,is lure
+B,no target
+A,is lure
+E,no target
+E,is lure
+A,target
+B,response
+D,response
+E,response
+B,target
+B,is lure
+E,target
+E,is lure
+A,no target
+B,no target
+E,target
+D,no target
+D,is lure
+C,no target
+D,target
+D,target
+C,target
+F,no target
+F,is lure
+D,no target
+D,is lure
+F,target
+E,no target
+F,is lure
+A,no target
+B,no target
+A,is lure
+F,no target
+C,no target
+A,target
+C,is lure
+F,no target
+F,is lure
+C,target
+B,no target
+F,target
+C,target
+C,is lure
+F,target
+E,no target
+E,is lure
+A,no target
+A,is lure
+C,no target
+C,is lure
+A,target
+D,no target
+E,no target
+A,target
+D,target
+E,target
+B,response
+D,response
+C,response
+B,target
+D,target
+C,target
+E,no target
+B,no target
+A,no target
+F,no target
+B,target
+B,is lure
+E,no target
+C,no target
+C,is lure
+E,target
+D,no target
+D,is lure
+E,target
+D,target
+B,no target
+F,no target
+D,target
+E,no target
+F,target
+E,is lure
+F,is lure
+D,no target
+E,target
+D,is lure
+E,is lure
+A,no target
+A,is lure
+A,is lure
+C,no target
+F,no target
+A,target
+F,is lure
+F,target
+B,no target
+B,is lure
+F,target
+B,target
+D,no target
+A,no target
+D,is lure
+A,is lure
+A,target
+C,no target
+C,is lure
+F,response
+A,response
+E,response
+F,target
+A,target
+E,target
+A,is lure
+F,no target
+F,is lure
+F,is lure
+D,no target
+A,no target
+F,target
+A,is lure
+A,target
+E,no target
+E,is lure
+F,no target
+E,target
+B,no target
+B,is lure
+E,target
+F,no target
+F,is lure
+D,no target
+D,is lure
+E,no target
+D,target
+E,is lure
+B,no target
+C,no target
+A,no target
+E,no target
+B,no target
+E,is lure
+C,no target
+B,target
+B,is lure
+A,no target
+B,target
+B,target
+A,target
+A,is lure
+C,no target
+C,is lure
+C,is lure
+D,no target
+D,is lure
+D,is lure
+D,target
+A,response
+E,response
+C,response
+A,target
+C,is lure
+A,is lure
+D,no target
+C,target
+A,target
+A,is lure
+F,no target
+A,target
+F,is lure
+D,no target
+F,is lure
+F,target
+B,no target
+C,no target
+B,is lure
+D,no target
+C,target
+D,is lure
+C,is lure
+D,is lure
+D,target
+E,no target
+E,is lure
+A,no target
+F,no target
+C,no target
+E,no target
+F,target
+C,target
+E,target
+F,target
+A,no target
+E,target
+B,no target
+E,is lure
+E,target
+B,target
+F,no target
+C,no target
+E,no target
+B,no target
+B,is lure
+A,no target
+B,target
+A,is lure
+B,is lure
+B,response
+C,response
+D,response
+B,target
+C,target
+B,is lure
+C,is lure
+F,no target
+C,is lure
+C,target
+F,target
+E,no target
+B,no target
+B,is lure
+A,no target
+C,no target
+A,is lure
+A,target
+D,no target
+C,no target
+A,target
+D,target
+A,is lure
+D,is lure
+B,no target
+D,is lure
+F,no target
+D,is lure
+D,target
+A,no target
+C,no target
+A,is lure
+D,no target
+F,no target
+F,is lure
+F,is lure
+F,target
+E,no target
+E,is lure
+F,target
+B,no target
+F,is lure
+D,no target
+B,target
+B,is lure
+E,no target
+A,no target
+E,is lure
+E,target
+A,target
+F,response
+C,response
+D,response
+F,target
+C,target
+D,target
+E,no target
+B,no target
+E,is lure
+E,target
+B,target
+E,target
+F,no target
+B,target
+E,target
+D,no target
+D,is lure
+A,no target
+C,no target
+A,is lure
+D,no target
+D,is lure
+A,target
+D,target
+D,target
+F,no target
+F,is lure
+C,no target
+B,no target
+F,target
+B,is lure
+F,is lure
+B,is lure
+F,is lure
+A,no target
+B,target
+F,target
+E,no target
+D,no target
+D,is lure
+A,no target
+C,no target
+B,no target
+C,is lure
+F,no target
+C,is lure
+E,no target
+E,is lure
+C,target
+C,is lure
+F,response
+C,response
+A,response
+F,target
+C,target
+C,is lure
+D,no target
+A,no target
+D,is lure
+C,no target
+D,is lure
+D,target
+F,no target
+F,is lure
+B,no target
+F,target
+B,is lure
+E,no target
+E,is lure
+E,is lure
+E,target
+E,target
+B,no target
+B,is lure
+E,target
+B,target
+A,no target
+C,no target
+C,is lure
+A,target
+B,no target
+E,no target
+F,no target
+B,target
+C,no target
+C,is lure
+D,no target
+D,is lure
+F,no target
+A,no target
+D,target
+F,target
+A,target
+F,is lure
+A,is lure
+E,no target
+A,is lure
+D,no target
+A,is lure
+A,target
+B,response
+C,response
+A,response
+B,target
+C,target
+A,target
+C,is lure
+B,no target
+C,is lure
+E,no target
+A,no target
+C,target
+E,target
+E,is lure
+E,is lure
+E,target
+F,no target
+C,no target
+F,is lure
+E,no target
+A,no target
+D,no target
+B,no target
+D,is lure
+B,is lure
+B,target
+D,target
+D,is lure
+C,no target
+E,no target
+E,is lure
+C,target
+F,no target
+E,target
+B,no target
+D,no target
+B,is lure
+A,no target
+D,target
+D,is lure
+A,target
+D,target
+A,is lure
+A,target
+A,is lure
+C,no target
+C,is lure
+F,no target
+F,is lure
+F,is lure
+D,response
+F,response
+C,response
+D,target
+E,no target
+D,is lure
+C,no target
+E,target
+B,no target
+B,is lure
+B,is lure
+D,no target
+B,target
+D,is lure
+A,no target
+A,is lure
+D,target
+D,is lure
+A,target
+A,is lure
+D,target
+B,no target
+A,target
+F,no target
+F,is lure
+E,no target
+F,target
+C,no target
+C,is lure
+F,target
+F,is lure
+C,target
+F,target
+D,no target
+C,target
+C,is lure
+F,no target
+A,no target
+C,target
+C,is lure
+A,target
+A,is lure
+D,no target
+F,no target
+F,is lure
+A,no target
+B,no target
+C,no target
+E,no target
+E,is lure
+C,response
+B,response
+C,response
+C,target
+F,no target
+F,is lure
+B,no target
+A,no target
+E,no target
+B,target
+F,no target
+F,is lure
+D,no target
+F,target
+D,is lure
+B,no target
+C,no target
+E,no target
+A,no target
+E,is lure
+A,is lure
+E,is lure
+D,no target
+A,target
+D,is lure
+A,is lure
+E,no target
+A,is lure
+E,is lure
+C,no target
+A,target
+E,target
+D,no target
+A,target
+E,target
+F,no target
+B,no target
+F,is lure
+B,is lure
+C,no target
+F,target
+B,target
+C,target
+C,is lure
+B,target
+C,target
+B,is lure
+C,is lure
+B,is lure
+A,no target
+B,response
+E,response
+D,response
+E,is lure
+C,no target
+F,no target
+F,is lure
+F,is lure
+E,no target
+E,is lure
+F,target
+D,no target
+E,target
+B,no target
+A,no target
+B,is lure
+D,no target
+E,no target
+B,target
+E,is lure
+B,is lure
+A,no target
+E,target
+B,target
+D,no target
+C,no target
+D,is lure
+D,target
+C,target
+C,is lure
+D,target
+B,no target
+B,is lure
+D,target
+D,is lure
+D,is lure
+E,no target
+B,no target
+C,no target
+F,no target
+A,no target
+C,target
+A,is lure
+A,target
+C,target
+A,target
+C,is lure
+F,no target
+C,is lure
+F,is lure
+D,response
+D,response
+A,response
+B,no target
+D,target
+C,no target
+B,target
+E,no target
+C,target
+E,is lure
+E,target
+C,target
+F,no target
+E,target
+A,no target
+E,is lure
+D,no target
+D,is lure
+E,target
+A,no target
+B,no target
+D,no target
+C,no target
+E,no target
+E,is lure
+F,no target
+D,no target
+D,is lure
+F,target
+F,is lure
+D,target
+D,is lure
+A,no target
+A,is lure
+A,is lure
+F,no target
+F,is lure
+A,target
+C,no target
+F,target
+C,is lure
+F,is lure
+C,is lure
+B,no target
+F,target
+E,no target
+B,target
+B,is lure
+B,is lure
+B,target
+A,response
+B,response
+F,response
+A,target
+D,no target
+D,is lure
+F,no target
+D,target
+D,target
+C,no target
+A,no target
+E,no target
+C,target
+B,no target
+E,target
+C,target
+E,is lure
+E,target
+C,target
+A,no target
+E,target
+A,is lure
+D,no target
+A,is lure
+D,is lure
+A,is lure
+A,target
+D,target
+D,is lure
+B,no target
+C,no target
+C,is lure
+F,no target
+B,no target
+F,is lure
+F,target
+B,target
+E,no target
+C,no target
+B,target
+B,is lure
+D,no target
+F,no target
+B,target
+A,no target
+F,target
+F,is lure
+E,no target
+F,target
+E,is lure
+B,response
+D,response
+E,response
+B,target
+D,target
+C,no target
+B,target
+D,target
+F,no target
+D,is lure
+A,no target
+A,is lure
+C,no target
+E,no target
+C,is lure
+E,is lure
+F,no target
+D,no target
+F,is lure
+D,is lure
+A,no target
+F,target
+F,is lure
+A,target
+F,target
+C,no target
+E,no target
+F,target
+C,target
+A,no target
+C,is lure
+B,no target
+C,is lure
+C,target
+D,no target
+D,is lure
+C,target
+E,no target
+F,no target
+B,no target
+E,target
+B,is lure
+D,no target
+E,target
+E,is lure
+D,target
+B,no target
+E,target
+B,is lure
+E,is lure
+B,response
+C,response
+E,response
+B,target
+C,target
+B,is lure
+E,no target
+B,is lure
+B,target
+B,is lure
+A,no target
+C,no target
+F,no target
+F,is lure
+C,target
+C,is lure
+D,no target
+C,target
+B,no target
+E,no target
+F,no target
+B,target
+E,target
+C,no target
+E,is lure
+E,target
+D,no target
+C,no target
+E,target
+E,is lure
+A,no target
+A,is lure
+A,is lure
+F,no target
+F,is lure
+B,no target
+A,no target
+F,target
+A,is lure
+A,target
+F,target
+F,is lure
+A,target
+E,no target
+E,is lure
+A,target
+B,no target
+D,no target
+D,is lure
+D,is lure
+B,response
+A,response
+D,response
+E,no target
+F,no target
+E,is lure
+C,no target
+E,is lure
+D,no target
+C,target
+D,is lure
+C,is lure
+B,no target
+E,no target
+C,target
+F,no target
+C,is lure
+A,no target
+A,is lure
+C,target
+D,no target
+A,target
+D,is lure
+A,is lure
+A,target
+C,no target
+B,no target
+B,is lure
+D,no target
+A,no target
+B,target
+B,is lure
+A,target
+F,no target
+C,no target
+F,is lure
+C,is lure
+F,is lure
+E,no target
+F,is lure
+F,target
+E,target
+E,is lure
+F,target
+E,target
+A,no target
+F,target
+E,target
+B,no target
+B,is lure
+B,response
+C,response
+B,response
+C,is lure
+C,target
+B,target
+C,target
+D,no target
+C,is lure
+D,is lure
+B,no target
+D,is lure
+B,is lure
+B,target
+D,target
+A,no target
+B,target
+E,no target
+E,is lure
+F,no target
+E,target
+F,is lure
+C,no target
+A,no target
+B,no target
+B,is lure
+B,is lure
+A,no target
+A,is lure
+E,no target
+E,is lure
+A,target
+A,is lure
+C,no target
+F,no target
+A,target
+F,is lure
+D,no target
+A,target
+B,no target
+D,target
+C,no target
+C,is lure
+F,no target
+E,no target
+D,no target
+F,target
+F,is lure
+D,target
+D,is lure
+C,response
+A,response
+D,response
+A,is lure
+C,no target
+F,no target
+A,target
+A,is lure
+E,no target
+D,no target
+F,no target
+F,is lure
+D,target
+A,no target
+D,is lure
+D,target
+A,target
+C,no target
+C,is lure
+B,no target
+B,is lure
+E,no target
+D,no target
+B,target
+E,target
+D,target
+B,target
+D,is lure
+B,is lure
+D,is lure
+C,no target
+C,is lure
+B,no target
+C,target
+B,is lure
+A,no target
+F,no target
+A,is lure
+A,target
+F,target
+F,is lure
+F,is lure
+F,target
+A,no target
+B,no target
+E,no target
+D,no target
+E,is lure
+E,target
+E,is lure
+E,response
+A,response
+B,response
+E,target
+D,no target
+D,is lure
+E,target
+D,target
+D,target
+B,no target
+F,no target
+D,target
+C,no target
+A,no target
+E,no target
+A,is lure
+E,is lure
+C,no target
+C,is lure
+C,is lure
+E,no target
+A,no target
+E,is lure
+D,no target
+C,no target
+B,no target
+C,is lure
+C,target
+B,target
+B,is lure
+F,no target
+F,is lure
+F,is lure
+B,no target
+D,no target
+F,target
+D,is lure
+A,no target
+D,is lure
+A,is lure
+A,target
+A,is lure
+A,target
+F,no target
+A,target
+E,no target
+F,target
+F,is lure
+E,target
+F,target
+D,response
+A,response
+B,response
+B,is lure
+B,is lure
+E,no target
+C,no target
+E,is lure
+D,no target
+E,is lure
+D,is lure
+F,no target
+E,target
+E,is lure
+A,no target
+D,no target
+E,target
+B,no target
+D,target
+E,target
+B,target
+F,no target
+F,is lure
+B,target
+F,target
+C,no target
+F,is lure
+C,is lure
+A,no target
+A,is lure
+B,no target
+A,target
+E,no target
+B,target
+A,target
+B,is lure
+C,no target
+D,no target
+C,is lure
+C,target
+D,target
+D,is lure
+C,target
+F,no target
+D,target
+B,no target
+F,target
+E,no target
+F,is lure
+A,no target
+C,response
+E,response
+B,response
+E,is lure
+E,target
+B,target
+E,target
+C,no target
+B,target
+B,is lure
+A,no target
+E,no target
+A,is lure
+D,no target
+D,is lure
+C,no target
+C,is lure
+C,is lure
+F,no target
+F,is lure
+C,target
+F,target
+F,target
+F,is lure
+D,no target
+D,is lure
+E,no target
+A,no target
+D,target
+A,is lure
+D,is lure
+F,no target
+F,is lure
+B,no target
+F,target
+C,no target
+C,is lure
+B,no target
+E,no target
+C,target
+A,no target
+D,no target
+F,no target
+A,target
+D,target
+B,no target
+A,target
+D,target
+B,target
+B,is lure
+B,response
+C,response
+B,response
+C,is lure
+B,is lure
+E,no target
+B,is lure
+F,no target
+E,target
+D,no target
+E,is lure
+D,is lure
+D,target
+E,target
+E,is lure
+D,target
+A,no target
+E,target
+D,target
+F,no target
+D,is lure
+B,no target
+F,target
+A,no target
+D,no target
+F,target
+F,is lure
+F,is lure
+B,no target
+C,no target
+A,no target
+A,is lure
+E,no target
+A,target
+A,target
+B,no target
+B,is lure
+A,target
+C,no target
+A,is lure
+F,no target
+F,is lure
+D,no target
+D,is lure
+F,target
+E,no target
+C,no target
+C,is lure
+C,is lure
+C,target
+B,response
+D,response
+F,response
+A,no target
+D,target
+C,no target
+A,target
+C,is lure
+A,is lure
+C,is lure
+E,no target
+A,target
+C,target
+E,target
+E,is lure
+C,target
+D,no target
+A,no target
+A,is lure
+F,no target
+D,no target
+C,no target
+C,is lure
+D,target
+B,no target
+D,is lure
+B,is lure
+D,is lure
+D,target
+B,target
+E,no target
+E,is lure
+E,is lure
+E,target
+D,no target
+F,no target
+D,is lure
+B,no target
+C,no target
+B,is lure
+B,target
+F,no target
+F,is lure
+E,no target
+A,no target
+F,target
+F,is lure
+A,target
+B,no target
+F,target
+C,
+E,
+B,
+C,target
+E,target
+C,is lure
+D,no target
+E,target
+C,target
+D,target
+C,is lure
+B,no target
+D,target
+B,is lure
+D,is lure
+B,is lure
+D,is lure
+F,no target
+D,is lure
+F,is lure
+E,no target
+E,is lure
+A,no target
+B,no target
+A,is lure
+C,no target
+B,target
+B,is lure
+F,no target
+A,no target
+F,is lure
+D,no target
+C,no target
+F,target
+F,is lure
+C,target
+C,is lure
+F,target
+E,no target
+E,is lure
+B,no target
+D,no target
+E,target
+B,target
+D,target
+A,no target
+A,is lure
+F,no target
+C,no target
+E,no target
