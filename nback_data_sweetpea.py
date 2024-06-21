@@ -16,7 +16,7 @@ from sweetpea import *
 # PARAMETERS
 
 N = 3 # N = 3 for 3-back task
-num_sequences = 100 # Number of sequences
+num_sequences = 10 # Number of sequences
 num_minimum_trials = 50 # Minimum number of trials per sequence
 
 ### REGULAR FACTORS
@@ -45,13 +45,15 @@ def is_no_target(letter):
     return not is_target(letter) and not is_lure(letter)
 
 
-
-
 response = Factor("response", [
     DerivedLevel("target", Window(is_target, [curr_letter], 4, 1)),
     DerivedLevel("no target",  Window(is_no_target, [curr_letter], 4, 1)),
     DerivedLevel("is lure", Window(is_lure, [curr_letter], 4, 1))
 ])
+
+# lure = Factor("lure", [
+#     DerivedLevel("is lure", Window(is_lure, [curr_letter], 4, 1))
+# ])
 
 ### EXPERIMENT
 
@@ -69,9 +71,9 @@ experiments  = synthesize_trials(block, num_sequences, CMSGen)
 
 print_experiments(block, experiments)
 
-#tabulate_experiments(block, experiments, [curr_letter, response])
+tabulate_experiments(block, experiments, [curr_letter, response])
 
-save_experiments_csv(block, experiments, "n_back_sequence")
+#save_experiments_csv(block, experiments, "n_back_sequence")
 
 # %%
 

@@ -14,7 +14,13 @@ def preprocess_data(data_as_input):
     # Read the dataset
     df = pd.read_csv(data_as_input)
 
-    # Convert the response column into one-hot encoded labels
+    # Create a new column "is_lure" and transfer the values that represent lure trials from the "response" column
+    df["is_lure"] = df["response"].apply(lambda x: x if x == "is lure" else None)
+
+    # Convert the "is_lure" column into one-hot encoded lanels
+    df["is_lure"] = df["is_lure"].apply(lambda x: 1 if x == "is lure" else 0)
+
+    # Convert the "response" column into one-hot encoded labels
     df["one_hot_response"] = df["response"].apply(lambda x: 1 if x == "target" else 0)
 
     # Sort the unique letters in the train_df
@@ -32,7 +38,7 @@ def preprocess_data(data_as_input):
     df.drop(columns = ["response"])
 
     # # Reorder the columns of train_df
-    dataframe = df.reindex(columns = ["encoded_letter", "one_hot_response"])
+    dataframe = df.reindex(columns = ["encoded_letter", "one_hot_response", "is_lure"])
 
     return dataframe
 
