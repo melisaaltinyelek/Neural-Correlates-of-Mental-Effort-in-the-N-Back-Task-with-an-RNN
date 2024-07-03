@@ -6,6 +6,7 @@ import glob
 import numpy as np
 from sklearn.model_selection import train_test_split
 from ast import literal_eval
+import tensorflow_datasets as tfds
 
 # %%
 
@@ -43,20 +44,24 @@ def preprocess_data(data_as_input):
     return dataframe
 
 dataset = preprocess_data("data.csv")
+dataset.to_csv("new_data.csv", index = True)
+
+#%%
+
+# Assign training, validation and test sizes as 80%, 10% and 10%, respectively
+train_size = int(0.8 * len(dataset))
+val_size = int(0.1 * len(dataset))
+test_size = int(0.1 * len(dataset))
+
+# Create a copy of the original dataset to avoid modifications
+df_train_val = dataset.copy() 
+
+df_val = df_train_val.iloc[:val_size]
+
+df_train = df_train_val.iloc[val_size:4500]
+
+df_test = df_train_val.iloc[4500:]
+
+#%%
 
 
-# %%
-
-# def train_model(train_df, n_neurons = None, n_batch = None, learning_rate = None):
-
-#     # X_train = [literal_eval(x) for x in train_df["letter"].tolist()]
-#     # y_train = [literal_eval(x) for x in train_df["one_hot_response"].tolist()]
-
-#     # X_train = np.array(X_train)
-#     # y_train = np.array(y_train)
-
-    
-#     pass
-
-# X_train, y_train = train_model(train_df = train_df)
-# %%
