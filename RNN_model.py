@@ -51,16 +51,19 @@ dataset.to_csv("new_data.csv", index = True)
 # Assign training, validation and test sizes as 80%, 10% and 10%, respectively
 train_size = int(0.8 * len(dataset))
 val_size = int(0.1 * len(dataset))
-test_size = int(0.1 * len(dataset))
+#test_size = int(0.1 * len(dataset))
 
 # Create a copy of the original dataset to avoid modifications
 df_train_val = dataset.copy() 
 
+# Extract validation set first
 df_val = df_train_val.iloc[:val_size]
 
-df_train = df_train_val.iloc[val_size:4500]
+# Extract training set using calculated size
+df_train = df_train_val.iloc[val_size:val_size+train_size]
 
-df_test = df_train_val.iloc[4500:]
+# Testing set remains separate (order preserved from original dataset)
+df_test = df_train_val.iloc[val_size+train_size:]
 
 #%%
 
