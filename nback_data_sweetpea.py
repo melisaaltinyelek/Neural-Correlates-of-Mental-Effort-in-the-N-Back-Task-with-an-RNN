@@ -16,7 +16,7 @@ from sweetpea import *
 # PARAMETERS
 
 N = 3 # N = 3 for 3-back task
-num_sequences = 10 # Number of sequences
+num_sequences = 100 # Number of sequences
 num_minimum_trials = 50 # Minimum number of trials per sequence
 
 ### REGULAR FACTORS
@@ -73,7 +73,7 @@ print_experiments(block, experiments)
 
 tabulate_experiments(block, experiments, [curr_letter, response])
 
-#save_experiments_csv(block, experiments, "n_back_sequence")
+save_experiments_csv(block, experiments, "n_back_sequence")
 
 # %%
 
@@ -86,7 +86,7 @@ combined_df = pd.DataFrame()
 # Loop through each csv file and append its contents to the dataframe
 for csv_file in csv_files:
     df = pd.read_csv(csv_file)
-    combined_df = pd.concat([combined_df.fillna("response"), df], ignore_index = True)
+    combined_df = pd.concat([combined_df.fillna("no target"), df], ignore_index = True)
 
 combined_df.to_csv("data.csv", index = False)
 # %%
