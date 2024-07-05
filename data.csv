@@ -4949,9 +4949,9 @@ E,target
 A,is lure
 A,target
 A,is lure
-E,
-D,
-D,
+E,no target
+D,no target
+D,no target
 F,no target
 A,no target
 D,target
