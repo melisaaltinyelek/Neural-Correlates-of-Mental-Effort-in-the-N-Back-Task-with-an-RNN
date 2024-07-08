@@ -90,7 +90,7 @@ class DataPreprocessor:
 
 if __name__ == "__main__":
   
-  data_processor = DataPreprocessor("data.csv")  
+  data_processor = DataPreprocessor("raw_data.csv")  
   preprocessed_data = data_processor.preprocess_data()
 
   X_train, y_train, X_val, y_val, X_test, y_test = data_processor.split_data(preprocessed_data)
