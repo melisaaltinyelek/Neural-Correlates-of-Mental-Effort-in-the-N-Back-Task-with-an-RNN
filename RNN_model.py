@@ -12,9 +12,6 @@ from sklearn.preprocessing import OneHotEncoder
 
 # %%
 
-dataset = "data.csv"
-dataset.to_csv("nback_data.csv", index = False)
-
 class DataPreprocessor:
   
   def __init__(self, data_path):
@@ -42,6 +39,8 @@ class DataPreprocessor:
 
     df["letter"] = df["letter"].map(self.encoded_letters)
     df["response"] = df["response"].map(self.encoded_responses)
+
+    #df.to_csv("nback_data.csv", index = False)
 
     return df
 
@@ -99,7 +98,6 @@ if __name__ == "__main__":
   print("Training dataset shape:", X_train.shape, y_train.shape)
   print("Validation dataset shape:", X_val.shape, y_val.shape)
   print("Test dataset shape:", X_test.shape, y_test.shape)
-
   
 
 #%%
