@@ -13,7 +13,7 @@ from sklearn.preprocessing import OneHotEncoder
 # %%
 
 dataset = "data.csv"
-# #dataset.to_csv("new_data.csv", index = False)
+dataset.to_csv("nback_data.csv", index = False)
 
 class DataPreprocessor:
   
@@ -64,12 +64,34 @@ class DataPreprocessor:
     y_test = responses[train_size + val_size:]
 
     return X_train, y_train, X_val, y_val, X_test, y_test
+  
+
+# def train_model(X_train, y_train, n_batch, learning_rate):
+
+
+#   model = tf.keras.Sequential([
+#     tf.keras.layers.LSTM(5, input_shape = (X_train.shape[1], y_train.shape[2])),
+#     tf.keras.layers.Dense(32, activation = "relu"),
+#     tf.keras.layers.Dense(3, activation = "softmax")
+#   ])
+
+#   optimizer = tf.keras.optimizers.Adam(learning_rate = learning_rate)
+
+
+#   model.compile(optimizer = optimizer,
+#                   loss = "categorical_crossentropy",
+#                   metrics = ["accuracy"])
+    
+
+#   cce_history = []
+
+#   return model
 
 #%%
 
 if __name__ == "__main__":
   
-  data_processor = DataPreprocessor("n_back_data.csv")  
+  data_processor = DataPreprocessor("data.csv")  
   preprocessed_data = data_processor.preprocess_data()
 
   X_train, y_train, X_val, y_val, X_test, y_test = data_processor.split_data(preprocessed_data)
@@ -77,6 +99,8 @@ if __name__ == "__main__":
   print("Training dataset shape:", X_train.shape, y_train.shape)
   print("Validation dataset shape:", X_val.shape, y_val.shape)
   print("Test dataset shape:", X_test.shape, y_test.shape)
+
+  
 
 #%%
 
