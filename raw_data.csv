@@ -1,5001 +1,4704 @@
 letter,response
-A,no target
-E,no target
-E,no target
+C,target
+A,lure
+B,target
+C,target
+A,target
+B,target
+D,lure
+A,target
+D,lure
+E,lure
 A,target
-D,no target
-C,no target
-B,no target
-C,is lure
-B,is lure
-E,no target
-D,no target
-E,is lure
-D,is lure
 D,target
 E,target
+B,lure
 D,target
-F,no target
-D,is lure
+E,target
+B,target
 D,target
-D,is lure
-F,no target
-C,no target
-F,is lure
-A,no target
-E,no target
-E,is lure
-A,target
-B,no target
-A,is lure
-B,is lure
-C,no target
-D,no target
-E,no target
-C,target
-E,is lure
-C,is lure
-A,no target
 E,target
-A,is lure
-F,no target
+E,lure
+A,lure
+B,lure
 E,target
-F,is lure
-A,no target
-A,is lure
+A,target
+E,lure
+A,lure
+C,lure
+C,lure
+C,lure
+C,target
+C,target
+D,lure
+E,lure
+F,lure
+C,lure
+B,lure
+D,lure
+B,lure
+F,lure
+A,lure
+B,target
 F,target
-B,no target
-B,is lure
+F,lure
+F,lure
 F,target
-F,is lure
-B,target
-B,no target
-C,no target
-C,no target
-D,no target
-C,target
-D,is lure
-E,no target
-D,is lure
-A,no target
-B,no target
+F,target
+F,target
 D,target
-A,target
+A,lure
+C,lure
+D,target
+B,lure
+F,lure
+D,target
 B,target
-A,is lure
-B,is lure
-C,no target
-C,is lure
-E,no target
-E,is lure
-F,no target
-F,is lure
-E,target
-E,is lure
-B,no target
-F,no target
-D,no target
-E,no target
 F,target
-D,target
-D,is lure
+E,lure
+B,target
 F,target
+E,target
+D,lure
+E,lure
+E,target
+E,lure
+C,lure
+E,target
+E,target
+C,target
+D,lure
+C,lure
+C,target
 D,target
-F,is lure
-C,no target
-F,is lure
-B,no target
-D,no target
-C,no target
+B,lure
+B,lure
+A,lure
 B,target
-C,is lure
-B,is lure
-A,no target
-C,target
 B,target
-F,no target
+F,lure
+C,lure
+D,lure
+A,lure
 C,target
-C,is lure
-F,target
-A,no target
-A,is lure
-A,no target
-B,no target
-F,no target
+E,lure
 A,target
-B,target
-C,no target
+C,target
+F,lure
 A,target
-B,target
-E,no target
-B,is lure
-D,no target
-B,is lure
-D,is lure
-E,no target
-E,is lure
-D,target
-A,no target
-B,no target
-F,no target
-F,is lure
-A,no target
-B,no target
+F,lure
 F,target
 A,target
-F,is lure
 F,target
-C,no target
-E,no target
-F,target
-A,no target
+D,lure
+B,lure
+A,lure
 E,target
-A,is lure
-F,no target
-F,is lure
-D,no target
-C,no target
-D,is lure
-C,is lure
-D,is lure
-D,target
-C,target
-C,is lure
-F,no target
-D,no target
-C,target
-B,no target
-C,is lure
+A,target
 C,target
-B,target
-B,is lure
-C,no target
-F,no target
-E,no target
+C,lure
+A,target
 C,target
-B,no target
-E,target
+A,lure
+D,lure
 C,target
-A,no target
+D,lure
+D,target
+F,lure
+D,target
+E,lure
+F,target
+E,lure
+A,lure
+F,target
 E,target
-C,target
-E,is lure
-D,no target
-E,is lure
-C,no target
-C,is lure
-F,no target
-F,is lure
-F,is lure
+C,lure
 F,target
-E,no target
-E,is lure
+E,target
+E,lure
 F,target
-A,no target
+F,lure
 E,target
-A,is lure
-A,target
-A,is lure
-B,no target
-A,target
-E,no target
+B,lure
+B,lure
+D,lure
+A,lure
 B,target
+D,target
+A,target
+C,lure
+D,target
 A,target
-A,is lure
+C,target
+F,lure
+B,lure
+B,lure
+D,lure
 B,target
-E,no target
-D,no target
 B,target
-B,is lure
-B,is lure
-F,no target
-A,no target
-C,no target
-C,is lure
-F,no target
-F,is lure
-B,no target
-C,no target
-B,is lure
-D,no target
-D,is lure
-E,no target
-C,no target
-F,no target
-C,is lure
-F,is lure
-E,no target
-E,is lure
-E,is lure
-A,no target
-F,no target
-A,is lure
-F,is lure
-D,no target
-B,no target
-B,is lure
+F,lure
+E,lure
+C,lure
+A,lure
+F,target
+F,lure
+D,lure
+F,target
+E,lure
 D,target
-E,no target
+B,lure
+A,lure
+A,lure
 B,target
-C,no target
-E,target
+A,target
+D,lure
 B,target
-D,no target
-E,target
-D,is lure
-A,no target
-D,is lure
-F,no target
-C,no target
-C,is lure
-C,is lure
-B,no target
-C,target
-B,is lure
-E,no target
-C,target
+A,target
+F,lure
 B,target
-A,no target
-D,no target
-A,is lure
 A,target
-D,target
+F,target
+C,lure
 A,target
-C,no target
+F,target
+B,lure
+D,lure
+C,lure
+E,lure
 D,target
-A,target
-D,is lure
-A,is lure
-B,no target
-B,is lure
-F,no target
-A,no target
-A,no target
-B,no target
-A,target
-A,target
-B,target
-B,is lure
-B,is lure
-B,target
-C,no target
-A,no target
-C,is lure
 C,target
-C,is lure
-C,target
-A,no target
-A,is lure
-A,is lure
-B,no target
-D,no target
-C,no target
-B,target
-A,no target
-F,no target
-A,is lure
-A,target
-E,no target
-C,no target
-D,no target
-D,is lure
-C,target
-F,no target
-B,no target
-F,is lure
-E,no target
-F,is lure
-D,no target
 E,target
-F,target
 D,target
+F,lure
 E,target
-F,target
-D,target
-D,is lure
-E,no target
-E,is lure
-F,no target
-F,is lure
-B,no target
-F,target
-D,no target
-E,no target
-A,no target
 D,target
+A,lure
+A,lure
+C,lure
+B,lure
+F,lure
+B,lure
+C,lure
+D,lure
+B,target
+C,target
+E,lure
+E,lure
+C,target
 E,target
-D,is lure
-C,no target
 E,target
-A,no target
-B,no target
-D,no target
-F,no target
-D,is lure
-B,no target
+F,lure
+A,lure
+B,target
+C,lure
+D,lure
+D,lure
+C,target
+D,target
+F,lure
+A,lure
+D,target
 F,target
-B,is lure
-E,no target
+E,lure
+B,lure
 F,target
-B,target
-F,is lure
+B,lure
+C,lure
 F,target
-E,no target
-E,is lure
-A,no target
-F,no target
-D,no target
-F,is lure
-E,no target
-E,is lure
-B,no target
-E,target
-B,is lure
 B,target
-B,is lure
-C,no target
-C,is lure
-A,no target
-A,is lure
-D,no target
-D,is lure
+C,target
+C,lure
+A,lure
+D,lure
+B,lure
 A,target
-A,is lure
 D,target
+B,target
 A,target
-F,no target
-D,target
-C,no target
-C,is lure
-C,is lure
-C,target
-D,no target
-D,no target
-F,no target
-D,target
-D,target
-F,target
-B,no target
-E,no target
-B,is lure
-A,no target
-E,target
-C,no target
-E,is lure
-D,no target
+F,lure
+C,lure
+A,target
+B,lure
 C,target
-D,is lure
-C,is lure
+D,lure
+B,target
 C,target
 D,target
-F,no target
-D,is lure
-F,is lure
-E,no target
-F,is lure
+F,lure
+E,lure
+E,lure
 F,target
 E,target
-F,target
-A,no target
+A,lure
+E,lure
 E,target
-D,no target
-E,is lure
-B,no target
-E,is lure
-B,is lure
-B,target
-F,no target
-B,target
-F,is lure
-D,no target
-D,is lure
-C,no target
-E,no target
-C,is lure
-A,no target
-C,is lure
+A,target
+E,target
+D,target
+E,target
 C,target
-F,no target
-B,no target
-B,is lure
-C,no target
-B,no target
-E,no target
-F,no target
-C,no target
-F,is lure
-F,target
+C,lure
+E,target
+E,lure
+E,lure
+E,target
+A,lure
+C,lure
+E,target
+A,target
 C,target
-A,no target
-C,is lure
+D,lure
+F,lure
 C,target
-D,no target
-B,no target
-F,no target
-D,target
-D,is lure
-D,is lure
-B,no target
-B,is lure
-B,is lure
-B,target
-B,target
-C,no target
-D,no target
-C,is lure
-D,is lure
 D,target
+F,target
 C,target
-C,is lure
-F,no target
-F,is lure
-E,no target
-A,no target
-A,is lure
-A,is lure
-F,no target
+D,target
+F,target
+A,lure
+F,lure
+A,lure
+C,lure
+A,lure
+F,lure
+D,lure
 A,target
-E,no target
-A,is lure
-E,is lure
-E,target
-D,no target
-B,no target
-E,target
+B,lure
 D,target
+A,target
 B,target
-B,is lure
-C,no target
-A,no target
-E,no target
-E,is lure
-D,no target
-C,no target
-E,no target
-D,target
-C,target
-E,target
-D,target
-D,is lure
-B,no target
-B,is lure
-A,no target
-F,no target
+B,lure
+B,lure
+C,lure
 B,target
-E,no target
-E,is lure
 B,target
-B,is lure
-D,no target
-C,no target
-A,no target
-A,is lure
-A,is lure
-F,no target
-B,no target
-C,no target
-E,no target
-D,no target
-D,is lure
-E,target
-F,no target
-E,is lure
-A,no target
+F,lure
+B,target
+E,lure
 F,target
-E,target
-F,is lure
-E,is lure
-F,is lure
-B,no target
-B,is lure
+D,lure
+D,lure
 F,target
-F,is lure
-B,target
-C,no target
-C,is lure
-C,is lure
-C,target
-C,target
-D,no target
-D,is lure
-E,no target
-A,no target
-F,no target
-E,no target
-A,target
-A,is lure
-A,is lure
-E,no target
-A,target
-E,is lure
-A,is lure
-E,is lure
+B,lure
+E,lure
 E,target
-A,target
 E,target
-C,no target
-C,is lure
-D,no target
-D,is lure
-C,target
-F,no target
 D,target
-F,is lure
-A,no target
-F,is lure
-D,no target
-F,is lure
-E,no target
-C,no target
+F,lure
+F,lure
+E,lure
+B,lure
 F,target
 E,target
-E,is lure
-F,target
-B,no target
-C,no target
+B,target
 F,target
-E,no target
+E,target
+C,lure
+A,lure
+D,lure
 C,target
-A,no target
-C,is lure
-F,no target
-C,is lure
+A,target
+C,lure
 C,target
-B,no target
-A,no target
-F,no target
+B,lure
+F,lure
+B,lure
 B,target
-B,is lure
-D,no target
-D,is lure
-D,is lure
-D,no target
-C,no target
-B,no target
-D,target
-C,target
+F,target
 B,target
-C,is lure
+E,lure
+F,target
+A,lure
+A,lure
+C,lure
+B,lure
+A,target
 C,target
-B,target
-B,is lure
-A,no target
 B,target
-D,no target
-C,no target
-E,no target
-C,is lure
-E,is lure
-C,is lure
-E,is lure
-F,no target
+D,lure
 C,target
-F,is lure
-E,no target
-D,no target
-D,is lure
-E,target
-B,no target
-D,target
-B,is lure
-A,no target
+F,lure
+E,lure
+A,lure
+E,lure
+D,lure
+A,target
+D,lure
 D,target
-A,is lure
-D,is lure
-A,is lure
-C,no target
-E,no target
 A,target
-F,no target
-E,target
-E,is lure
-F,target
-F,is lure
-E,target
-D,no target
-A,no target
-D,is lure
-B,no target
-F,no target
-F,is lure
-C,no target
-B,no target
-E,no target
-A,no target
-E,is lure
-E,target
-F,no target
+D,target
+C,lure
+B,lure
+D,target
 E,target
-F,is lure
-F,target
-B,no target
-C,no target
-F,target
-A,no target
-D,no target
-A,is lure
-E,no target
+E,lure
 D,target
-C,no target
-D,is lure
-C,is lure
-B,no target
+D,lure
+C,lure
 D,target
-B,is lure
-A,no target
 D,target
-F,no target
+A,lure
+C,lure
+F,lure
 A,target
-A,is lure
-E,no target
-E,is lure
-C,no target
-C,is lure
-E,target
 C,target
-E,is lure
-B,no target
-C,target
-B,is lure
-C,is lure
-D,no target
-F,no target
-F,is lure
-E,no target
-F,target
-D,no target
-F,is lure
-D,is lure
-A,no target
-D,is lure
-A,is lure
-F,no target
-B,no target
-B,no target
 F,target
-E,no target
-E,is lure
-E,is lure
-F,no target
-C,no target
-E,target
-C,is lure
-E,is lure
-A,no target
-C,target
-C,is lure
 A,target
-A,is lure
-A,is lure
+C,target
+D,lure
 A,target
-E,no target
-D,no target
-D,is lure
-C,no target
-E,no target
-D,target
-D,is lure
-D,is lure
-F,no target
-F,is lure
-B,no target
-B,is lure
+B,lure
+F,lure
+E,lure
+F,lure
+E,lure
+A,lure
 F,target
+E,target
+D,lure
+B,lure
+E,target
+A,lure
 B,target
-F,is lure
-F,target
-C,no target
-D,no target
-C,is lure
-B,no target
-B,is lure
-F,no target
-F,is lure
-D,no target
-A,no target
-A,is lure
-B,no target
-B,is lure
+E,target
 A,target
 B,target
+F,lure
+B,lure
 B,target
-B,no target
-D,no target
-D,no target
-B,target
-D,target
-B,is lure
-F,no target
-F,is lure
-E,no target
 F,target
-E,is lure
-D,no target
-D,is lure
+C,lure
+B,target
+A,lure
+C,target
+C,lure
+D,lure
+E,lure
+C,target
+F,lure
 E,target
-C,no target
-A,no target
-A,is lure
-B,no target
-B,is lure
-A,target
-E,no target
-D,no target
-C,no target
-A,no target
-A,is lure
-A,is lure
-E,no target
-A,target
-D,no target
+B,lure
+F,target
 E,target
-E,is lure
-D,target
-D,is lure
-D,is lure
-F,no target
-B,no target
-B,is lure
+F,lure
+C,lure
+F,lure
+F,target
+E,lure
+B,lure
 F,target
-C,no target
+A,lure
 B,target
-C,is lure
+B,lure
+C,lure
+B,target
+D,lure
 C,target
-A,no target
-B,no target
+B,target
+A,lure
 C,target
-A,target
-F,no target
+C,lure
+B,lure
+D,lure
 C,target
-F,is lure
-F,target
-F,no target
-E,no target
-E,no target
-A,no target
-E,target
-A,is lure
-B,no target
-C,no target
-C,is lure
 B,target
-F,no target
-A,no target
-F,is lure
-A,is lure
+C,lure
+C,target
+E,lure
+A,lure
+E,lure
+A,lure
+A,target
+E,target
 A,target
-D,no target
-C,no target
 A,target
+D,lure
+A,target
+F,lure
+D,target
+E,lure
+D,lure
+D,target
+E,target
 D,target
-D,is lure
-B,no target
 D,target
-B,is lure
+A,target
+C,target
+A,target
+C,lure
+D,lure
+F,lure
+D,lure
+C,lure
+A,lure
+A,lure
+C,target
+B,lure
+A,target
+F,lure
 B,target
-B,is lure
+B,lure
+D,lure
+E,lure
 B,target
-F,no target
-A,no target
-F,is lure
-A,is lure
-E,no target
+D,target
+E,target
+E,lure
+D,target
+F,lure
+F,lure
+A,lure
+A,lure
 F,target
 A,target
-D,no target
-D,is lure
-D,is lure
-E,no target
-F,no target
-D,target
-F,is lure
+C,lure
 F,target
-B,no target
+C,lure
+B,lure
 F,target
-E,no target
-D,no target
-E,is lure
-C,no target
-E,is lure
-C,is lure
 C,target
-F,no target
-A,no target
-A,no target
+E,lure
 F,target
-F,is lure
-C,no target
-C,is lure
-A,no target
-A,is lure
-D,no target
-A,target
-D,is lure
-A,is lure
-A,target
-B,no target
-B,is lure
-E,no target
+E,lure
+B,lure
+D,lure
+E,target
 B,target
-E,is lure
+D,target
 E,target
 B,target
-B,is lure
-F,no target
-D,no target
-F,is lure
-D,is lure
-B,no target
-D,is lure
-C,no target
-A,no target
 D,target
-F,no target
-B,no target
-C,no target
+E,target
 F,target
+F,target
+C,lure
+D,lure
+A,lure
+B,lure
+E,lure
+C,lure
 B,target
-E,no target
-B,is lure
-A,no target
-E,target
-A,is lure
+D,lure
+A,lure
+C,lure
+F,lure
 A,target
-D,no target
-E,no target
-E,is lure
+C,target
+E,lure
+A,target
+C,target
+F,lure
+F,lure
+C,target
+B,lure
+D,lure
+D,lure
+B,target
+F,lure
+D,target
+E,lure
+F,target
 D,target
 E,target
-F,no target
+F,target
 D,target
-F,is lure
-D,no target
-B,no target
-B,no target
-F,no target
+E,target
+A,lure
+C,lure
+E,target
+A,target
+C,target
+E,target
+E,lure
+B,lure
+B,lure
+A,lure
+B,target
 B,target
-F,is lure
-B,is lure
-F,is lure
-E,no target
-F,is lure
-E,is lure
-A,no target
-D,no target
-B,no target
 A,target
-B,is lure
-D,no target
+D,target
+D,target
+A,lure
+C,lure
+A,lure
+B,lure
+B,lure
+D,lure
+B,target
+A,lure
+D,target
+B,target
 A,target
-A,is lure
-A,is lure
-B,no target
-E,no target
-E,is lure
-C,no target
-C,is lure
+B,lure
+D,lure
+E,lure
+A,lure
+D,target
 E,target
-A,no target
-F,no target
-A,is lure
-C,no target
+A,target
+E,lure
+F,lure
+A,target
+C,lure
 F,target
 A,target
 C,target
 F,target
-C,is lure
+E,lure
 C,target
 F,target
-C,target
-D,no target
-E,no target
-D,is lure
-E,is lure
 E,target
-D,target
-F,no target
-A,no target
-D,target
-D,is lure
-C,no target
-C,is lure
-C,no target
-A,no target
-D,no target
-D,is lure
-B,no target
-D,target
-C,no target
-C,is lure
-C,is lure
-C,target
-D,no target
-C,target
-A,no target
-A,is lure
-D,no target
-D,is lure
-D,is lure
-C,no target
-C,is lure
-F,no target
-E,no target
-E,is lure
-F,target
+D,lure
+E,lure
 E,target
+C,lure
+B,lure
 E,target
-F,target
-F,is lure
-F,is lure
-D,no target
-B,no target
-E,no target
-B,is lure
-A,no target
-A,is lure
-F,no target
-A,target
-B,no target
-F,target
-C,no target
-E,no target
-A,no target
 C,target
-E,target
-A,target
-E,is lure
-A,is lure
-E,is lure
-F,no target
-A,target
-F,is lure
-D,no target
-B,no target
-C,no target
-B,is lure
-C,is lure
-B,is lure
 B,target
+F,lure
 C,target
-D,no target
-B,target
-A,no target
-D,target
 B,target
-D,is lure
-C,no target
-C,is lure
-B,no target
-C,target
-A,no target
-C,is lure
-C,target
-A,target
-A,is lure
-F,no target
-F,is lure
-F,is lure
-B,no target
-C,no target
 F,target
-D,no target
-D,is lure
-F,target
-E,no target
+F,lure
+F,lure
+C,lure
+A,target
 D,target
-C,no target
 E,target
-E,is lure
-A,no target
-A,is lure
-A,is lure
-E,no target
-E,is lure
-F,no target
-F,is lure
+A,target
+F,lure
 E,target
-D,no target
-D,is lure
-F,no target
-B,no target
-E,no target
-E,no target
-F,no target
-C,no target
+F,lure
+F,target
 E,target
 F,target
-C,target
-F,is lure
-B,no target
-A,no target
+D,lure
+B,lure
 F,target
-F,is lure
-D,no target
-C,no target
+D,target
+C,lure
 F,target
 D,target
 C,target
-A,no target
-C,is lure
-A,is lure
-B,no target
+B,lure
+C,lure
+A,lure
+B,target
 C,target
-B,is lure
-A,no target
-A,is lure
+A,target
 B,target
-B,is lure
-F,no target
-F,is lure
+E,lure
+C,lure
 B,target
-E,no target
-B,is lure
-E,is lure
-D,no target
+C,lure
+E,lure
 B,target
+C,target
+A,lure
+A,lure
+F,lure
+B,lure
+A,target
+E,lure
+D,lure
+D,lure
 E,target
+A,lure
 D,target
-E,is lure
+B,lure
+F,lure
+E,lure
+D,lure
 E,target
-D,target
-F,no target
-C,no target
-C,is lure
-E,no target
-F,no target
-B,no target
-C,no target
-D,no target
-D,is lure
-E,no target
-E,is lure
-F,no target
-D,no target
-D,no target
-A,no target
-D,target
+F,target
 D,target
-A,target
-A,is lure
-D,target
-F,no target
-B,no target
-B,is lure
-D,no target
-D,is lure
-B,target
-B,is lure
-F,no target
-E,no target
-B,target
+E,target
+D,lure
+F,lure
+F,lure
+F,lure
 F,target
-F,is lure
-E,no target
-A,no target
+B,lure
+C,lure
 F,target
-E,target
-E,is lure
-D,no target
-E,target
-C,no target
-C,is lure
-F,no target
-E,no target
-F,is lure
-C,no target
-E,target
+B,target
+E,lure
 F,target
-E,is lure
-F,is lure
-D,no target
-D,is lure
-A,no target
-B,no target
-A,is lure
+E,lure
+E,target
+E,lure
+C,lure
+A,lure
+F,lure
+C,target
 A,target
-A,is lure
-C,no target
-B,no target
-B,is lure
+B,lure
 C,target
-B,target
-B,no target
-A,no target
-A,no target
-A,is lure
 A,target
+B,target
+A,lure
+E,lure
+B,target
 A,target
-C,no target
-C,is lure
-C,is lure
-F,no target
-A,no target
+B,lure
+C,lure
+D,lure
+A,lure
 C,target
-F,target
-E,no target
-F,is lure
-E,is lure
-E,target
-F,target
-B,no target
-B,is lure
-C,no target
-D,no target
-D,is lure
-B,no target
-A,no target
 D,target
-B,target
-B,is lure
+A,target
+D,lure
+A,lure
+D,lure
 D,target
-F,no target
-D,is lure
-E,no target
-E,is lure
+C,lure
+B,lure
 D,target
-E,target
-E,target
-E,is lure
-A,no target
-D,no target
-A,is lure
-B,no target
-A,is lure
-D,no target
+C,target
 B,target
-F,no target
-F,is lure
-F,is lure
-C,no target
-C,is lure
-E,no target
-E,no target
-E,no target
-C,no target
-D,no target
-E,target
-E,is lure
-D,target
-A,no target
-D,is lure
 D,target
-E,no target
-E,is lure
-D,target
 E,target
-D,is lure
-A,no target
-A,is lure
-A,is lure
-F,no target
-A,target
-B,no target
-A,is lure
-B,is lure
-B,target
-B,is lure
-D,no target
-D,is lure
-B,target
-C,no target
-F,no target
-C,is lure
-E,no target
-F,target
-C,target
-C,is lure
-D,no target
 C,target
-B,no target
-F,no target
-F,is lure
-B,target
-C,no target
-B,is lure
-C,is lure
-E,no target
-E,is lure
-A,no target
-B,no target
-C,no target
-A,target
-E,no target
-F,no target
-B,no target
-B,is lure
-F,target
-E,no target
-E,is lure
-D,no target
-E,target
-F,no target
 D,target
-F,is lure
-D,is lure
-F,is lure
-A,no target
-C,no target
-A,is lure
-C,is lure
+C,lure
+D,lure
+C,lure
 C,target
-A,target
-A,is lure
+D,target
 C,target
-C,is lure
-B,no target
-A,no target
-B,is lure
-B,target
+A,lure
+F,lure
+F,lure
 A,target
-B,target
-E,no target
-B,is lure
-E,is lure
-E,target
-F,no target
-D,no target
-A,no target
+B,lure
 F,target
-B,no target
 A,target
-F,target
-F,is lure
-B,no target
-E,no target
-C,no target
 B,target
-E,target
-F,no target
-D,no target
-C,no target
-D,is lure
-C,no target
-C,no target
-F,no target
-C,target
-D,no target
 F,target
-D,is lure
-F,is lure
-D,is lure
-E,no target
-F,target
-F,is lure
-E,target
-E,is lure
-A,no target
-F,no target
-F,is lure
-E,no target
+E,lure
+B,target
 F,target
-C,no target
-E,target
-E,is lure
-E,is lure
 E,target
-A,no target
-D,no target
-B,no target
-A,target
-D,target
 B,target
-B,is lure
-F,no target
-C,no target
-C,is lure
-B,no target
-B,is lure
-E,no target
-B,target
-B,target
-A,no target
-D,no target
-A,is lure
-B,no target
-F,no target
-A,target
-C,no target
-C,is lure
-A,target
-C,target
-A,is lure
-F,no target
-D,no target
-A,no target
-F,target
-D,target
-B,no target
-B,is lure
-A,no target
-A,is lure
-F,no target
-C,no target
-D,no target
-F,target
-F,is lure
-F,is lure
-E,no target
-E,is lure
 F,target
-C,no target
-A,no target
-E,no target
-B,no target
+A,lure
+F,lure
+C,lure
+D,lure
+A,lure
+B,lure
+E,lure
 A,target
+C,lure
 E,target
-A,is lure
 A,target
+C,target
+F,lure
+D,lure
+D,lure
+B,lure
+B,lure
+A,lure
+E,lure
+B,target
+E,lure
 E,target
-E,is lure
-A,target
-A,is lure
+C,target
+D,target
 E,target
-B,no target
-B,is lure
-F,no target
-D,no target
-B,target
-C,no target
-C,is lure
-B,target
-B,is lure
 C,target
-F,no target
-B,target
+D,target
+E,target
 C,target
-C,is lure
-C,is lure
-E,no target
-A,no target
-D,no target
-D,is lure
-A,no target
-A,no target
-A,no target
+E,lure
+D,lure
+E,lure
+A,lure
+F,lure
+C,lure
 A,target
-B,no target
-F,no target
-B,is lure
-D,no target
-C,no target
-C,is lure
-C,is lure
-A,no target
+F,target
 C,target
-A,is lure
 A,target
-B,no target
-B,is lure
-D,no target
-B,target
-D,is lure
-D,target
-B,target
-B,is lure
-E,no target
-E,is lure
-B,target
-F,no target
-F,is lure
-F,is lure
-C,no target
-A,no target
 F,target
-C,target
-C,is lure
-E,no target
-C,target
-A,no target
-A,is lure
-A,is lure
-F,no target
-F,is lure
-D,no target
+D,lure
+B,lure
 F,target
-B,no target
 D,target
+B,target
 F,target
-C,no target
-D,target
-E,no target
-D,is lure
-A,no target
-E,no target
-B,no target
+F,lure
+A,lure
+A,lure
+E,lure
+A,target
 A,target
 E,target
-B,target
-F,no target
-A,no target
-C,no target
-E,no target
-F,no target
-C,target
-C,is lure
-D,no target
-D,is lure
-E,no target
-E,is lure
-C,no target
+E,lure
+B,lure
 E,target
-C,is lure
-B,no target
-D,no target
-D,is lure
-F,no target
+F,lure
+F,lure
+A,lure
+C,lure
+C,lure
+B,lure
+D,lure
+D,lure
+B,target
+C,lure
 D,target
-F,is lure
-A,no target
-F,is lure
-D,no target
-A,target
+B,target
+B,lure
 F,target
+A,target
 D,target
-F,is lure
-E,no target
-B,no target
-F,target
-C,no target
-B,target
 F,target
-C,target
-A,no target
-C,is lure
-C,target
 A,target
-A,is lure
-A,is lure
-B,no target
-B,is lure
-B,is lure
-B,target
-D,no target
-A,no target
-F,no target
-A,is lure
-F,is lure
-A,is lure
-F,is lure
-B,no target
-C,no target
-E,no target
-B,target
-B,is lure
-C,no target
-B,target
-F,no target
-C,target
-D,no target
+D,target
 F,target
-F,is lure
-A,no target
+C,lure
+E,lure
 F,target
-B,no target
-A,target
-B,is lure
-A,is lure
-A,target
-E,no target
-A,target
-C,no target
-E,target
-E,is lure
 C,target
-C,is lure
-D,no target
-D,is lure
+E,target
+D,lure
 C,target
-F,no target
-C,is lure
-A,no target
-C,is lure
-F,no target
-B,no target
-E,no target
-B,is lure
-D,no target
 E,target
-B,target
-D,target
-A,no target
-D,is lure
-C,no target
-D,no target
-C,no target
+F,lure
 C,target
-A,no target
-A,is lure
-E,no target
-C,no target
-E,is lure
 E,target
-A,no target
-D,no target
-F,no target
+C,lure
+F,lure
+A,lure
+E,lure
+B,lure
+F,lure
+A,lure
+B,target
+D,lure
 A,target
+C,lure
 D,target
-D,is lure
-E,no target
-C,no target
-E,is lure
-C,is lure
-F,no target
-E,target
-F,is lure
-A,no target
-D,no target
-A,is lure
-F,no target
-A,is lure
-F,is lure
-F,target
-B,no target
-B,is lure
-F,target
-B,target
-B,target
-F,target
-D,no target
-D,is lure
-D,is lure
+C,lure
+B,lure
 D,target
-C,no target
-E,no target
-B,no target
-C,target
-C,is lure
-C,is lure
-B,no target
 C,target
-B,is lure
 B,target
-B,no target
-A,no target
-F,no target
-E,no target
-D,no target
-E,is lure
-D,is lure
-F,no target
-C,no target
-D,target
-F,target
-E,no target
-A,no target
-F,target
+B,lure
+F,lure
+A,lure
+E,lure
+D,lure
+E,lure
+A,lure
+B,lure
 E,target
 A,target
-F,target
-E,target
-C,no target
-B,no target
-D,no target
-D,is lure
-B,target
-A,no target
-D,target
 B,target
+D,lure
 A,target
-D,target
-B,target
-D,is lure
-F,no target
-F,is lure
-C,no target
-D,no target
-C,is lure
-E,no target
-E,is lure
-C,target
-E,target
-F,no target
 C,target
-C,is lure
-B,no target
-B,is lure
 C,target
-C,is lure
-A,no target
-B,no target
-B,is lure
-B,is lure
-C,no target
-D,no target
-E,no target
-E,is lure
-A,no target
-F,no target
-A,is lure
 A,target
+B,lure
+A,lure
+F,lure
+D,lure
+C,lure
 F,target
-A,target
-F,is lure
-D,no target
-A,target
+D,target
+E,lure
+D,lure
+C,lure
+F,lure
+D,target
+E,lure
 F,target
-C,no target
-C,is lure
+B,lure
+E,target
 F,target
-F,is lure
-C,target
-E,no target
-B,no target
-B,is lure
-D,no target
-C,no target
-B,target
-C,is lure
-B,is lure
 B,target
-C,target
-E,no target
-C,is lure
-E,is lure
-E,target
-C,target
-A,no target
-A,is lure
-A,is lure
-F,no target
-E,no target
-F,is lure
-B,no target
-E,target
-E,is lure
-F,no target
 E,target
-D,no target
-C,no target
-D,is lure
-B,no target
-A,no target
-D,no target
-C,no target
-D,no target
-B,no target
-C,target
-B,is lure
-C,is lure
-D,no target
-D,is lure
-D,is lure
-E,no target
-E,is lure
-D,target
-C,no target
-D,is lure
-A,no target
-C,target
-A,is lure
-E,no target
-F,no target
-A,target
+A,lure
+B,target
 E,target
-F,target
-E,is lure
-A,no target
-A,is lure
-C,no target
 A,target
+F,lure
+D,lure
 A,target
-B,no target
-E,no target
-E,is lure
-B,target
-B,is lure
-F,no target
-F,is lure
-B,target
-D,no target
-B,is lure
-A,no target
-C,no target
-A,is lure
-B,no target
-F,no target
-D,no target
-B,target
-F,target
+B,lure
 D,target
-F,is lure
-F,target
-E,no target
-A,no target
-B,no target
-C,no target
-B,is lure
-C,is lure
-C,target
-E,no target
+C,lure
+E,lure
+A,lure
 C,target
-E,is lure
-B,no target
-C,target
-E,target
-B,target
-F,no target
-E,target
-E,is lure
+A,lure
+F,lure
+B,lure
+C,lure
 F,target
-F,is lure
-A,no target
-B,no target
-B,is lure
-A,target
 B,target
-E,no target
-A,target
-C,no target
-B,no target
-C,is lure
-B,is lure
-D,no target
-A,no target
-F,no target
-A,is lure
-C,no target
-F,target
-D,no target
-E,no target
-D,is lure
-D,target
+E,lure
+D,lure
+B,target
 E,target
-A,no target
 D,target
-D,is lure
-D,is lure
-F,no target
-F,is lure
-F,is lure
-F,target
-D,no target
-A,no target
-E,no target
-E,no target
-A,target
-D,no target
-E,target
-B,no target
-A,no target
-B,is lure
-A,is lure
-B,is lure
-D,no target
-A,target
-F,no target
 D,target
-F,is lure
-A,no target
-C,no target
-A,is lure
+E,target
+A,lure
+C,lure
+E,target
 A,target
-E,no target
-E,is lure
-E,is lure
+E,lure
 E,target
-D,no target
-F,no target
-D,is lure
-F,is lure
-C,no target
-D,target
-E,no target
-B,no target
-E,is lure
-B,is lure
-B,target
-A,no target
+A,target
+B,lure
+C,lure
+C,lure
 B,target
-C,no target
-F,no target
-C,is lure
-F,is lure
-F,target
-C,target
-F,target
-F,target
 C,target
-E,no target
-B,no target
 C,target
-C,is lure
-B,no target
-C,no target
-C,no target
 B,target
 C,target
-D,no target
-D,is lure
 C,target
-E,no target
-E,is lure
-F,no target
-A,no target
-E,target
-D,no target
-A,target
-A,is lure
-B,no target
+B,target
+A,lure
+D,lure
+F,lure
 A,target
-B,is lure
-C,no target
+B,lure
+A,lure
+D,lure
+B,target
 A,target
-F,no target
-C,target
-C,is lure
-B,no target
-B,is lure
-A,no target
-A,is lure
-A,is lure
-F,no target
-E,no target
-E,is lure
-F,target
-F,is lure
-E,target
-C,no target
+B,lure
+F,lure
+E,lure
+E,lure
 F,target
-D,no target
-F,is lure
-A,no target
+D,lure
+B,lure
+D,lure
+A,lure
+F,lure
 D,target
+F,lure
 F,target
-C,no target
 D,target
-B,no target
-E,no target
+F,target
+F,target
 D,target
-D,is lure
-E,target
-E,is lure
-C,no target
-C,no target
-C,no target
-B,no target
-B,is lure
-D,no target
-F,no target
+C,lure
+E,lure
+F,target
 B,target
 D,target
-F,target
-D,is lure
-F,is lure
-B,no target
-B,is lure
+A,lure
+D,lure
+F,lure
+A,target
+B,lure
 F,target
+A,target
 B,target
-C,no target
-A,no target
+A,lure
+B,lure
 B,target
-A,is lure
 A,target
-A,is lure
+E,lure
+D,lure
 A,target
-B,no target
-F,no target
-C,no target
-A,no target
-C,is lure
-D,no target
-E,no target
-C,target
-D,target
 E,target
-C,target
 D,target
-D,is lure
-C,target
-E,no target
-C,is lure
-F,no target
-D,no target
-F,is lure
-A,no target
-A,is lure
+F,lure
+E,target
+F,lure
 F,target
-E,no target
-F,is lure
-C,no target
 E,target
-C,is lure
-B,no target
-F,no target
-C,no target
-B,target
-A,no target
-A,is lure
-B,target
-E,no target
-A,target
-A,is lure
-A,is lure
-A,target
-D,no target
-F,no target
-C,no target
-C,is lure
-B,no target
-F,no target
-C,target
+F,target
+A,lure
+B,lure
+C,lure
+D,lure
+F,lure
+E,lure
+E,lure
+E,lure
+B,lure
+E,target
+D,lure
 B,target
-B,is lure
-A,no target
-D,no target
-D,is lure
-A,target
-D,target
+A,lure
 D,target
-D,is lure
-E,no target
-E,is lure
+C,lure
+C,lure
 D,target
-E,target
-E,target
-A,no target
-F,no target
-C,no target
-F,is lure
-F,target
-D,no target
-C,no target
-E,no target
-C,is lure
-E,is lure
-B,no target
 C,target
-E,target
-C,is lure
-B,no target
-B,is lure
 C,target
-F,no target
-B,no target
-E,no target
+C,lure
+C,target
+E,target
 F,target
-B,target
+D,target
 E,target
-B,is lure
-E,is lure
-D,no target
-B,target
-B,is lure
+D,lure
 D,target
-C,no target
-E,no target
-F,no target
-E,is lure
 E,target
-A,no target
-F,no target
-F,is lure
-A,target
-B,no target
-F,target
-C,no target
-D,no target
-B,no target
-B,is lure
+D,target
 D,target
-E,no target
-D,is lure
-E,is lure
-D,is lure
-A,no target
-A,is lure
-A,is lure
-C,no target
-C,is lure
+A,lure
+C,lure
+B,lure
 A,target
-E,no target
 C,target
+E,lure
 A,target
-C,is lure
-D,no target
-F,no target
-D,is lure
-B,no target
-F,target
-A,no target
-B,target
-A,is lure
-E,no target
-F,no target
-A,no target
+A,lure
 E,target
+A,target
+F,lure
+B,lure
+A,target
+E,lure
+E,lure
+F,lure
+F,lure
+B,lure
 F,target
-F,is lure
-E,target
-D,no target
+F,target
+F,lure
 F,target
-D,is lure
-B,no target
-B,is lure
-A,no target
+D,lure
+D,lure
+B,lure
+C,lure
+C,lure
 B,target
-C,no target
-B,is lure
-F,no target
+D,lure
 C,target
 B,target
-B,is lure
+A,lure
 C,target
-E,no target
-E,is lure
-D,no target
-C,no target
-D,is lure
-C,is lure
-C,target
-C,is lure
-B,no target
-D,no target
-D,is lure
-E,no target
-D,target
-E,is lure
-A,no target
-B,no target
-E,target
-E,is lure
-F,no target
-F,is lure
-F,is lure
-C,no target
+B,target
+C,lure
+E,lure
+B,target
+A,lure
+D,lure
+B,lure
+B,target
+B,lure
+F,lure
+B,target
+E,lure
 F,target
-A,no target
-A,is lure
-A,is lure
+A,lure
+C,lure
+B,lure
+A,target
+D,lure
+B,target
+A,target
+D,target
+C,lure
 A,target
+D,target
+F,lure
 A,target
-F,no target
-D,no target
-C,no target
-C,no target
 D,target
-F,no target
-D,is lure
-B,no target
 F,target
-B,is lure
-F,is lure
-B,is lure
-C,no target
+D,lure
+D,target
 F,target
-F,is lure
+F,lure
+F,lure
+A,lure
+A,lure
+D,lure
+C,lure
+E,lure
+E,lure
+C,target
+E,target
+E,target
 C,target
-C,is lure
-B,no target
-D,no target
+C,lure
+B,lure
+E,lure
 C,target
-E,no target
-C,is lure
-E,is lure
-C,is lure
-F,no target
+B,target
 E,target
 C,target
-A,no target
+A,lure
 E,target
-E,is lure
-C,no target
-D,no target
-A,no target
-A,is lure
-D,target
-B,no target
-D,is lure
-E,no target
 B,target
-B,is lure
-A,no target
-F,no target
-F,is lure
+D,target
 A,target
-C,no target
-A,is lure
-D,no target
-A,is lure
+C,lure
+C,lure
 A,target
-D,target
-D,is lure
-D,no target
-F,no target
-B,no target
-D,target
+A,lure
+F,lure
+B,lure
+D,lure
 F,target
 B,target
-D,target
-D,is lure
-A,no target
-A,is lure
-B,no target
-F,no target
-B,is lure
-E,no target
-E,is lure
-D,no target
-F,no target
+B,lure
+E,lure
+B,target
+F,lure
 E,target
+F,lure
+C,lure
+D,lure
+F,target
+E,lure
 D,target
 F,target
-C,no target
-F,is lure
-C,is lure
-E,no target
+E,target
+D,target
 F,target
-D,no target
-B,no target
-D,is lure
-B,is lure
-C,no target
-A,no target
-C,is lure
+E,target
+D,target
+B,lure
+E,target
+C,lure
+A,lure
+A,lure
 C,target
+F,lure
 A,target
-C,target
-E,no target
-B,no target
-E,is lure
-D,no target
-B,target
-B,is lure
-F,no target
-F,is lure
-F,is lure
-C,no target
-A,no target
-C,is lure
 C,target
-A,target
-A,is lure
-D,no target
-C,no target
-F,no target
-C,is lure
-B,no target
-F,target
+E,lure
+E,lure
 C,target
-F,is lure
-A,no target
+A,lure
+B,lure
 C,target
-C,is lure
-E,no target
-F,no target
-E,is lure
-D,no target
-B,no target
-D,is lure
-D,target
+D,lure
 B,target
-E,no target
-B,is lure
-D,no target
-B,is lure
-C,no target
-A,no target
-C,is lure
-D,no target
-F,no target
-C,target
+D,lure
 D,target
-F,target
-B,no target
-E,no target
+B,target
 F,target
-C,no target
-E,target
-A,no target
-E,is lure
-E,target
-A,target
-A,is lure
-E,target
-A,target
-E,is lure
-A,is lure
-A,target
-C,no target
-F,no target
-F,is lure
-F,is lure
-D,no target
-A,no target
-C,no target
-D,target
-D,is lure
-C,target
-A,no target
-D,target
-A,is lure
-D,is lure
-B,no target
-E,no target
-B,is lure
-E,is lure
-F,no target
+E,lure
 B,target
+E,lure
+D,lure
+A,lure
 E,target
+F,lure
+B,lure
+F,lure
 F,target
+A,lure
+A,lure
+B,lure
+A,target
+C,lure
 B,target
-B,is lure
-F,target
-D,no target
-C,no target
-E,no target
-C,is lure
-D,no target
-C,is lure
-F,no target
-C,is lure
+A,target
 C,target
-A,no target
-A,is lure
-C,target
+C,lure
+A,target
+A,lure
+D,lure
 A,target
-B,no target
-F,no target
-F,is lure
-F,is lure
-E,no target
-B,no target
+F,lure
+E,lure
+B,lure
 F,target
 E,target
-E,is lure
-C,no target
-D,no target
+C,lure
+D,lure
 E,target
-A,no target
-E,is lure
-A,is lure
-C,no target
-D,no target
-F,no target
-C,no target
-F,is lure
-E,no target
-D,no target
-C,no target
-C,is lure
-D,target
 C,target
-F,no target
-F,is lure
-A,no target
-F,target
-B,no target
-C,no target
+F,lure
+E,target
+C,target
 F,target
-E,no target
+D,lure
 C,target
-C,is lure
-E,target
-E,is lure
-B,no target
-D,no target
-E,target
-D,is lure
-A,no target
-E,target
+C,lure
 D,target
-D,is lure
-F,no target
-C,no target
+B,lure
+E,lure
 D,target
-C,is lure
-D,is lure
-F,no target
-C,target
-E,no target
-A,no target
-B,no target
-A,is lure
-B,is lure
-B,target
-A,target
-D,no target
 B,target
-A,target
-B,is lure
-A,is lure
+D,target
+D,target
+C,target
+D,target
+D,target
+C,target
+B,lure
+A,lure
+E,lure
+A,lure
 A,target
-A,no target
-A,no target
-F,no target
-B,no target
-D,no target
-A,no target
-F,no target
-A,is lure
-F,is lure
-E,no target
-E,is lure
-E,is lure
-C,no target
-B,no target
+E,target
+D,lure
+F,lure
 E,target
-B,is lure
-A,no target
+E,lure
+F,target
+A,lure
 E,target
-C,no target
-C,is lure
+C,lure
+A,target
 E,target
-D,no target
 C,target
-C,is lure
-A,no target
-F,no target
-E,no target
 A,target
-F,target
-F,is lure
+B,lure
+B,lure
 A,target
-A,is lure
-D,no target
-D,is lure
-E,no target
-E,is lure
-D,target
-F,no target
-B,no target
-D,target
-F,target
-B,target
-D,target
-B,is lure
-D,is lure
-C,no target
 B,target
-B,is lure
-C,target
 B,target
-D,no target
-A,no target
-E,no target
-C,no target
-C,is lure
-E,target
-B,no target
-E,is lure
-C,no target
+E,lure
 B,target
-E,target
+D,lure
+D,lure
+A,lure
+C,lure
+F,lure
+F,lure
+D,lure
+F,target
+E,lure
+F,lure
+C,lure
+C,lure
+F,target
 C,target
-D,no target
-A,no target
-E,no target
-D,target
-E,is lure
+B,lure
+F,target
+C,target
+F,target
+E,lure
+B,lure
+D,lure
 E,target
+F,lure
 D,target
-D,is lure
-C,no target
+E,target
+D,lure
+F,lure
+C,lure
 D,target
-C,is lure
-D,is lure
-A,no target
-C,target
-B,no target
-C,is lure
-C,target
-B,target
-F,no target
-A,no target
-D,no target
 F,target
-A,target
-A,is lure
-E,no target
-A,target
-D,no target
-A,is lure
-F,no target
-B,no target
-A,target
-A,is lure
+C,target
+D,target
+B,lure
+E,lure
+F,lure
 B,target
-F,no target
-B,is lure
-F,is lure
-B,is lure
-E,no target
-B,no target
-C,no target
-F,no target
-D,no target
-F,is lure
-E,no target
-F,is lure
-F,target
 E,target
 F,target
-E,is lure
-B,no target
-E,is lure
-B,is lure
-B,target
-B,is lure
-A,no target
 B,target
-C,no target
-B,is lure
+E,target
+D,lure
 B,target
-C,target
-F,no target
-E,no target
-A,no target
-D,no target
-D,is lure
-A,target
-D,target
-B,no target
-F,no target
-D,target
-A,no target
-A,is lure
-C,no target
-C,is lure
+A,lure
+C,lure
+F,lure
 A,target
 C,target
-F,no target
-A,target
-A,is lure
 F,target
-C,no target
-F,is lure
-E,no target
-C,target
-C,is lure
-D,no target
-D,is lure
-D,is lure
-C,no target
-A,no target
-D,no target
-F,no target
-D,is lure
-A,no target
-D,is lure
-C,no target
-E,no target
-E,is lure
-B,no target
-C,no target
-C,is lure
-C,is lure
-C,target
+A,target
 C,target
-D,no target
-B,no target
-A,no target
-B,is lure
+A,lure
+E,lure
+B,lure
+A,target
+C,lure
+A,lure
+A,target
+E,lure
+D,lure
+C,lure
+A,lure
+D,target
+B,lure
 B,target
-E,no target
+D,target
+F,target
 B,target
-E,is lure
+E,lure
+E,lure
+F,lure
 E,target
-B,target
-B,is lure
-B,is lure
-F,no target
-E,no target
-F,is lure
-D,no target
 E,target
-F,target
-E,is lure
-F,is lure
 F,target
-E,target
-C,no target
+F,lure
+C,lure
 F,target
-B,no target
+C,lure
 C,target
-D,no target
-C,is lure
-F,no target
-A,no target
-F,is lure
-A,is lure
+A,lure
+B,lure
+A,lure
+D,lure
+D,lure
 A,target
-A,is lure
-E,no target
-A,no target
-F,no target
-E,target
+A,lure
+D,target
 A,target
-F,target
-E,target
-F,is lure
-E,is lure
-A,no target
-F,target
-F,is lure
 A,target
-A,is lure
-F,target
-E,no target
+D,target
 A,target
-A,is lure
-A,is lure
-C,no target
-D,no target
-F,no target
-D,is lure
-B,no target
-D,is lure
-B,is lure
+D,lure
+B,lure
+C,lure
+D,target
 B,target
-E,no target
-E,is lure
-A,no target
-C,no target
-C,is lure
-F,no target
-F,is lure
 C,target
-B,no target
-E,no target
-E,is lure
-A,no target
-B,no target
-D,no target
-F,no target
+A,lure
 B,target
-B,is lure
-D,no target
+C,target
+E,lure
+D,lure
+C,target
+E,target
+C,lure
+B,lure
+F,lure
+B,lure
+F,lure
+F,target
+E,lure
 B,target
-D,is lure
-B,is lure
-C,no target
-C,is lure
-B,no target
-A,no target
-B,no target
+F,lure
 B,target
+D,lure
+E,lure
+A,lure
+F,lure
+E,target
 A,target
-C,no target
-B,target
-C,is lure
-A,no target
-B,target
-B,is lure
-B,is lure
-E,no target
-E,is lure
-F,no target
-D,no target
-B,no target
 F,target
-F,is lure
-E,no target
-D,no target
-B,no target
-E,target
-E,is lure
-A,no target
-A,is lure
+A,lure
+E,lure
+F,target
+A,target
 E,target
-F,no target
-F,is lure
-B,no target
-B,is lure
-C,no target
-D,no target
-A,no target
-D,is lure
-A,is lure
-D,is lure
-A,is lure
-C,no target
-D,target
-D,is lure
+B,lure
+B,lure
+B,lure
+C,lure
+C,lure
+B,target
 C,target
-D,target
-F,no target
 C,target
+D,lure
+D,lure
+E,lure
 D,target
-E,no target
-C,target
-E,is lure
-E,target
-D,no target
-A,no target
-C,no target
 D,target
-E,no target
-E,is lure
-C,no target
-C,is lure
 E,target
-F,no target
-C,target
-C,is lure
-B,no target
-B,is lure
-A,no target
-A,is lure
-A,is lure
-A,target
-A,target
-A,target
-E,no target
-D,no target
-E,is lure
-D,is lure
-F,no target
-A,no target
+E,lure
 D,target
-F,target
-F,is lure
-D,target
-C,no target
-F,target
-F,is lure
-C,target
-B,no target
-F,target
-C,target
-D,no target
-B,no target
-A,no target
-B,is lure
-E,no target
-D,no target
-E,is lure
-D,is lure
-C,no target
-D,is lure
-C,is lure
-F,no target
-F,is lure
-A,no target
-D,no target
-F,no target
-F,is lure
-C,no target
-E,no target
-D,no target
-E,is lure
-D,is lure
-E,is lure
-D,is lure
-C,no target
+F,lure
 E,target
-B,no target
-C,target
-F,no target
-F,is lure
-D,no target
+D,target
 F,target
+C,lure
+F,lure
 F,target
-F,is lure
-B,no target
-A,no target
-C,no target
-C,is lure
-E,no target
 C,target
-E,is lure
-F,no target
-A,no target
-B,no target
-A,is lure
-B,is lure
-F,no target
-A,target
+D,lure
+C,lure
+B,lure
+A,lure
+A,lure
 B,target
-F,target
 A,target
+A,target
+F,target
 B,target
-D,no target
-B,is lure
-E,no target
 D,target
+A,lure
 B,target
-A,no target
-D,target
-A,is lure
-D,is lure
-D,target
+E,lure
 A,target
-D,no target
-D,no target
-A,no target
-D,target
-D,target
-B,no target
-B,is lure
-A,no target
-F,no target
-B,target
+A,lure
+D,lure
 A,target
-A,is lure
-B,target
-B,is lure
-F,no target
-A,no target
-A,is lure
-B,no target
+F,lure
+B,lure
 A,target
-D,no target
-C,no target
-E,no target
-D,target
-C,target
-E,target
-E,is lure
-C,target
-C,is lure
+F,target
+B,target
+E,lure
+D,lure
+D,lure
 E,target
-D,no target
-D,is lure
-D,is lure
-E,no target
-E,is lure
-F,no target
-C,no target
+C,lure
+C,lure
 E,target
-F,target
-F,is lure
-D,no target
+C,target
+F,lure
+B,lure
+D,lure
 F,target
-D,is lure
-C,no target
-E,no target
-E,is lure
-B,no target
-B,is lure
-A,no target
-A,is lure
-B,target
-B,no target
-B,no target
-A,no target
-B,target
-D,no target
-D,is lure
-B,target
-B,is lure
+C,lure
 D,target
-E,no target
-B,target
+E,lure
+C,target
 D,target
 E,target
-D,is lure
-C,no target
-B,no target
+C,target
 D,target
-E,no target
-C,no target
-C,is lure
-A,no target
-A,is lure
+C,lure
 C,target
+F,lure
+F,lure
+B,lure
+B,lure
+F,target
+B,target
+A,lure
+A,lure
+E,lure
 A,target
-F,no target
-F,is lure
-C,no target
+E,target
+E,target
 F,target
-C,is lure
-C,target
-C,is lure
-B,no target
-C,target
-F,no target
-A,no target
-A,is lure
+A,lure
+D,lure
+F,target
+A,target
+D,target
 F,target
-F,is lure
+A,target
+C,lure
+A,lure
 A,target
-E,no target
-A,is lure
-D,no target
+E,lure
+A,target
+E,lure
 E,target
-D,is lure
-B,no target
-B,is lure
-F,no target
-A,no target
-D,no target
+F,lure
+F,lure
+B,lure
+B,lure
 F,target
-F,no target
-C,no target
-B,no target
-C,is lure
-B,is lure
-E,no target
+A,lure
+A,lure
+E,lure
+E,lure
+D,lure
+E,target
+C,lure
+B,lure
+C,lure
 C,target
 B,target
-E,target
-E,is lure
+F,lure
+C,target
 B,target
-A,no target
-A,is lure
-C,no target
-F,no target
-A,target
+B,lure
 C,target
-E,no target
-E,is lure
-F,no target
-A,no target
-E,target
-D,no target
-A,target
-A,is lure
-D,target
-C,no target
-A,target
-B,no target
-D,no target
-D,is lure
 B,target
-A,no target
+F,lure
+D,lure
+C,lure
+D,lure
 D,target
-C,no target
-D,is lure
-C,is lure
-B,no target
-F,no target
-B,is lure
-F,is lure
-B,is lure
-D,no target
-F,target
-E,no target
-F,is lure
-E,is lure
-B,no target
-F,target
-F,is lure
-C,no target
-B,no target
-A,no target
-C,target
-A,is lure
-A,target
-A,is lure
-E,no target
-E,is lure
-E,is lure
-D,no target
-C,no target
-D,is lure
-C,is lure
-F,no target
-A,no target
-C,target
-B,no target
-C,is lure
-A,no target
-C,is lure
 C,target
-E,no target
-F,no target
-E,is lure
-E,target
-F,target
-B,no target
-E,target
-D,no target
-A,no target
-E,target
 D,target
-A,target
-A,is lure
-C,no target
-B,no target
-D,no target
-D,is lure
+D,target
+C,lure
+B,lure
+D,target
+D,lure
 B,target
 D,target
-C,no target
-E,no target
 D,target
-D,is lure
-F,no target
-F,is lure
-F,is lure
-F,target
-F,target
-D,no target
-C,no target
-B,no target
+B,target
 D,target
-C,target
-C,is lure
-B,no target
-C,target
-D,no target
-D,is lure
-B,no target
-B,is lure
-E,no target
-E,is lure
+A,lure
 B,target
-A,no target
-F,no target
+B,lure
+F,lure
+D,lure
 B,target
-A,target
 F,target
-A,is lure
-D,no target
+F,lure
+E,lure
+D,lure
 F,target
-E,no target
-D,target
-B,no target
+E,target
+C,lure
+C,lure
+F,lure
+C,target
+B,lure
+E,lure
+C,target
+A,lure
 E,target
-E,is lure
-C,no target
-A,no target
+C,target
+D,lure
 E,target
-F,no target
-C,no target
+B,lure
+E,lure
+A,lure
+C,lure
 E,target
-C,is lure
-D,no target
-D,is lure
-D,is lure
-D,target
-A,no target
-A,is lure
-A,is lure
 A,target
-C,no target
-C,is lure
-F,no target
-E,no target
 C,target
+A,lure
+A,target
+F,lure
+A,target
+E,lure
 F,target
-F,is lure
-D,no target
-D,no target
-E,no target
-D,target
-D,target
+A,target
 E,target
-B,no target
-A,no target
 E,target
-E,is lure
-A,target
-A,is lure
+B,target
+B,lure
 E,target
-C,no target
-C,is lure
-F,no target
-D,no target
-F,is lure
-D,is lure
-D,target
-A,no target
-C,no target
-A,is lure
-B,no target
-C,target
-A,target
+E,lure
+C,lure
+B,lure
+A,lure
+B,lure
 B,target
-A,is lure
-B,is lure
-E,no target
 A,target
-B,target
-D,no target
-C,no target
-C,is lure
-F,no target
-E,no target
-A,no target
-D,no target
-F,no target
-D,is lure
-F,is lure
-D,is lure
-B,no target
-F,target
-B,is lure
+A,lure
 B,target
-F,target
-F,is lure
-E,no target
-E,no target
-A,no target
-A,no target
-A,is lure
 A,target
 A,target
-F,no target
-F,is lure
-F,is lure
-D,no target
+D,lure
+F,lure
+D,lure
+C,lure
 F,target
-A,no target
-C,no target
-F,target
-F,is lure
-E,no target
-A,no target
-D,no target
-A,is lure
-D,is lure
-D,target
-D,is lure
-D,target
-B,no target
-D,target
-C,no target
-C,is lure
-B,no target
-F,no target
+F,lure
 C,target
-B,target
-E,no target
-C,target
-E,is lure
-C,is lure
-E,is lure
-B,no target
-E,is lure
-B,is lure
-B,target
-E,target
-B,target
-A,no target
-A,is lure
-F,no target
-C,no target
-C,is lure
-D,no target
-C,target
-E,no target
-E,no target
-F,no target
-C,no target
-C,is lure
 F,target
-D,no target
+D,lure
 C,target
 F,target
-F,is lure
+D,target
 C,target
-C,is lure
-D,no target
+C,lure
+F,lure
 C,target
-D,is lure
-D,target
-E,no target
+A,lure
+F,target
+A,lure
+E,lure
+E,lure
+D,lure
+C,lure
+E,target
 D,target
-E,is lure
-D,is lure
+E,lure
+B,lure
 D,target
-F,no target
-E,no target
-B,no target
-B,is lure
-A,no target
-E,no target
+F,lure
 B,target
-E,is lure
-A,no target
-E,is lure
-A,is lure
-A,target
-C,no target
-F,no target
-B,no target
-A,no target
+D,target
 F,target
+F,lure
+D,target
+E,lure
+B,lure
+D,target
+B,lure
 B,target
-F,is lure
-B,is lure
-D,no target
-D,is lure
-C,no target
-C,is lure
-F,no target
-B,no target
-F,is lure
-B,is lure
+F,lure
+A,lure
 B,target
-C,no target
-E,no target
-C,no target
-B,no target
-F,no target
-C,target
-D,no target
-D,is lure
-C,target
-D,target
-F,no target
-C,target
-C,is lure
 F,target
-F,is lure
-A,no target
-D,no target
+A,target
+F,lure
+C,lure
+A,target
 F,target
+D,lure
 A,target
+D,lure
 D,target
-B,no target
 A,target
-C,no target
-E,no target
-F,no target
-F,is lure
-F,is lure
-B,no target
-B,is lure
-F,target
-E,no target
-E,is lure
-C,no target
+A,lure
+E,lure
+D,lure
+C,lure
+E,target
+D,target
+C,target
 E,target
-B,no target
-B,is lure
-B,is lure
+E,lure
+C,target
+B,lure
+C,lure
+B,lure
+A,lure
+C,target
 B,target
-A,no target
+D,lure
+E,lure
 B,target
-C,no target
-D,no target
-E,no target
-D,is lure
-E,is lure
-D,is lure
-A,no target
+F,lure
+E,target
+C,lure
+A,lure
+E,target
+C,target
+C,target
 E,target
 D,target
-A,target
+C,target
 E,target
-B,no target
-D,no target
-F,no target
-D,is lure
 D,target
-D,is lure
+D,lure
+A,lure
 D,target
-F,no target
-F,is lure
+A,lure
+B,lure
 D,target
-B,no target
+A,target
+F,lure
+A,lure
+A,target
 F,target
-E,no target
-B,target
+A,target
+F,lure
 F,target
-A,no target
-B,target
-E,no target
 A,target
-F,no target
-A,is lure
-E,no target
-E,is lure
-C,no target
-E,target
-D,no target
-B,no target
+F,target
+D,lure
+C,lure
+F,target
+B,lure
+B,lure
+C,lure
+E,lure
+B,target
+D,lure
 E,target
-B,is lure
-F,no target
-B,is lure
 B,target
-A,no target
-C,no target
-A,is lure
-C,is lure
-C,target
-A,target
+A,lure
+F,lure
+F,lure
+C,lure
+C,lure
+B,lure
 C,target
-D,no target
-D,is lure
 C,target
-A,no target
-C,is lure
-D,no target
-A,target
-A,is lure
-B,no target
-C,no target
-C,is lure
-D,no target
-E,no target
-C,no target
-D,target
+B,target
+E,lure
+E,lure
+E,lure
 E,target
+D,lure
 C,target
-A,no target
-B,no target
-B,is lure
-B,is lure
-B,target
-B,target
-C,no target
-E,no target
 B,target
-C,target
 E,target
-D,no target
-E,is lure
-C,no target
-C,is lure
-F,no target
-F,is lure
 C,target
-B,no target
-C,is lure
-B,is lure
-D,no target
-D,is lure
-E,no target
-D,target
-D,target
-F,no target
-A,no target
-A,is lure
-F,target
+A,lure
+E,target
+B,lure
 A,target
-F,is lure
-D,no target
-E,no target
+C,lure
+F,lure
+F,lure
+A,lure
+E,lure
 F,target
-E,is lure
-C,no target
-C,is lure
+A,target
 E,target
-E,is lure
-A,no target
-B,no target
-A,is lure
-F,no target
-A,no target
-D,no target
-E,no target
-E,is lure
-D,target
+F,target
+A,target
 E,target
-D,is lure
-F,no target
-F,is lure
+F,target
+E,lure
+C,lure
+F,target
+D,lure
+E,lure
+D,lure
+B,lure
+D,lure
 D,target
-B,no target
-E,no target
-A,no target
 B,target
-E,target
-E,is lure
-A,no target
-B,no target
-A,is lure
-A,target
-D,no target
-B,no target
-C,no target
-C,is lure
+E,lure
+D,target
 B,target
-C,target
-B,is lure
-E,no target
-B,is lure
-F,no target
-A,no target
+D,lure
+C,lure
 B,target
-A,is lure
-F,no target
-C,no target
-C,is lure
-F,target
-D,no target
-F,is lure
-D,is lure
-F,is lure
-F,target
-C,no target
-C,is lure
-E,no target
-C,target
-E,is lure
-E,target
-D,no target
-D,is lure
-F,no target
-D,no target
-F,no target
-F,target
 D,target
-E,no target
-D,is lure
-B,no target
-A,no target
-B,is lure
-D,no target
-B,is lure
-F,no target
-B,is lure
-A,no target
-C,no target
-C,is lure
-B,no target
-F,no target
-F,is lure
-B,target
-C,no target
-F,target
-C,is lure
-F,is lure
-A,no target
-C,target
-F,target
-A,target
 C,target
-A,is lure
-D,no target
+F,lure
+F,lure
+B,lure
+C,lure
+A,lure
+A,lure
 C,target
 A,target
+B,lure
+A,target
+B,target
+B,target
+A,target
+B,target
+B,target
+B,lure
+D,lure
+C,lure
+C,lure
+D,target
+C,target
+E,lure
+D,target
+A,lure
+F,lure
+F,lure
+B,lure
+B,lure
+D,lure
+C,lure
+E,lure
+A,lure
+C,target
+D,lure
+A,target
+C,target
+B,lure
+D,lure
+A,lure
+A,lure
+D,target
+E,lure
+A,target
+D,target
+E,target
+E,lure
+F,lure
+F,lure
+E,target
+F,target
+C,lure
+E,target
+F,target
+C,target
+E,target
+F,target
+B,target
+F,target
+E,target
+B,target
+E,lure
+A,lure
+B,target
+F,lure
+B,lure
+B,target
+B,lure
+D,lure
+D,lure
+C,lure
+B,lure
+D,target
+C,target
+E,lure
+D,target
+D,lure
+E,target
+A,lure
+D,target
+E,target
+A,target
+C,lure
+A,lure
+A,target
+E,lure
+A,target
+F,lure
+D,lure
+A,target
+C,lure
+D,target
+B,lure
+C,target
+F,lure
+E,lure
+C,target
+F,target
+E,target
+A,lure
+F,target
+F,lure
+C,lure
+F,target
+F,lure
+A,target
+A,lure
+F,target
+B,lure
+A,target
+F,target
+B,target
+F,lure
+F,target
+A,lure
+F,target
+E,lure
+A,target
+D,lure
+A,lure
+E,lure
+D,target
+D,lure
+E,target
+D,target
+F,lure
+B,lure
+D,target
+B,lure
+C,lure
+C,lure
+B,target
+C,target
+C,target
+A,lure
+D,lure
+D,lure
+A,target
+D,target
+C,lure
+E,lure
+C,lure
+C,target
+E,target
+C,target
+B,lure
+E,target
+E,lure
+B,target
+E,target
+F,lure
+A,lure
+E,lure
+C,target
+A,target
+E,target
+B,lure
+F,lure
+E,target
+E,lure
+C,lure
+E,target
+D,lure
+C,target
+E,target
+D,target
+B,lure
+C,lure
+D,target
+B,target
+E,lure
+D,target
+B,target
+B,lure
+E,lure
+B,target
+F,lure
+A,lure
+B,target
+F,target
+A,target
+D,lure
+A,lure
+A,target
+D,target
+A,target
+D,lure
+C,lure
+F,lure
+F,lure
+C,target
+B,lure
+F,target
+C,target
+D,lure
+F,target
+A,lure
+C,lure
+D,target
+E,target
+B,target
+D,target
+C,lure
+B,target
+D,target
+C,target
+B,target
+E,lure
+A,lure
+C,lure
+E,target
+A,target
+B,lure
+E,target
+A,target
+B,target
+D,lure
+A,target
+E,lure
+C,lure
+F,lure
+F,lure
+B,lure
+C,lure
+F,target
+D,lure
+C,target
+F,target
+D,target
+C,target
+E,lure
+A,lure
+C,target
+D,lure
+F,lure
+D,lure
+A,lure
+F,target
+E,lure
+F,lure
+A,lure
+E,target
+B,lure
+A,target
+B,lure
+E,target
+B,target
+F,lure
+C,lure
+B,target
+F,target
+A,lure
+B,target
+C,lure
+B,lure
+D,lure
+C,target
+A,lure
+A,lure
+F,lure
+B,lure
+E,lure
+B,lure
+B,target
+E,target
+E,lure
+D,lure
+F,lure
+B,lure
+D,target
+F,target
+E,lure
+D,target
+E,lure
+E,target
+D,target
+E,target
+C,lure
+A,lure
+F,lure
+C,target
+A,target
+F,target
+C,target
+A,target
+F,target
+D,lure
+A,target
+C,lure
+D,target
+A,target
+D,lure
+E,lure
+A,target
+F,lure
+A,lure
+B,lure
+C,lure
+B,lure
+F,lure
+E,lure
+B,target
+C,lure
+A,lure
+D,lure
+C,target
+A,target
+D,target
+B,lure
+F,lure
+D,target
+F,lure
+F,target
+E,lure
+F,target
+F,target
+E,target
+E,lure
+F,target
+E,target
+E,target
+A,lure
+D,lure
+E,target
+A,target
+A,lure
+C,lure
+C,lure
+B,lure
+C,target
+C,target
+B,target
+D,lure
+C,target
+B,target
+D,target
+D,lure
+B,target
+D,target
+D,target
+B,target
+B,target
+E,lure
+A,lure
+C,lure
+B,lure
+E,lure
+C,target
+A,lure
+F,lure
+F,lure
+B,lure
+C,lure
+F,target
+B,target
+A,lure
+F,target
+F,lure
+A,target
+F,target
+F,target
+A,target
+A,lure
+D,lure
+D,lure
+A,target
+D,target
+D,target
+B,lure
+E,lure
+E,lure
+F,lure
+D,lure
+E,target
+D,lure
+C,lure
+E,target
+D,target
+C,target
+E,target
+B,lure
+C,target
+E,target
+B,target
+C,target
+C,lure
+E,target
+F,target
+A,lure
+E,target
+F,target
+A,target
+A,lure
+C,lure
+C,lure
+B,lure
+F,lure
+D,lure
+B,target
+D,lure
+D,target
+B,target
+F,lure
+F,lure
+B,target
+F,target
+F,target
+E,lure
+B,lure
+A,lure
+C,lure
+E,lure
+A,target
+C,target
+E,target
+A,target
+B,lure
+E,target
+E,lure
+E,lure
+D,lure
+C,lure
+A,lure
+F,lure
+C,target
+A,target
+D,lure
+C,target
+B,lure
+D,target
+C,target
+B,target
+D,target
+B,lure
+B,target
+D,lure
+E,lure
+F,lure
+D,target
+E,target
+D,lure
+C,lure
+A,lure
+D,target
+A,lure
+A,target
+C,lure
+A,target
+A,target
+C,target
+B,lure
+C,lure
+A,lure
+F,lure
+C,target
+F,lure
+F,target
+C,target
+C,lure
+F,target
+E,lure
+C,target
+F,target
+E,target
+F,lure
+F,target
+B,lure
+D,lure
+E,lure
+B,target
+D,target
+E,target
+B,target
+B,lure
+A,lure
+D,lure
+E,lure
+A,target
+D,target
+E,target
+C,target
+B,target
+C,target
+C,target
+B,target
+B,lure
+D,lure
+E,lure
+B,target
+D,target
+B,lure
+B,target
+E,lure
+A,lure
+C,lure
+C,lure
+D,lure
+D,lure
+B,lure
+D,target
+D,target
+F,lure
+F,lure
+A,lure
+E,lure
+F,target
+A,target
+E,target
+F,target
+A,target
+F,lure
+F,target
+D,lure
+A,lure
+E,lure
+D,target
+A,target
+E,target
+A,lure
+C,lure
+E,target
+A,target
+F,lure
+E,target
+B,lure
+F,target
+C,lure
+D,target
+B,target
+A,target
+D,target
+B,target
+A,target
+E,lure
+B,target
+D,lure
+E,target
+B,target
+B,lure
+E,target
+E,lure
+D,lure
+F,lure
+E,target
+D,target
+B,lure
+C,lure
+A,lure
+F,lure
+C,target
+A,target
+F,target
+A,lure
+E,lure
+A,lure
+D,lure
+B,lure
+A,target
+C,lure
+E,lure
+B,lure
+C,target
+E,target
+C,lure
+D,lure
+A,lure
+C,target
+D,target
+C,lure
+F,lure
+F,lure
+C,target
+F,target
+F,target
+A,target
+C,target
+D,lure
+C,lure
+C,target
+A,lure
+C,target
+C,target
+E,lure
+F,lure
+B,lure
+E,target
+B,lure
+E,lure
+D,lure
+B,target
+E,target
+A,lure
+B,target
+E,target
+B,lure
+B,target
+E,target
+B,target
+E,lure
+C,lure
+A,lure
+F,lure
+F,lure
+A,target
+D,lure
+F,target
+A,target
+D,target
+A,lure
+A,target
+D,target
+B,lure
+F,lure
+D,target
+C,lure
+F,target
+C,lure
+D,lure
+F,target
+E,lure
+D,target
+F,target
+C,target
+A,target
+D,lure
+C,target
+A,target
+D,target
+A,lure
+F,lure
+D,target
+A,target
+F,target
+B,lure
+A,target
+E,lure
+B,target
+C,lure
+E,target
+B,target
+C,target
+E,target
+B,target
+B,lure
+E,target
+D,lure
+E,lure
+D,lure
+D,target
+B,lure
+F,lure
+C,lure
+F,lure
+A,lure
+A,lure
+C,lure
+F,lure
+E,lure
+E,lure
+F,target
+E,target
+A,lure
+D,lure
+C,lure
+B,lure
+D,target
+C,target
+B,target
+D,target
+F,target
+C,target
+D,target
+E,lure
+C,target
+D,target
+E,target
+B,lure
+D,target
+B,lure
+B,target
+E,lure
+F,lure
+A,lure
+E,target
+F,target
+D,lure
+C,lure
+F,target
+A,lure
+D,lure
+C,lure
+F,lure
+C,lure
+C,target
+B,lure
+A,lure
+C,target
+A,lure
+A,target
+D,lure
+A,target
+E,lure
+C,lure
+A,target
+B,lure
+F,lure
+E,lure
+B,target
+D,lure
+E,target
+B,target
+F,lure
+E,target
+B,target
+F,target
+A,target
+D,target
+E,lure
+E,lure
+D,target
+C,lure
+E,target
+D,target
+C,target
+E,target
+E,lure
+F,lure
+E,target
+E,target
+C,lure
+D,lure
+D,lure
+C,target
+D,target
+A,lure
+D,lure
+F,lure
+F,lure
+A,lure
+F,target
+F,target
+D,lure
+A,lure
+F,target
+A,lure
+C,lure
+B,lure
+A,target
+C,target
+B,target
+A,target
+B,lure
+C,lure
+A,target
+B,target
+C,target
+B,lure
+B,target
+B,lure
+B,target
+F,lure
+E,lure
+F,lure
+E,target
+A,lure
+F,target
+E,target
+E,lure
+C,lure
+F,lure
+E,target
+C,target
+F,target
+E,target
+C,target
+A,lure
+C,lure
+F,lure
+D,lure
+B,lure
+F,target
+D,target
+D,lure
+D,lure
+B,lure
+C,lure
+D,target
+B,target
+B,lure
+D,target
+B,target
+D,lure
+D,target
+B,target
+B,lure
+F,lure
+B,target
+E,lure
+A,lure
+E,lure
+C,lure
+A,target
+A,lure
+C,target
+A,target
+A,target
+C,target
+E,lure
+A,target
+C,target
+D,target
+B,target
+C,target
+D,target
+B,target
+F,lure
+D,target
+D,lure
+C,lure
+A,lure
+A,lure
+C,target
+A,target
+F,lure
+F,lure
+D,lure
+A,lure
+F,target
+B,lure
+A,target
+F,target
+A,lure
+A,target
+F,target
+B,lure
+C,lure
+F,target
+B,target
+D,lure
+B,lure
+C,lure
+C,lure
+E,lure
+B,lure
+C,target
+D,lure
+B,target
+E,lure
+D,target
+E,lure
+E,target
+E,lure
+E,target
+F,lure
+E,target
+E,target
+C,target
+A,lure
+F,target
+C,target
+D,lure
+F,target
+C,target
+C,lure
+F,target
+C,target
+E,lure
+C,lure
+E,lure
+C,lure
+E,lure
+E,target
+A,lure
+E,target
+E,target
+A,target
+E,target
+B,lure
+F,lure
+C,lure
+B,target
+A,lure
+D,lure
+B,target
+A,target
+D,target
+F,lure
+A,target
+B,lure
+B,lure
+A,target
+B,target
+D,lure
+B,lure
+F,lure
+D,target
+B,target
+A,lure
+D,target
+E,lure
+D,lure
+D,target
+F,lure
+D,target
+E,lure
+A,lure
+D,target
+E,target
+A,target
+E,lure
+F,lure
+A,target
+E,target
+C,lure
+F,lure
+A,lure
+C,target
+F,target
+C,lure
+C,target
+E,lure
+C,target
+C,target
+E,target
+D,lure
+A,lure
+F,lure
+C,lure
+A,target
+B,lure
+B,lure
+A,target
+B,target
+F,lure
+D,lure
+D,lure
+F,target
+D,target
+D,target
+F,target
+A,lure
+E,lure
+C,lure
+B,lure
+E,target
+B,lure
+B,target
+D,lure
+B,target
+B,target
+A,lure
+E,target
+D,target
+A,target
+E,target
+F,lure
+E,lure
+D,lure
+B,lure
+B,lure
+E,lure
+F,lure
+E,lure
+F,lure
+C,lure
+B,lure
+F,target
+C,target
+B,target
+F,target
+F,lure
+D,lure
+F,target
+F,target
+D,target
+D,lure
+D,lure
+D,target
+D,target
+C,lure
+A,lure
+B,lure
+A,lure
+E,lure
+B,target
+A,target
+E,target
+B,target
+A,target
+E,target
+C,lure
+C,lure
+A,lure
+C,target
+C,target
+A,target
+C,target
+A,target
+F,target
+D,target
+A,target
+B,lure
+F,lure
+E,lure
+C,lure
+D,lure
+E,target
+C,target
+A,lure
+F,lure
+C,target
+C,lure
+F,target
+C,target
+C,target
+E,lure
+D,lure
+F,lure
+E,target
+A,lure
+F,target
+E,target
+A,target
+D,lure
+E,target
+E,lure
+D,target
+B,lure
+B,lure
+D,target
+B,target
+B,target
+D,target
+D,lure
+B,target
+B,lure
+C,lure
+B,target
+A,lure
+F,lure
+A,lure
+A,target
+E,lure
+C,lure
+B,target
+E,target
+F,target
+B,target
+E,target
+F,target
+B,target
+E,target
+F,target
+A,lure
+A,lure
+F,target
+A,target
+A,target
+A,lure
+F,lure
+C,lure
+C,lure
+C,lure
+C,target
+F,lure
+F,lure
+C,target
+B,lure
+E,lure
+F,lure
+E,lure
+E,target
+B,lure
+B,lure
+D,lure
+B,target
+E,lure
+D,target
+D,lure
+B,lure
+C,lure
+A,lure
+D,lure
+C,target
+A,target
+D,target
+C,target
+D,lure
+D,target
+E,lure
+D,target
+A,target
+D,target
+A,target
+C,lure
+C,lure
+A,target
+F,lure
+C,target
+A,target
+F,target
+B,lure
+B,lure
+F,target
+B,target
+B,target
+F,target
+E,lure
+E,lure
+D,lure
+E,target
+F,lure
+A,lure
+E,target
+F,target
+D,lure
+E,target
+A,lure
+A,lure
+D,lure
+F,lure
+B,lure
+D,target
+B,lure
+B,target
+D,target
+C,lure
+B,target
+D,target
+A,lure
+F,lure
+C,lure
+D,lure
+E,lure
+C,target
+E,lure
+E,target
+C,target
+F,target
+A,lure
+A,lure
+D,lure
+F,lure
+A,target
+D,target
+B,lure
+A,target
+E,lure
+B,target
+A,target
+E,target
+A,lure
+C,lure
+B,lure
+A,target
+C,target
+E,lure
+D,lure
+C,target
+E,target
+D,target
+C,target
+E,target
+C,lure
+E,lure
+A,lure
+E,lure
+C,lure
+C,lure
+F,lure
+C,target
+F,lure
+F,target
+D,lure
+B,lure
+F,target
+D,target
+B,target
+F,target
+B,lure
+B,target
+D,lure
+F,lure
+B,target
+D,target
+D,target
+D,target
+E,target
+D,target
+B,lure
+E,target
+F,lure
+B,target
+E,target
+E,lure
+B,target
+E,target
+D,lure
+B,target
+A,lure
+D,target
+E,lure
+A,target
+F,lure
+C,lure
+A,target
+F,target
+B,lure
+C,lure
+A,lure
+D,lure
+C,target
+B,lure
+E,lure
+C,target
+E,lure
+A,lure
+C,target
+B,lure
+F,lure
+C,target
+B,target
+F,target
+F,lure
+C,lure
+F,target
+F,target
+A,lure
+C,lure
+D,lure
+A,target
+D,lure
+E,target
+A,target
+B,lure
+B,lure
+A,target
+E,lure
+B,target
+A,target
+E,target
+B,target
+A,target
+B,lure
+B,target
+E,lure
+D,lure
+B,target
+E,target
+C,lure
+F,lure
+D,lure
+C,target
+F,target
+D,target
+C,target
+C,lure
+D,target
+F,lure
+C,target
+D,target
+F,target
+A,lure
+C,lure
+A,lure
+D,lure
+E,lure
+B,lure
+D,target
+C,lure
+D,lure
+A,lure
+A,lure
+E,lure
+F,lure
+F,lure
+E,target
+F,target
+F,target
+C,target
+A,target
+A,target
+E,lure
+A,target
+A,target
+A,lure
+E,lure
+B,lure
+D,lure
+E,target
+A,lure
+D,target
+A,lure
+B,lure
+D,target
+C,lure
+B,target
+F,lure
+D,lure
+C,lure
+D,lure
+D,target
+E,lure
+E,lure
+D,target
+F,lure
+E,target
+B,lure
+A,lure
+E,target
+F,lure
+C,lure
+E,target
+F,target
+C,target
+D,lure
+F,target
+C,target
+B,lure
+F,target
+C,target
+B,target
+F,target
+F,lure
+B,target
+C,lure
+E,target
+E,target
+B,lure
+F,lure
+D,lure
+D,lure
+B,lure
+D,target
+B,lure
+E,lure
+C,lure
+B,target
+E,target
+C,target
+B,target
+E,target
+A,lure
+B,target
+F,lure
+F,lure
+A,lure
+B,lure
+F,target
+E,lure
+B,target
+E,lure
+C,lure
+E,lure
+A,lure
+C,target
+A,lure
+A,target
+D,lure
+A,target
+C,lure
+D,target
+A,target
+C,target
+F,lure
+A,target
+D,lure
+F,target
+C,lure
+D,target
+F,target
+C,target
+D,target
+A,target
+E,target
+E,lure
+C,lure
+E,target
+D,lure
+D,lure
+B,lure
+D,target
+F,lure
+B,target
+C,lure
+F,target
+B,target
+C,target
+F,target
+E,lure
+C,target
+F,target
+E,target
+C,target
+D,lure
+E,target
+C,target
+D,target
+A,lure
+D,lure
+F,lure
+A,target
+D,target
+A,lure
+A,target
+D,target
+B,lure
+A,target
+C,lure
+C,lure
+F,lure
+F,lure
+B,lure
+E,lure
+A,lure
+B,target
+A,lure
+B,lure
+B,target
+E,lure
+D,target
+B,target
+A,lure
+F,lure
+D,lure
+A,target
+B,lure
+D,target
+A,target
+B,target
+D,target
+D,lure
+E,lure
+D,target
+B,lure
+E,target
+F,lure
+B,target
+A,lure
+F,target
+E,lure
+D,lure
+F,target
+E,target
+C,lure
+F,target
+B,lure
+C,target
+E,lure
+E,lure
+F,lure
+C,lure
+E,target
+C,lure
+F,lure
+E,target
+C,target
+F,target
+D,lure
+A,lure
+A,lure
+C,lure
+B,lure
+A,target
+C,target
+B,target
+A,target
+D,target
+C,target
+B,target
+D,target
+C,target
+B,target
+D,target
+C,target
+E,lure
+C,lure
+C,target
+E,target
+D,lure
+B,lure
+C,lure
+F,lure
+A,lure
+A,lure
+E,lure
+A,target
+B,lure
+C,lure
+F,lure
+D,lure
+F,lure
+F,target
+C,lure
+F,target
+F,target
+E,lure
+A,lure
+A,lure
+E,target
+A,target
+A,target
+D,lure
+D,lure
+B,lure
+D,target
+B,lure
+E,lure
+F,lure
+B,target
+E,target
+F,target
+B,target
+E,target
+E,target
+D,target
+B,lure
+E,target
+F,lure
+B,target
+F,lure
+B,lure
+B,target
+F,target
+B,target
+D,lure
+F,target
+B,target
+E,lure
+F,target
+D,lure
+E,target
+F,target
+C,lure
+C,lure
+A,lure
+E,lure
+C,target
+A,target
+D,lure
+C,target
+A,target
+D,target
+C,target
+E,lure
+D,target
+C,target
+E,target
+F,lure
+B,lure
+F,lure
+B,lure
+A,lure
+A,lure
+D,lure
+C,lure
+A,target
+E,lure
+A,lure
+A,target
+C,lure
+B,target
+C,target
+C,lure
+B,target
+D,lure
+E,lure
+A,lure
+F,lure
+E,target
+A,target
+F,target
+C,lure
+B,lure
+D,lure
+C,target
+F,lure
+D,target
+C,target
+F,target
+D,target
+C,target
+F,target
+A,lure
+F,lure
+E,lure
+A,target
+E,lure
+E,target
+A,target
+C,lure
+C,lure
+F,lure
+D,lure
+E,lure
+B,lure
+D,target
+E,target
+B,target
+A,lure
+E,target
+A,lure
+D,lure
+B,lure
+A,target
+D,target
+B,target
+B,lure
+F,target
+D,target
+F,lure
+F,target
+B,lure
+E,lure
+B,lure
+B,target
+E,target
+B,target
+C,lure
+E,target
+B,target
+B,lure
+F,lure
+B,target
+A,lure
+D,lure
+C,lure
+A,target
+D,target
+C,target
+A,target
+D,target
+C,target
+B,lure
+D,target
+A,lure
+A,lure
+C,lure
+E,lure
+D,lure
+C,target
+E,target
+E,lure
+C,target
+D,lure
+D,lure
+F,lure
+F,lure
+A,lure
+C,lure
+F,target
+A,target
+E,lure
+F,target
+A,target
+B,target
+B,target
+C,target
+E,lure
+D,lure
+E,lure
+C,lure
+B,lure
+D,lure
+F,lure
+B,target
+D,target
+B,lure
+B,target
+D,target
+D,lure
+E,lure
+D,target
+D,target
+E,target
+C,lure
+A,lure
+A,lure
+C,target
+C,lure
+F,lure
+E,lure
+C,target
+C,lure
+E,target
+D,lure
+F,lure
+E,target
+A,lure
+F,target
+E,target
+A,target
+F,target
+A,lure
+A,target
+F,target
+A,target
+A,target
+F,target
+F,lure
+B,lure
+B,lure
+D,lure
+B,target
+F,target
+D,target
+B,target
+E,lure
+D,target
+A,lure
+E,target
+F,lure
+B,lure
+E,target
+B,lure
+C,lure
+C,lure
+A,lure
+C,target
+D,lure
+E,lure
+C,target
 D,target
-A,is lure
-E,no target
-C,no target
+A,lure
+E,lure
+D,target
+A,target
+E,target
+B,lure
 A,target
-A,is lure
-F,no target
-F,is lure
-E,no target
-E,is lure
-E,is lure
-B,no target
-D,no target
 E,target
 B,target
-E,is lure
-F,no target
-E,no target
-E,no target
-F,target
-A,no target
-B,no target
-E,no target
 A,target
-A,is lure
-A,is lure
-C,no target
+D,lure
+F,lure
+F,lure
+E,lure
+F,target
+F,target
+F,lure
+C,lure
+A,lure
+F,target
+B,lure
 A,target
+C,lure
+B,target
+D,lure
+C,target
+C,target
 A,target
 C,target
-C,is lure
-F,no target
-F,is lure
-F,is lure
-F,target
-E,no target
-E,is lure
-F,target
-D,no target
-D,is lure
-E,no target
-E,is lure
-E,is lure
-E,target
-C,no target
+C,target
+A,target
+B,lure
+D,lure
+C,lure
+E,lure
+E,lure
+B,lure
 E,target
-D,no target
-A,no target
-D,is lure
-F,no target
-F,is lure
+A,lure
+D,lure
+D,lure
+A,target
+A,lure
 D,target
-B,no target
-B,is lure
-C,no target
-D,no target
-D,is lure
+E,lure
+C,lure
+D,target
+E,target
+F,lure
+C,lure
+E,target
+C,lure
+F,lure
+E,target
 C,target
+F,target
+F,lure
+E,lure
+B,lure
+F,target
+B,lure
+A,lure
+A,lure
+B,target
+F,lure
+D,lure
+B,target
+F,target
 D,target
-B,no target
-A,no target
+B,target
+F,target
 D,target
+B,target
+F,target
+B,lure
 B,target
-B,is lure
-F,no target
+C,lure
+A,lure
 B,target
-E,no target
-B,no target
-C,no target
+F,lure
+A,target
+E,lure
+C,lure
+E,lure
+C,lure
+D,lure
 E,target
-B,target
-C,target
-A,no target
-D,no target
-E,no target
-B,no target
+A,lure
 D,target
-B,is lure
-E,no target
-A,no target
-A,is lure
 E,target
-B,no target
 A,target
-E,target
+A,lure
+C,lure
+A,target
+F,lure
+C,target
+A,target
+F,target
+C,target
+D,lure
+B,lure
+C,target
+B,lure
 B,target
-E,is lure
-A,no target
-E,is lure
-C,no target
-E,is lure
-F,no target
 C,target
-F,is lure
+A,lure
+D,lure
+B,lure
+E,lure
+D,target
+F,lure
+E,target
+D,target
 F,target
-D,no target
-D,is lure
+F,lure
+E,lure
+D,lure
 F,target
-F,is lure
-C,no target
-C,is lure
-D,no target
-D,is lure
-D,is lure
+E,target
 D,target
-F,no target
-E,no target
-F,is lure
-B,no target
-B,is lure
-B,is lure
-F,no target
 B,target
-C,no target
+A,target
+C,target
+F,lure
+A,target
+C,target
+F,target
+A,target
+A,lure
 F,target
-C,is lure
-F,no target
-C,no target
-D,no target
+B,lure
+D,lure
 F,target
-C,target
-F,is lure
-C,is lure
-A,no target
-D,no target
-A,is lure
+C,lure
+A,lure
+C,lure
+B,lure
+B,lure
+B,lure
+E,lure
+A,lure
+B,target
+D,lure
 A,target
-A,is lure
-F,no target
-C,no target
-C,is lure
-B,no target
-B,is lure
-D,no target
 B,target
-D,is lure
-B,is lure
+D,target
+C,lure
 B,target
+F,lure
+D,lure
+A,lure
+C,lure
+E,lure
+F,lure
+C,target
+D,lure
+E,lure
+C,target
 D,target
-C,no target
-E,no target
+E,target
+F,lure
 D,target
-D,is lure
 E,target
-F,no target
-B,no target
-B,is lure
 F,target
-B,target
-E,no target
-A,no target
-C,no target
-F,no target
-C,is lure
-A,no target
-D,no target
-A,is lure
-A,target
 D,target
-D,is lure
-A,target
-B,no target
-E,no target
-E,is lure
-E,is lure
 E,target
-E,no target
-D,no target
-C,no target
-F,no target
+E,lure
+B,lure
+D,lure
 D,target
-D,is lure
-D,is lure
-C,no target
+A,lure
 D,target
-C,is lure
-B,no target
-D,target
-C,target
-C,is lure
-C,is lure
-F,no target
-F,is lure
-E,no target
-E,is lure
-F,target
-A,no target
-A,is lure
-F,target
+E,lure
 A,target
+F,lure
+E,target
 A,target
 F,target
-C,no target
-F,is lure
-B,no target
-F,is lure
-B,is lure
-A,no target
-E,no target
-B,target
-B,is lure
 E,target
-E,is lure
-D,no target
-D,is lure
-E,target
-A,no target
-E,is lure
-F,no target
 A,target
-A,is lure
-D,no target
-C,no target
-B,no target
-E,no target
-B,is lure
-B,no target
-D,no target
-A,no target
+F,target
+C,lure
+B,lure
+F,target
+E,lure
 B,target
-F,no target
-E,no target
-D,no target
-E,is lure
-E,target
-B,no target
+B,lure
 E,target
-B,is lure
-A,no target
-E,target
+B,target
+C,lure
+F,lure
 B,target
-B,is lure
-F,no target
-F,is lure
-C,no target
-C,is lure
+D,lure
+D,lure
+B,target
+F,lure
+D,target
+E,lure
 F,target
-F,is lure
-B,no target
-C,no target
-A,no target
-A,is lure
+D,target
+A,lure
+E,lure
+F,lure
+D,lure
+C,lure
+B,lure
+A,lure
+C,target
+A,lure
+C,lure
 C,target
 A,target
-F,no target
 C,target
-C,is lure
-C,is lure
-A,no target
 C,target
-A,is lure
-E,no target
-D,no target
-A,target
-D,is lure
-C,no target
-E,no target
-D,target
-E,is lure
-B,no target
-E,is lure
-D,no target
+F,target
+F,target
 B,target
-B,is lure
+D,lure
+D,lure
+D,lure
+E,lure
 D,target
-D,is lure
-E,no target
-D,no target
-F,no target
-E,target
 D,target
-E,is lure
-C,no target
-C,is lure
 E,target
-D,no target
-D,is lure
-D,is lure
-F,no target
-F,is lure
 D,target
-F,target
-A,no target
-F,is lure
-E,no target
-E,is lure
-F,target
-C,no target
-C,is lure
-A,no target
-A,is lure
-A,is lure
-E,no target
-C,no target
-B,no target
+A,lure
 E,target
+E,lure
+A,target
+C,lure
+F,lure
+E,lure
+C,target
+F,target
+A,lure
 C,target
+B,lure
+D,lure
+A,lure
 B,target
-C,is lure
-D,no target
-A,no target
+C,lure
+B,lure
+F,lure
 C,target
-B,no target
+B,target
+C,lure
+B,lure
+B,target
+A,lure
+E,lure
+F,lure
+A,target
+E,target
+F,target
+A,target
+E,target
+C,lure
 A,target
-A,is lure
+B,lure
+C,target
+F,lure
 B,target
-B,is lure
+D,target
 A,target
 B,target
-F,no target
-F,is lure
-E,no target
-B,no target
-E,is lure
-D,no target
-D,is lure
-C,no target
-E,no target
-F,no target
-C,target
+D,target
+D,lure
+B,target
+C,lure
+E,lure
+D,lure
+B,lure
 E,target
-A,no target
-E,is lure
-D,no target
-A,target
-F,no target
-A,is lure
+D,target
+B,target
+C,lure
+A,lure
+E,lure
+C,target
 A,target
-F,target
+E,target
+B,lure
 A,target
-E,no target
-C,no target
-E,is lure
+E,target
+D,lure
+C,lure
+D,lure
+D,target
+C,target
+E,lure
+A,lure
+C,target
 E,target
+F,lure
 C,target
+A,lure
+A,lure
+E,lure
+F,lure
+A,target
+F,lure
+F,target
+B,lure
+F,target
+B,lure
+F,lure
+F,target
+C,lure
 E,target
-C,is lure
-A,no target
-A,is lure
-A,is lure
-B,no target
-B,is lure
-B,is lure
+B,lure
+D,lure
+A,lure
 B,target
-D,no target
+F,lure
+F,lure
 B,target
-D,is lure
-F,no target
-F,is lure
-D,target
 F,target
-E,no target
-C,no target
-E,is lure
-C,is lure
-D,no target
-D,is lure
-D,is lure
-A,no target
-B,no target
-B,is lure
-F,no target
-C,no target
-F,is lure
-C,is lure
-B,no target
-D,no target
-A,no target
-A,no target
-A,is lure
-B,no target
-A,target
-D,no target
-B,target
-D,is lure
-B,is lure
-F,no target
-B,is lure
-C,no target
 F,target
 B,target
+E,lure
+C,lure
+D,lure
+E,target
+C,target
+D,target
+E,target
+A,lure
+A,lure
+B,lure
+A,target
+E,lure
+C,lure
+A,target
+E,target
+C,target
+A,target
+D,lure
+C,target
+A,target
+C,lure
+C,target
+E,lure
+B,lure
+F,lure
+D,lure
+A,lure
+F,target
+D,target
+C,lure
+B,lure
+D,target
+F,lure
+E,lure
+D,target
+F,target
 C,target
 F,target
-A,no target
-B,no target
+B,target
+C,target
 F,target
-C,no target
 B,target
-A,no target
-B,is lure
-E,no target
+B,lure
+A,lure
+F,lure
+D,lure
 A,target
-A,is lure
-A,is lure
-D,no target
-B,no target
-D,is lure
-F,no target
-E,no target
-C,no target
-E,is lure
-A,no target
-C,target
-C,is lure
-C,is lure
-E,no target
-D,no target
-E,is lure
-E,target
+F,target
 D,target
-E,target
-F,no target
+A,target
+B,lure
+D,target
+A,target
+A,lure
+D,target
+C,lure
+D,lure
+E,lure
+F,lure
 D,target
 E,target
-D,is lure
-E,is lure
-A,no target
-F,no target
-C,no target
-D,no target
 F,target
-C,target
-B,no target
-B,is lure
-E,no target
-E,is lure
-B,target
-A,no target
+B,lure
 E,target
+D,lure
 B,target
-B,is lure
-E,target
-E,is lure
+C,lure
+B,lure
 B,target
+C,target
+C,lure
+E,lure
+A,lure
+C,target
+E,target
+E,lure
+E,lure
+E,target
+A,lure
+D,lure
+F,lure
+C,lure
+F,lure
+A,target
 E,target
-C,no target
-F,no target
-A,no target
 C,target
-A,is lure
-E,no target
-E,is lure
-D,no target
-D,is lure
-B,no target
+D,lure
+E,target
+C,target
 D,target
-F,no target
-D,is lure
-C,no target
-D,is lure
-C,is lure
-A,no target
-A,is lure
+C,lure
+A,lure
+C,lure
+E,lure
+A,target
 C,target
+D,lure
+B,lure
+A,lure
+D,target
+B,target
 A,target
-C,is lure
-D,no target
+D,target
+D,lure
 A,target
-E,no target
-A,is lure
-F,no target
-F,is lure
-C,no target
-C,is lure
+F,lure
+D,target
+B,lure
+F,target
+A,lure
+B,target
+E,lure
+C,lure
+E,lure
+C,lure
+C,target
+F,lure
+D,lure
+F,lure
+E,lure
+A,lure
 F,target
-B,no target
-E,no target
-A,no target
-F,no target
 E,target
-B,no target
+B,lure
 F,target
-D,no target
-D,is lure
-C,no target
-C,is lure
-D,target
-A,no target
-C,target
-E,no target
+F,lure
+B,target
+B,lure
+F,target
+B,target
 A,target
-C,target
-A,is lure
-B,no target
-A,is lure
-F,no target
+F,lure
+B,lure
+A,target
+E,lure
+D,lure
+A,target
+B,lure
+F,lure
+E,lure
 B,target
-C,no target
-B,is lure
+E,lure
+B,lure
 B,target
-C,target
-C,is lure
-E,no target
-B,no target
-F,no target
-B,is lure
-F,is lure
-F,target
+E,target
+A,lure
 B,target
-E,no target
-B,is lure
-A,no target
-D,no target
-C,no target
-D,is lure
+E,target
+C,lure
+F,lure
+E,target
+B,lure
+F,target
+E,target
+D,lure
+F,target
+C,lure
+D,target
+F,target
+C,target
 D,target
-F,no target
-A,no target
-A,is lure
 F,target
+A,lure
+D,target
+D,lure
+E,lure
+A,lure
+D,target
+C,lure
 A,target
-F,is lure
-D,no target
+C,lure
+C,target
+D,lure
+C,target
+F,lure
+A,lure
+C,target
+E,target
 A,target
-D,is lure
-D,target
-B,no target
-E,no target
-A,no target
-A,is lure
+C,target
 E,target
 A,target
-E,is lure
+C,target
+C,lure
+D,lure
+A,lure
+F,lure
+D,target
+F,lure
+C,lure
+D,target
+F,target
+C,target
+D,target
+C,lure
+C,target
+E,lure
+E,lure
+A,lure
+D,lure
 E,target
-D,no target
-A,no target
-C,no target
-F,no target
 A,target
-B,no target
+A,lure
+F,lure
+E,lure
+C,lure
 F,target
-F,is lure
-E,no target
+F,lure
+B,lure
+B,lure
 F,target
-A,no target
-B,no target
-A,is lure
-B,is lure
 B,target
-A,target
-E,no target
-B,target
-F,no target
-B,is lure
-C,no target
+D,lure
 F,target
+A,lure
+B,lure
+B,lure
+A,target
+D,lure
 B,target
-F,is lure
-D,no target
-D,is lure
-D,is lure
-B,no target
+E,lure
 D,target
-B,is lure
-C,no target
-E,no target
-C,is lure
-E,is lure
-C,is lure
-C,target
+B,target
 E,target
-E,is lure
-C,target
-F,no target
-D,no target
-A,no target
-E,no target
-F,no target
-D,no target
+B,lure
+D,target
 E,target
-E,is lure
+B,target
 D,target
-D,is lure
-F,no target
-F,is lure
+A,lure
+E,lure
+C,lure
+A,target
+E,target
+C,target
+A,target
+A,lure
+C,target
+D,lure
+A,target
+C,target
 D,target
-E,no target
-D,is lure
-A,no target
+A,target
+A,lure
+F,lure
+F,lure
+F,lure
+D,lure
+C,lure
+F,target
+E,lure
+C,target
+F,target
+E,target
+B,lure
+B,lure
 E,target
+B,target
+D,lure
+C,lure
+C,lure
 D,target
-E,is lure
-A,no target
-B,no target
-A,is lure
-F,no target
+A,lure
+E,lure
+F,lure
+D,lure
+B,lure
+F,target
+E,lure
 B,target
-F,is lure
-B,is lure
-F,is lure
-D,no target
-E,no target
-C,no target
-C,is lure
-D,no target
-B,no target
-D,is lure
-A,no target
-C,no target
-C,is lure
+F,target
+C,target
 A,target
-A,is lure
+F,lure
 C,target
+A,target
+C,lure
+D,lure
+D,lure
+E,lure
+D,target
+B,lure
+C,lure
+D,target
+A,lure
+D,lure
+F,lure
+B,lure
+D,target
+E,lure
+B,target
+D,target
+E,target
+B,target
+E,lure
+E,target
+B,target
+E,target
+F,lure
+A,lure
+E,target
+F,target
+F,lure
+A,lure
+A,lure
+F,target
+A,target
+D,lure
+F,target
 A,target
-B,no target
-A,is lure
-D,no target
+E,lure
+F,target
+C,lure
+C,lure
+B,lure
+B,lure
+C,target
+B,target
+B,lure
+F,lure
+D,lure
+B,target
+B,lure
+D,target
+B,target
 B,target
-B,is lure
-B,is lure
-C,no target
+D,target
 B,target
-C,is lure
-E,no target
-F,no target
-E,is lure
-A,no target
-A,no target
-F,no target
-F,is lure
-D,no target
+F,lure
+D,target
+D,lure
 F,target
-E,no target
-C,no target
-B,no target
-A,no target
-B,is lure
-A,is lure
-E,no target
-E,is lure
+B,lure
+C,lure
+F,target
+C,lure
+F,lure
+D,lure
+B,lure
+A,lure
+C,lure
+A,lure
+A,target
+C,target
+A,target
 A,target
-A,is lure
+C,target
+E,lure
+A,target
+C,target
 E,target
-C,no target
-E,is lure
-C,is lure
+C,lure
+E,lure
+A,lure
 C,target
+E,target
+E,lure
+E,lure
 E,target
-B,no target
+D,lure
+F,lure
+E,target
+D,target
+F,target
+A,lure
+C,target
 C,target
+F,target
+A,lure
+C,target
+A,lure
+A,target
+D,lure
+E,lure
+F,lure
+D,target
+E,target
+B,lure
+D,target
 E,target
-C,is lure
-A,no target
-F,no target
-D,no target
-D,is lure
-B,no target
-F,no target
-F,is lure
 B,target
-B,is lure
-F,target
+D,target
+B,lure
+F,lure
+B,lure
 B,target
-F,is lure
-F,target
+A,lure
 B,target
-E,no target
-B,is lure
-A,no target
-F,no target
-D,no target
+D,lure
 A,target
-C,no target
-C,is lure
+C,lure
+B,lure
 A,target
-A,is lure
-B,no target
-D,no target
-E,no target
-C,no target
-C,is lure
-F,no target
-E,no target
 C,target
+B,target
+F,lure
+D,lure
+D,lure
+F,target
+F,lure
+C,lure
 F,target
+E,lure
+E,lure
+F,target
+C,lure
+E,target
+A,lure
+E,lure
 E,target
+A,target
+C,lure
 C,target
-D,no target
-D,is lure
+E,lure
+A,target
 C,target
-F,no target
+D,lure
+A,target
+E,lure
 D,target
-F,is lure
-E,no target
+D,lure
+E,target
 D,target
-B,no target
-D,is lure
-F,no target
-F,is lure
-A,no target
-F,target
-A,is lure
-A,target
-D,no target
-D,is lure
-A,target
+A,lure
+E,target
 D,target
-A,is lure
-B,no target
-C,no target
-D,no target
-A,no target
-E,no target
-E,is lure
-A,target
-A,is lure
-C,no target
-C,is lure
-C,is lure
-A,no target
-B,no target
-B,is lure
-B,is lure
-B,target
-B,target
-B,target
-D,no target
-F,no target
-E,no target
+F,lure
+E,target
 D,target
 F,target
-E,target
-E,is lure
-E,is lure
-F,no target
-F,is lure
-B,no target
-B,is lure
-E,no target
+C,lure
+B,lure
+B,lure
+E,lure
 B,target
 B,target
-C,no target
+F,lure
+A,lure
 B,target
-E,no target
-C,target
-E,is lure
-C,is lure
-F,no target
-E,target
-A,no target
 F,target
-D,no target
-A,target
+B,lure
+B,target
+D,lure
+F,lure
+A,lure
+F,lure
 F,target
-B,no target
 A,target
-D,no target
-E,no target
+D,lure
+E,lure
 A,target
-C,no target
-A,is lure
-F,no target
-A,is lure
-F,is lure
-B,no target
-F,is lure
-B,is lure
-D,no target
-B,is lure
-D,is lure
-D,target
-A,no target
-A,is lure
-D,target
-D,is lure
-C,no target
-D,no target
-A,no target
-A,no target
-D,target
-B,no target
-E,no target
-E,is lure
-E,is lure
-D,no target
+B,lure
 E,target
-F,no target
-C,no target
-C,is lure
-F,target
+C,lure
+C,lure
+C,lure
 C,target
-C,target
-F,target
+A,lure
 C,target
-B,no target
-E,no target
-D,no target
-E,is lure
-C,no target
-B,no target
-B,is lure
-B,is lure
-B,target
-C,no target
-A,no target
-C,is lure
-D,no target
 A,target
-D,is lure
-F,no target
-D,is lure
-A,no target
-A,is lure
 D,target
-A,target
-D,is lure
+C,target
+D,lure
+D,target
+C,target
+E,lure
+B,lure
+D,lure
+F,lure
+A,lure
+D,target
+B,lure
+F,lure
+B,lure
+B,target
+F,target
+C,lure
+B,target
+B,lure
+D,lure
+A,lure
+B,target
 D,target
+C,lure
+E,lure
+E,lure
+C,target
+E,target
+A,lure
+F,lure
+E,target
 A,target
-A,is lure
-E,no target
-F,no target
-F,is lure
+F,target
 E,target
-A,no target
+C,lure
 F,target
 E,target
-F,no target
-C,no target
-D,no target
-E,no target
 C,target
-E,is lure
-C,is lure
-A,no target
-E,target
-A,is lure
-F,no target
-A,is lure
-F,is lure
 F,target
+A,lure
+E,lure
+C,lure
 A,target
-A,is lure
-D,no target
-B,no target
-B,is lure
-D,target
-E,no target
-C,no target
-C,is lure
-C,is lure
-A,no target
-F,no target
-F,is lure
+D,lure
+F,lure
 A,target
-F,target
-F,target
-E,no target
-B,no target
-C,no target
-D,no target
+C,lure
+E,lure
+F,lure
+D,lure
+E,target
+A,lure
+B,lure
+B,lure
+C,lure
 B,target
-C,target
-D,target
 B,target
 C,target
-B,is lure
-D,no target
-D,is lure
+C,lure
 B,target
-C,no target
-D,target
-A,no target
-B,no target
-B,is lure
-A,target
-F,no target
-D,no target
-E,no target
-C,no target
-B,no target
-D,no target
 C,target
+A,lure
 B,target
+A,lure
+B,lure
+F,lure
+E,lure
+D,lure
+C,lure
+E,target
 D,target
-B,is lure
-C,no target
-E,no target
-C,is lure
-E,is lure
-C,is lure
 C,target
 E,target
-E,is lure
-F,no target
-F,is lure
-E,target
-E,is lure
-C,no target
-A,no target
-B,no target
-B,is lure
-D,no target
-B,target
-E,no target
-F,no target
-B,target
-F,is lure
-B,is lure
-A,no target
+F,lure
+D,lure
+F,lure
+D,lure
+B,lure
 F,target
-C,no target
-B,no target
-A,no target
-C,target
-C,is lure
-D,no target
-D,is lure
-D,is lure
-E,no target
-F,no target
 D,target
-E,target
+A,lure
 F,target
 D,target
-F,is lure
-D,is lure
-A,no target
-F,no target
-C,no target
 A,target
-C,is lure
-B,no target
+F,target
+D,target
 A,target
-C,target
-B,target
+F,target
+E,lure
 A,target
-C,target
-A,is lure
-C,is lure
-B,no target
-F,no target
-B,is lure
-F,is lure
-B,is lure
-F,is lure
-C,no target
-B,target
-E,no target
-A,no target
-A,is lure
-D,no target
-E,no target
-D,is lure
-A,no target
-B,no target
-C,no target
-C,is lure
-B,target
-E,no target
-E,is lure
-F,no target
-F,is lure
+E,lure
 E,target
-E,is lure
-F,target
-D,no target
+A,target
+A,target
 E,target
+F,lure
+E,lure
+E,target
 F,target
-D,target
 E,target
-C,no target
-E,is lure
-A,no target
-A,is lure
-D,no target
-F,no target
-C,no target
-B,no target
-F,no target
-C,target
-C,is lure
-E,no target
-D,no target
+F,lure
+E,lure
+B,lure
+A,lure
+C,lure
+B,target
+A,target
 C,target
-E,target
-D,target
-B,no target
-E,target
-E,is lure
-A,no target
-E,target
-A,is lure
-B,no target
-A,is lure
-B,is lure
-A,is lure
-C,no target
+F,lure
+A,target
+B,lure
+F,target
+D,lure
 B,target
-B,is lure
-F,no target
+F,target
+F,lure
 B,target
-F,is lure
-E,no target
-F,is lure
-D,no target
-D,is lure
-D,is lure
-F,no target
-C,no target
+C,lure
+F,target
+D,lure
+C,target
+D,lure
 D,target
-C,is lure
 C,target
-A,no target
-E,no target
-E,is lure
+B,lure
+A,lure
+A,lure
+D,lure
+C,lure
 A,target
-F,no target
-F,is lure
+D,target
+A,lure
+C,lure
+D,target
+B,lure
+C,target
+E,lure
+B,target
+E,lure
+E,target
+F,target
 A,target
 F,target
-D,no target
-C,no target
-C,is lure
-A,no target
-B,no target
-B,is lure
-F,no target
-C,no target
-D,no target
-C,is lure
-D,is lure
-C,is lure
-F,no target
+F,target
+A,target
+D,lure
+C,lure
+B,lure
 D,target
 C,target
-A,no target
-C,is lure
-E,no target
+A,lure
+F,lure
+F,lure
 A,target
-B,no target
-A,is lure
+D,lure
+B,lure
 A,target
-C,no target
-A,target
-D,no target
-D,is lure
-D,is lure
-C,no target
-B,no target
-B,is lure
+C,lure
+B,target
+D,lure
 C,target
 B,target
-F,no target
-B,is lure
-F,is lure
-D,no target
-C,no target
-A,no target
-E,no target
+E,lure
 C,target
-F,no target
-A,no target
-F,is lure
-A,is lure
-D,no target
-A,is lure
-E,no target
-D,target
-B,no target
+E,lure
 E,target
-E,is lure
-B,target
-B,is lure
+D,lure
+E,target
+E,target
+D,target
+B,lure
 E,target
-E,is lure
-E,is lure
-D,no target
-F,no target
-C,no target
+D,target
+E,lure
+C,lure
 D,target
+A,lure
+C,target
+A,lure
+E,lure
+A,lure
+F,lure
+F,lure
+B,lure
 F,target
+C,lure
+B,target
 C,target
-F,is lure
-A,no target
-B,no target
-B,is lure
 A,target
-A,is lure
-C,no target
-C,is lure
-A,target
+D,target
 C,target
-A,is lure
-D,no target
-A,is lure
-D,is lure
-E,no target
-F,no target
+A,target
 D,target
-C,no target
-F,target
-C,is lure
-B,no target
-F,target
-E,no target
-A,no target
-E,is lure
-F,no target
-D,no target
+A,lure
+A,target
+D,target
+B,lure
+E,lure
+A,lure
+D,lure
 E,target
-C,no target
+D,lure
 D,target
-C,is lure
-D,is lure
-F,no target
+B,lure
+C,lure
+A,lure
+C,lure
+F,lure
+F,lure
+C,target
+F,target
+D,lure
 C,target
-F,is lure
-B,no target
-F,is lure
-E,no target
-D,no target
-A,no target
+F,target
+E,lure
+D,lure
+E,lure
 E,target
-E,is lure
-A,target
+C,lure
+C,lure
 E,target
-F,no target
-A,no target
-E,no target
+F,lure
+E,lure
+B,lure
 F,target
+E,target
+B,target
+A,lure
+B,lure
+B,target
 A,target
-A,is lure
-A,is lure
-E,no target
-E,is lure
-D,no target
-B,no target
-F,no target
-B,is lure
-F,is lure
-F,target
-C,no target
-E,no target
-F,target
-E,is lure
-B,no target
-A,no target
-B,is lure
 B,target
-B,is lure
-D,no target
 B,target
-D,is lure
-F,no target
-D,is lure
-F,is lure
-C,no target
-C,is lure
-C,is lure
-A,no target
-C,target
-A,is lure
-F,no target
-C,target
-F,is lure
-E,no target
-E,is lure
-D,no target
-A,no target
-C,no target
+F,lure
 D,target
-D,is lure
-B,no target
+B,target
+A,target
 D,target
+B,target
+F,lure
 D,target
 B,target
-C,no target
-B,no target
-A,no target
+D,lure
+A,lure
+C,lure
+D,target
+E,lure
 C,target
-B,target
-D,no target
+C,lure
+E,target
 C,target
-A,no target
-A,is lure
-F,no target
-F,is lure
-F,is lure
-B,no target
-C,no target
-C,is lure
-B,target
-B,is lure
-E,no target
-B,target
-E,is lure
-D,no target
-E,is lure
-D,is lure
-B,no target
-B,is lure
-E,no target
-F,no target
-A,no target
-C,no target
+F,lure
+E,target
+C,target
 F,target
-C,is lure
+F,lure
 C,target
-E,no target
-E,is lure
-A,no target
-A,is lure
-E,target
+C,lure
+F,target
+A,lure
+D,lure
+B,lure
 A,target
+A,lure
+B,target
 A,target
+E,lure
+E,lure
+F,lure
+B,lure
 E,target
-A,target
-C,no target
+F,target
+D,lure
 E,target
-C,is lure
-B,no target
-B,is lure
-F,no target
-F,is lure
-D,no target
-D,is lure
-A,no target
-E,no target
-F,no target
+F,target
+A,lure
+C,lure
+B,lure
+B,lure
+D,lure
+E,lure
+C,target
 A,target
-A,is lure
-A,is lure
+F,lure
+B,lure
 A,target
+F,target
+D,lure
 A,target
-D,no target
-C,no target
-F,no target
-F,is lure
-C,target
 F,target
-C,is lure
-A,no target
+E,lure
+C,lure
 F,target
-E,no target
-E,is lure
-D,no target
-B,no target
+C,lure
+C,target
+A,lure
+E,lure
+E,lure
+A,target
+A,lure
 E,target
-E,is lure
-B,target
+D,lure
+F,lure
 E,target
-D,no target
-D,is lure
-A,no target
-C,no target
 D,target
-C,is lure
-D,is lure
-D,target
-D,is lure
-B,no target
-F,no target
-D,target
-A,no target
 F,target
-F,is lure
-E,no target
-C,no target
-B,no target
-C,is lure
-C,target
-E,no target
-C,target
-F,no target
 E,target
-F,is lure
-B,no target
-E,no target
-C,no target
+F,lure
+A,lure
+A,lure
+C,lure
+D,lure
+E,lure
+B,lure
+B,lure
+E,target
 B,target
-F,no target
-F,is lure
-D,no target
-B,no target
-D,is lure
-B,is lure
-D,is lure
-A,no target
+D,lure
+B,lure
+C,lure
+D,target
 B,target
+C,target
 D,target
-A,target
-A,is lure
+B,target
+F,lure
 D,target
+B,target
+D,lure
 A,target
-D,is lure
-C,no target
-C,is lure
+B,target
+C,lure
+F,lure
+B,target
+E,lure
+A,lure
+B,target
+E,target
+B,lure
+D,lure
+E,target
+E,lure
+D,target
+E,target
+C,lure
 D,target
-E,no target
+A,lure
+E,lure
+F,lure
+B,lure
+E,target
+A,lure
+C,lure
+C,lure
+A,target
+A,lure
 C,target
-B,no target
-B,is lure
-B,is lure
-F,no target
-C,no target
-B,target
-E,no target
-A,no target
-A,is lure
-A,is lure
-C,no target
-C,is lure
+D,lure
 A,target
-B,no target
 C,target
-D,no target
-C,is lure
-E,no target
-E,is lure
-A,no target
-F,no target
-E,target
-F,is lure
+D,target
+A,target
+C,target
+E,lure
+B,lure
+C,target
+F,lure
+F,lure
+B,lure
 F,target
-E,target
 F,target
-C,no target
-A,no target
-F,no target
-C,target
+D,lure
+F,target
+F,target
+D,target
+A,target
+A,lure
+A,target
+C,lure
+F,lure
 A,target
+B,lure
 F,target
-F,is lure
-D,no target
-D,is lure
+F,lure
+B,target
+A,lure
 F,target
-F,is lure
-B,no target
-C,no target
-B,is lure
 B,target
-F,no target
-C,no target
-E,no target
-C,is lure
-E,is lure
-A,no target
-F,no target
-E,target
-A,target
+F,lure
+C,lure
+B,target
 F,target
-C,no target
-B,no target
-D,no target
 C,target
-D,is lure
-E,no target
+B,target
+D,lure
 C,target
+E,lure
 D,target
-C,is lure
-A,no target
-A,is lure
-A,is lure
-B,no target
-B,is lure
-D,no target
-D,is lure
-B,target
+D,lure
+D,lure
 D,target
 D,target
-B,target
-F,no target
-B,is lure
-A,no target
-A,is lure
-E,no target
-A,no target
-C,no target
-B,no target
-A,target
+E,lure
+F,lure
+E,lure
+C,lure
+F,target
+E,target
 C,target
-B,target
-B,is lure
-A,no target
-E,no target
-E,is lure
-A,target
-A,is lure
+A,lure
 E,target
-E,is lure
-D,no target
-D,is lure
+D,lure
+A,target
 E,target
-D,target
 D,target
-C,no target
-C,is lure
-B,no target
-B,is lure
-F,no target
-B,target
-A,no target
-A,is lure
-B,target
-E,no target
-B,is lure
-F,no target
-C,no target
-F,is lure
-F,target
+B,lure
+B,lure
+E,lure
+C,lure
+A,lure
+B,lure
+C,target
 C,target
-C,is lure
-E,no target
-D,no target
-B,no target
 E,target
-C,no target
-E,is lure
-A,no target
+A,lure
 C,target
-F,no target
+E,target
+E,lure
+F,lure
+E,target
+B,lure
+A,lure
+C,lure
+F,lure
 A,target
-B,no target
-F,target
-D,no target
-F,is lure
-C,no target
-F,no target
-B,no target
-C,target
-F,target
-E,no target
 C,target
-C,is lure
-C,is lure
-D,no target
+C,lure
+C,lure
+D,lure
 C,target
-F,no target
-F,is lure
-B,no target
-E,no target
-B,is lure
-E,is lure
-C,no target
-E,is lure
-E,target
-F,no target
-E,target
-F,is lure
-A,no target
-B,no target
-A,is lure
+D,lure
+D,target
+A,lure
+B,lure
+D,target
 A,target
 B,target
-F,no target
+E,lure
 A,target
-A,is lure
-F,target
-B,no target
-F,is lure
-A,no target
 B,target
+F,lure
+C,lure
+E,lure
 F,target
-C,no target
-E,no target
-C,is lure
-D,no target
+B,lure
 E,target
-A,no target
-E,is lure
-D,no target
-A,target
-D,is lure
-C,no target
-D,is lure
-D,target
-F,no target
-A,no target
-E,no target
 F,target
-A,target
-D,no target
+B,target
+D,lure
 F,target
-D,is lure
-F,is lure
-B,no target
-B,is lure
+A,lure
+E,lure
 F,target
-F,is lure
+A,target
+B,lure
+D,lure
+F,lure
 B,target
-E,no target
-A,no target
-C,no target
-A,is lure
-C,is lure
-D,no target
-D,is lure
-C,target
-A,no target
 D,target
-D,is lure
-C,no target
 D,target
-C,is lure
-E,no target
-E,is lure
-C,target
-E,target
-F,no target
+D,target
+C,lure
+A,lure
+D,target
 C,target
-F,is lure
-C,is lure
-B,no target
-B,is lure
-A,no target
-A,is lure
-B,target
 A,target
-D,no target
-B,target
-F,no target
-D,target
-C,no target
-E,no target
-B,no target
-F,no target
-E,no target
-A,no target
-B,no target
-F,no target
+F,lure
+C,target
 A,target
-B,target
 F,target
-A,target
-C,no target
-B,no target
-B,is lure
-B,is lure
-B,target
-C,no target
-B,target
-D,no target
-C,target
-C,is lure
-E,no target
-C,target
+D,lure
+C,lure
+C,lure
+B,lure
 C,target
-C,is lure
-E,no target
-E,is lure
-E,is lure
+E,lure
+B,target
+F,lure
 E,target
-B,no target
-A,no target
-A,is lure
-D,no target
-D,is lure
-D,is lure
-F,no target
-F,is lure
-D,target
-A,no target
-A,is lure
-C,no target
-A,target
-D,no target
-B,no target
-D,is lure
-A,no target
-F,no target
-D,target
-F,is lure
-E,no target
-D,target
+D,lure
 F,target
-F,is lure
-E,no target
-D,no target
-B,no target
 E,target
 D,target
-F,no target
-D,is lure
-C,no target
+B,lure
+F,lure
+B,lure
+B,target
 F,target
-F,is lure
-C,target
-A,no target
-A,is lure
+C,lure
+B,target
+A,lure
 C,target
-C,is lure
+A,lure
 A,target
-A,is lure
-D,no target
-F,no target
-A,target
-C,no target
-D,no target
-A,target
-C,target
-D,target
-D,is lure
-E,no target
-D,target
-B,no target
-B,is lure
-F,no target
-D,no target
-F,is lure
-A,no target
-A,is lure
-E,no target
-B,no target
-E,is lure
+A,lure
+E,lure
+E,lure
+D,lure
+D,lure
 E,target
-B,target
-B,is lure
+E,lure
+F,lure
+B,lure
 E,target
-E,is lure
-E,is lure
-B,no target
-C,no target
-B,is lure
-B,target
-E,no target
-A,no target
-F,no target
-B,no target
-A,no target
 F,target
-F,is lure
-A,target
-A,is lure
-B,no target
-B,is lure
-F,no target
 B,target
+F,lure
+D,lure
 B,target
-F,target
-E,no target
-C,no target
-D,no target
-C,is lure
+D,lure
+C,lure
+B,target
+C,lure
+E,lure
+B,target
 C,target
-D,target
-A,no target
+C,lure
+A,lure
+F,lure
 C,target
-E,no target
 A,target
-A,is lure
+E,lure
+C,target
+D,lure
+E,target
+C,target
+D,target
+B,lure
+D,lure
+A,lure
+F,lure
+B,lure
+F,lure
+F,target
+E,lure
+F,target
+B,lure
 E,target
-E,is lure
-E,is lure
-D,no target
-D,is lure
-B,no target
-C,no target
-C,is lure
-F,no target
-F,is lure
-A,no target
+F,target
+B,target
+F,lure
 F,target
-C,no target
-F,is lure
-C,is lure
-B,no target
-B,is lure
-D,no target
-A,no target
 B,target
-A,is lure
-B,is lure
-E,no target
+C,lure
+A,lure
+A,lure
+D,lure
+E,lure
 A,target
-F,no target
+D,target
+E,target
+A,target
+D,target
 E,target
+B,lure
+D,target

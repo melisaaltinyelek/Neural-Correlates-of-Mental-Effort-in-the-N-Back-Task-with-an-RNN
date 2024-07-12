@@ -28,9 +28,8 @@ class DataPreprocessor:
     }
 
     self.encoded_responses = {
-        "target": [1, 0, 0],
-        "no target": [0, 1, 0],
-        "is lure": [0, 0, 1]
+        "target": [1, 0],
+        "lure": [0, 1]
     }
 
   def preprocess_data(self):
