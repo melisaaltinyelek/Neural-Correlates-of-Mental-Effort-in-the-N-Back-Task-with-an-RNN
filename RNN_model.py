@@ -64,26 +64,42 @@ class DataPreprocessor:
     return X_train, y_train, X_val, y_val, X_test, y_test
   
 
-# def train_model(X_train, y_train, n_batch, learning_rate):
+class LSTMTrainer:
+  def __init__(self, X_train, y_train, n_batch, learning_rate):
 
+    # X_train.shape = (3762, 1, 6) (# samples/, 1 timestep, 6 features)
+    self.X_train = np.reshape(X_train, (X_train.shape[0], 1, X_train.shape[1]))
+    self.y_train = y_train
+    self.n_batch = n_batch
+    self.learning_rate = learning_rate
+    self.model = None
+  
+    # X_train.shape = (3762, 1, 6) (# samples/, 1 timestep, 6 features)
+    #X_train = np.reshape(X_train, (X_train.shape[0], 1, X_train.shape[1]))
 
-#   model = tf.keras.Sequential([
-#     tf.keras.layers.LSTM(5, input_shape = (X_train.shape[1], y_train.shape[2])),
-#     tf.keras.layers.Dense(32, activation = "relu"),
-#     tf.keras.layers.Dense(3, activation = "softmax")
-#   ])
+  def initialize_model(self):
 
-#   optimizer = tf.keras.optimizers.Adam(learning_rate = learning_rate)
+    self.model = tf.keras.Sequential([
+      tf.keras.layers.LSTM(32, input_shape = (self.X_train.shape[1], self.X_train.shape[2])),
+      tf.keras.layers.Dense(2, activation = "sigmoid")
+    ])
 
-
-#   model.compile(optimizer = optimizer,
-#                   loss = "categorical_crossentropy",
-#                   metrics = ["accuracy"])
+    self.model.compile(optimizer = tf.keras.optimizers.Adam(self.learning_rate),
+                    loss = tf.keras.losses.BinaryCrossentropy(),
+                    metrics = ["accuracy"])
     
+  def train_model(self, epochs):
 
-#   cce_history = []
+    bce_history = []
 
-#   return model
+    training_history = self.model.fit(self.X_train, self.y_train,
+                                 epochs = epochs,
+                                 batch_size = self.n_batch,
+                                 shuffle = False)
+    
+    bce_history.append(training_history.history)
+
+    return bce_history, self.model 
 
 #%%
 
@@ -97,7 +113,46 @@ if __name__ == "__main__":
   print("Training dataset shape:", X_train.shape, y_train.shape)
   print("Validation dataset shape:", X_val.shape, y_val.shape)
   print("Test dataset shape:", X_test.shape, y_test.shape)
+
+  lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, n_batch = 32, learning_rate = 0.1)
+  lstm_trainer.initialize_model()
+  history = lstm_trainer.train_model(epochs = 100)
+
+
+  # def train_model(X_train, y_train, n_batch, learning_rate):
+
+  #   # X_train.shape = (3762, 1, 6) (# samples/, 1 timestep, 6 features)
+  #   X_train = np.reshape(X_train, (X_train.shape[0], 1, X_train.shape[1]))
+
+  #   model = tf.keras.Sequential([
+  #     tf.keras.layers.LSTM(32, input_shape = (X_train.shape[1], X_train.shape[2])),
+  #     tf.keras.layers.Dense(2, activation = "sigmoid"),
+  #   ])
+
+  #   #optimizer = tf.keras.optimizers.Adam(learning_rate = learning_rate)
+
+  #   model.compile(optimizer = tf.keras.optimizers.Adam(learning_rate),
+  #                   loss = tf.keras.losses.BinaryCrossentropy(),
+  #                   metrics = ["accuracy"])
+      
+
+  #   bce_history = []
+
+  #   training_history = model.fit(X_train, y_train,
+  #                                epochs = 50,
+  #                                batch_size = n_batch,
+  #                                verbose = 1,
+  #                                shuffle = False)
+
+
+  #   bce_history.append(training_history.history)
+
+  #   print(X_train.shape)
+
+  #   return bce_history, model
   
+  
+  #bce_history, model = train_model(X_train = X_train, y_train = y_train, n_batch = 32, learning_rate = 0.1)
 
 #%%
 
