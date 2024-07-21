@@ -28,8 +28,9 @@ class DataPreprocessor:
     }
 
     self.encoded_responses = {
-        "target": [1, 0],
-        "lure": [0, 1]
+        "target": [1, 0, 0],
+        "lure": [0, 1, 0],
+        "nontarget": [0, 0, 1]
     }
 
   def preprocess_data(self):
@@ -81,11 +82,12 @@ class LSTMTrainer:
 
     self.model = tf.keras.Sequential([
       tf.keras.layers.LSTM(32, input_shape = (self.X_train.shape[1], self.X_train.shape[2])),
-      tf.keras.layers.Dense(2, activation = "sigmoid")
+      tf.keras.layers.Dense(64, activation = 'relu'),
+      tf.keras.layers.Dense(3, activation = "softmax")
     ])
 
     self.model.compile(optimizer = tf.keras.optimizers.Adam(self.learning_rate),
-                    loss = tf.keras.losses.BinaryCrossentropy(),
+                    loss = tf.keras.losses.CategoricalCrossentropy(),
                     metrics = ["accuracy"])
     
   def train_model(self, epochs):
@@ -95,7 +97,7 @@ class LSTMTrainer:
     training_history = self.model.fit(self.X_train, self.y_train,
                                  epochs = epochs,
                                  batch_size = self.n_batch,
-                                 shuffle = False)
+                                 shuffle = True)
     
     bce_history.append(training_history.history)
 
@@ -114,7 +116,7 @@ if __name__ == "__main__":
   print("Validation dataset shape:", X_val.shape, y_val.shape)
   print("Test dataset shape:", X_test.shape, y_test.shape)
 
-  lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, n_batch = 32, learning_rate = 0.1)
+  lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, n_batch = 32, learning_rate = 0.01)
   lstm_trainer.initialize_model()
   history = lstm_trainer.train_model(epochs = 100)
 

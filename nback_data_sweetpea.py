@@ -38,17 +38,17 @@ def is_target(letter):
 
 def is_lure(letter):
     
-    # return (letter[0] == letter[-(N-1)] or letter[0] == letter[-(N-2)]) and not is_target(letter)
-    return not is_target(letter)
+    return (letter[0] == letter[-(N-1)] or letter[0] == letter[-(N-2)]) and not is_target(letter)
+    #return not is_target(letter)
 
-# def is_no_target(letter):   
+def is_no_target(letter):   
 
-#     return not is_target(letter) and not is_lure(letter)
+    return not is_target(letter) and not is_lure(letter)
 
 
 response = Factor("response", [
     DerivedLevel("target", Window(is_target, [curr_letter], 4, 1)),
-    #DerivedLevel("lure",  Window(is_no_target, [curr_letter], 4, 1)),
+    DerivedLevel("nontarget", Window(is_no_target, [curr_letter], 4, 1)),
     DerivedLevel("lure", Window(is_lure, [curr_letter], 4, 1))
 ])
 
@@ -87,7 +87,9 @@ combined_df = pd.DataFrame()
 # Loop through each csv file and append its contents to the dataframe
 for csv_file in csv_files:
     df = pd.read_csv(csv_file)
-    combined_df = pd.concat([combined_df.dropna(), df], ignore_index = True)
+    combined_df = pd.concat([combined_df, df], ignore_index = True)
+
+combined_df.dropna(inplace = True)
 
 combined_df.to_csv("raw_data.csv", index = False)
 # %%
