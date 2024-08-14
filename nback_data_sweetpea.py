@@ -2,6 +2,7 @@
 
 import pandas as pd
 import glob
+import os
 
 from sweetpea import (
     Factor, DerivedLevel, WithinTrial, Transition, AtMostKInARow,
@@ -17,7 +18,7 @@ from sweetpea import *
 
 N = 3 # N = 3 for 3-back task
 num_sequences = 100 # Number of sequences
-num_minimum_trials = 50 # Minimum number of trials per sequence
+num_minimum_trials = 60 # Minimum number of trials per sequence
 
 ### REGULAR FACTORS
 
@@ -58,9 +59,10 @@ response = Factor("response", [
 
 ### EXPERIMENT
 
-k = 7
+k = 1
 constraints = [
-               MinimumTrials(num_minimum_trials)]
+               MinimumTrials(num_minimum_trials),
+               AtMostKInARow(k, response)]
 
 design       = [curr_letter, response]
 crossing     = [curr_letter, response]
@@ -76,8 +78,6 @@ tabulate_experiments(block, experiments, [curr_letter, response])
 
 save_experiments_csv(block, experiments, "n_back_sequence")
 
-# %%
-
 # Store all csv files in a list for the current directory
 csv_files = glob.glob("*.csv")
 
@@ -89,8 +89,14 @@ for csv_file in csv_files:
     df = pd.read_csv(csv_file)
     combined_df = pd.concat([combined_df, df], ignore_index = True)
 
+    os.remove(csv_file)
+
 combined_df.dropna(inplace = True)
 
 combined_df.to_csv("raw_data.csv", index = False)
+
+# %%
+
+
 # %%
 

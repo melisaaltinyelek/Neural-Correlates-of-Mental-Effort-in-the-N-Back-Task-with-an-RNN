@@ -31,7 +31,8 @@ class DataPreprocessor:
 
         self.df = df
 
-        #print(self.df)
+        print(self.df)
+        df.to_csv("nback_data.csv", index = False)
 
         return df
   
@@ -83,7 +84,7 @@ class LSTMTrainer:
 
         self.model = tf.keras.Sequential([
             tf.keras.layers.LSTM(64, input_shape = (self.X_train.shape[1], self.X_train.shape[2])),
-            #tf.keras.layers.Dropout(0.5),
+            tf.keras.layers.Dropout(0.2),
             #tf.keras.layers.LSTM(128, return_sequences = False),
             #tf.keras.layers.Dropout(0.2),
             tf.keras.layers.Dense(128, activation = "relu"),
