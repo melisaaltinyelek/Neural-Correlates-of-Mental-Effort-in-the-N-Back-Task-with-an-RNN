@@ -46,11 +46,13 @@ class DataPreprocessor:
 
         for i in range(len(letters) - n_steps):
             X.append(letters[i:i + n_steps])
-            y.append(responses[i + n_steps])
+            #print(X)
+            y.append(responses[i + n_steps - 1])
+            #print(y)
 
         return np.array(X), np.array(y)
 
-    def split_data(self, data, train_ratio = 0.8, val_ratio = 0.1):
+    def split_data(self, data, train_ratio = 0.8, val_ratio = 0.2):
 
         X, y = self.create_sequences(data)
 
@@ -132,9 +134,9 @@ if __name__ == "__main__":
     print("Validation dataset shape:", X_val.shape, y_val.shape)
     print("Test dataset shape:", X_test.shape, y_test.shape)
 
-    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 128, learning_rate = 0.01)
+    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 128, learning_rate = 0.001)
     lstm_trainer.initialize_model()
-    history, model = lstm_trainer.train_model(epochs = 200)
+    history, model = lstm_trainer.train_model(epochs = 100)
     eval_results = lstm_trainer.eval_model()
 
 # %%
