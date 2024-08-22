@@ -1,6 +1,7 @@
 #%%
 import tensorflow as tf
 import tensorflow_datasets as tfds
+#from tensorflow.keras.regularizers import l2 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from ast import literal_eval
@@ -38,8 +39,8 @@ class DataPreprocessor:
   
     def create_sequences(self, df, n_steps = 4):
 
-        letters = np.array(self.df["letter"].tolist())
-        responses = np.array(self.df["response"].tolist())
+        letters = np.array(df["letter"].tolist())
+        responses = np.array(df["response"].tolist())
 
         X, y = [], []
 
@@ -84,13 +85,14 @@ class LSTMTrainer:
 
         self.model = tf.keras.Sequential([
             tf.keras.layers.LSTM(64, input_shape = (self.X_train.shape[1], self.X_train.shape[2])),
-            tf.keras.layers.Dropout(0.2),
+            #tf.keras.layers.Dropout(0.5),
             #tf.keras.layers.LSTM(128, return_sequences = False),
-            #tf.keras.layers.Dropout(0.2),
+            tf.keras.layers.Dropout(0.2),  
             tf.keras.layers.Dense(128, activation = "relu"),
             #tf.keras.layers.Dropout(0.2),
             tf.keras.layers.Dense(3, activation = "softmax")
         ])
+        
         self.model.compile(optimizer = tf.keras.optimizers.Adam(self.learning_rate),
                            loss = "categorical_crossentropy",
                            metrics = ["accuracy"])
@@ -117,8 +119,6 @@ class LSTMTrainer:
 
         return eval_results
 
-
-
 #%%
 
 if __name__ == "__main__":
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     print("Validation dataset shape:", X_val.shape, y_val.shape)
     print("Test dataset shape:", X_test.shape, y_test.shape)
 
-    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 64, learning_rate = 0.01)
+    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 128, learning_rate = 0.01)
     lstm_trainer.initialize_model()
     history, model = lstm_trainer.train_model(epochs = 200)
     eval_results = lstm_trainer.eval_model()
