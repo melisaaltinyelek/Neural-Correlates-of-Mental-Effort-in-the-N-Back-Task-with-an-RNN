@@ -119,7 +119,15 @@ class LSTMTrainer:
     def eval_model(self):
 
         eval_results = self.model.evaluate(self.X_test, self.y_test, batch_size = 128)
-        print(f"Test loss, test accuracy: {eval_results}")
+        print(f"Overall Test loss, Test accuracy: {eval_results}")
+
+        predictions = self.model.predict(self.X_test)
+
+        # Print the first 10 predictions along with their true values
+        print("\nPredictions for 10 trials:")
+        for i in range(10):
+            print(f"Trial {i + 1}:")
+            print(f"Predicted: {predictions[i]}, True value: {self.y_test[i]}")
 
         return eval_results
 
