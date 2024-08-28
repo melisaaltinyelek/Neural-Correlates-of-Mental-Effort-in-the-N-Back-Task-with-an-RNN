@@ -33,7 +33,7 @@ class DataPreprocessor:
         self.df = df
 
         print(self.df)
-        df.to_csv("nback_data.csv", index = False)
+        #df.to_csv("nback_data.csv", index = False)
 
         return df
   
@@ -56,8 +56,15 @@ class DataPreprocessor:
 
         X, y = self.create_sequences(data)
 
-        train_size = int(train_ratio * len(X))
-        val_size = int(val_ratio * len(X))
+        total_samples = len(X)
+        train_size = int(train_ratio * total_samples)
+        
+        remaining_samples = total_samples - train_size
+        val_size = remaining_samples // 2
+        test_size = remaining_samples - val_size
+
+        if val_size != test_size:
+            val_size = test_size = remaining_samples // 2
 
         X_train = X[:train_size]
         y_train = y[:train_size]
@@ -67,6 +74,18 @@ class DataPreprocessor:
 
         X_test = X[train_size + val_size:]
         y_test = y[train_size + val_size:]
+
+        # train_size = int(train_ratio * len(X))
+        # val_size = int(val_ratio * len(X))
+
+        # X_train = X[:train_size]
+        # y_train = y[:train_size]
+
+        # X_val = X[train_size:train_size + val_size]
+        # y_val = y[train_size:train_size + val_size]
+
+        # X_test = X[train_size + val_size:]
+        # y_test = y[train_size + val_size:]
 
         return X_train, y_train, X_val, y_val, X_test, y_test
 
@@ -86,12 +105,9 @@ class LSTMTrainer:
     def initialize_model(self):
 
         self.model = tf.keras.Sequential([
-            tf.keras.layers.LSTM(64, input_shape = (self.X_train.shape[1], self.X_train.shape[2])),
-            #tf.keras.layers.Dropout(0.5),
-            #tf.keras.layers.LSTM(128, return_sequences = False),
+            tf.keras.layers.LSTM(12, input_shape = (self.X_train.shape[1], self.X_train.shape[2])),
             tf.keras.layers.Dropout(0.2),  
-            tf.keras.layers.Dense(128, activation = "relu"),
-            #tf.keras.layers.Dropout(0.2),
+            tf.keras.layers.Dense(32, activation = "relu"),
             tf.keras.layers.Dense(3, activation = "softmax")
         ])
         
@@ -134,9 +150,9 @@ if __name__ == "__main__":
     print("Validation dataset shape:", X_val.shape, y_val.shape)
     print("Test dataset shape:", X_test.shape, y_test.shape)
 
-    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 128, learning_rate = 0.001)
+    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 128, learning_rate = 0.01)
     lstm_trainer.initialize_model()
-    history, model = lstm_trainer.train_model(epochs = 100)
+    history, model = lstm_trainer.train_model(epochs = 300)
     eval_results = lstm_trainer.eval_model()
 
 # %%
