@@ -60,11 +60,9 @@ class DataPreprocessor:
         train_size = int(train_ratio * total_samples)
         
         remaining_samples = total_samples - train_size
-        val_size = remaining_samples // 2
-        test_size = remaining_samples - val_size
-
-        if val_size != test_size:
-            val_size = test_size = remaining_samples // 2
+        # Divide val_size by 2 so that both validation and test datasets have the same number of data
+        val_size = remaining_samples // 2 
+        # test_size = remaining_samples - val_size
 
         X_train = X[:train_size]
         y_train = y[:train_size]
@@ -74,18 +72,6 @@ class DataPreprocessor:
 
         X_test = X[train_size + val_size:]
         y_test = y[train_size + val_size:]
-
-        # train_size = int(train_ratio * len(X))
-        # val_size = int(val_ratio * len(X))
-
-        # X_train = X[:train_size]
-        # y_train = y[:train_size]
-
-        # X_val = X[train_size:train_size + val_size]
-        # y_val = y[train_size:train_size + val_size]
-
-        # X_test = X[train_size + val_size:]
-        # y_test = y[train_size + val_size:]
 
         return X_train, y_train, X_val, y_val, X_test, y_test
 
@@ -152,7 +138,7 @@ if __name__ == "__main__":
 
     lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 128, learning_rate = 0.01)
     lstm_trainer.initialize_model()
-    history, model = lstm_trainer.train_model(epochs = 300)
+    history, model = lstm_trainer.train_model(epochs = 200)
     eval_results = lstm_trainer.eval_model()
 
 # %%

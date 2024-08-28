@@ -17,16 +17,10 @@ N = 3 # N = 3 for 3-back task
 num_sequences = 150 # Number of sequences
 num_minimum_trials = 57 # Minimum number of trials per sequence
 
-### REGULAR FACTORS
-
 letters = ["A", "B", "C", "D", "E", "F"]
 
 # Factor is used to define factors and its levels
 curr_letter = Factor("letter", letters)
-
-### DERIVED FACTORS
-
-# Response factor
 
 def is_target(letter):
 
@@ -49,8 +43,6 @@ response = Factor("response", [
     DerivedLevel("lure", Window(is_lure, [curr_letter], 4, 1))
 ])
 
-### EXPERIMENT 
-
 num_letters = len(letters)
 #print(f"The total number of letters: {num_letters}")
 
@@ -65,7 +57,6 @@ trials_per_combination = num_minimum_trials // total_combinations
 
 # trials_per_response = num_minimum_trials // num_responses
 # print(f"Trials per response: {trials_per_response}")
-
 
 num_consecutive_response = 3
 constraints = [MinimumTrials(num_minimum_trials),
@@ -89,15 +80,11 @@ constraints = [MinimumTrials(num_minimum_trials),
 #     ExactlyK(trials_per_letter, curr_letter.levels[5]),
 # ])
 
-
-
 design       = [curr_letter, response]
 crossing     = [curr_letter, response]
 block        = CrossBlock(design, crossing, constraints)
 
 experiments  = synthesize_trials(block, num_sequences, CMSGen)
-
-### END OF EXPERIMENT DESIGN
 
 print_experiments(block, experiments)
 
@@ -121,5 +108,3 @@ for csv_file in csv_files:
 combined_df.dropna(inplace = True)
 
 combined_df.to_csv("raw_data.csv", index = False)
-
-# %%
