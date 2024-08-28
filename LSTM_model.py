@@ -119,7 +119,7 @@ class LSTMTrainer:
     def eval_model(self):
 
         eval_results = self.model.evaluate(self.X_test, self.y_test, batch_size = 128)
-        print(f"Evaluation result:{eval_results}")
+        print(f"Test loss, test accuracy: {eval_results}")
 
         return eval_results
 
