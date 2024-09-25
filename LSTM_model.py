@@ -1,9 +1,10 @@
 #%%
+
 import tensorflow as tf
 import tensorflow_datasets as tfds
-#from tensorflow.keras.regularizers import l2 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
+import matplotlib.pyplot as plt
 from ast import literal_eval
 import pandas as pd
 import numpy as np
@@ -27,13 +28,14 @@ class DataPreprocessor:
         encoded_letters = letter_encoder.fit_transform(df[["letter"]])
         encoded_responses = response_encoder.fit_transform(df[["response"]])
 
+        # Convert the encoded columns to lists to store them in pandas DataFrame
         df["letter"] = encoded_letters.tolist()
         df["response"] = encoded_responses.tolist()
 
         self.df = df
 
         print(self.df)
-        #df.to_csv("nback_data.csv", index = False)
+        # df.to_csv("nback_data.csv", index = False)
 
         return df
   
@@ -44,20 +46,31 @@ class DataPreprocessor:
 
         X, y = [], []
 
+        # Create chunks or sequences of 4 consesutive letters, store them in X
+        # For each sequence in X, store the response for the last letter in that sequence
         for i in range(len(letters) - n_steps):
             X.append(letters[i:i + n_steps])
             #print(X)
             y.append(responses[i + n_steps - 1])
             #print(y)
 
+        # print(f"Thef X: {len(X)}")
+        
+        print(f"The X array: {np.array(X)}")
         return np.array(X), np.array(y)
 
     def split_data(self, data, train_ratio = 0.8, val_ratio = 0.2):
 
         X, y = self.create_sequences(data)
+        # print(f"This is X (letters): {X}")
+        # print(f"The shape of X: {X.shape}")
+        # print(f"This is y (responses): {y}")
+        # print(f"The shape of y: {y.shape}")
 
         total_samples = len(X)
+        # print(total_samples)
         train_size = int(train_ratio * total_samples)
+        # print(train_size)
         
         remaining_samples = total_samples - train_size
         # Divide val_size by 2 so that both validation and test datasets have the same number of data
@@ -93,7 +106,7 @@ class LSTMTrainer:
         self.model = tf.keras.Sequential([
             tf.keras.layers.LSTM(12, input_shape = (self.X_train.shape[1], self.X_train.shape[2])),
             tf.keras.layers.Dropout(0.2),  
-            tf.keras.layers.Dense(32, activation = "relu"),
+            tf.keras.layers.Dense(24, activation = "relu"),
             tf.keras.layers.Dense(3, activation = "softmax")
         ])
         
@@ -105,16 +118,18 @@ class LSTMTrainer:
 
         cce_history = []
 
-        training_history = self.model.fit(self.X_train, self.y_train,
+        self.training_history = self.model.fit(self.X_train, self.y_train,
                                           epochs = epochs,
                                           batch_size = self.n_batch,
                                           validation_data = (self.X_val, self.y_val),
                                           shuffle = True)
                                         
 
-        cce_history.append(training_history.history)
+        cce_history.append(self.training_history.history)
 
-        return cce_history, self.model
+        # print(training_history.history.keys())
+
+        return cce_history, self.model, self.training_history
     
     def eval_model(self):
 
@@ -130,6 +145,28 @@ class LSTMTrainer:
             print(f"Predicted: {predictions[i]}, True value: {self.y_test[i]}")
 
         return eval_results
+        
+    def visualize_results(self):
+        
+        # Plot history for accuracies
+        plt.plot(self.training_history.history["accuracy"])
+        plt.plot(self.training_history.history["val_accuracy"])
+        plt.title("Model Accuracy")
+
+        plt.xlabel("Epoch")
+        plt.ylabel("Accuracy")
+        plt.legend(["Train", "Test"], loc = "upper right")
+        plt.show()
+
+        # Plot history for losses
+        plt.plot(self.training_history.history["loss"])
+        plt.plot(training_history.history["val_loss"])
+        plt.title("Model Loss")
+
+        plt.xlabel("Epoch")
+        plt.ylabel("Loss")
+        plt.legend(["Train", "Test"], loc = "upper right")
+        plt.show()
 
 #%%
 
@@ -146,7 +183,8 @@ if __name__ == "__main__":
 
     lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 128, learning_rate = 0.01)
     lstm_trainer.initialize_model()
-    history, model = lstm_trainer.train_model(epochs = 200)
+    cce_history, model, training_history = lstm_trainer.train_model(epochs = 200)
     eval_results = lstm_trainer.eval_model()
+    display_acc_loss = lstm_trainer.visualize_results()
 
 # %%
