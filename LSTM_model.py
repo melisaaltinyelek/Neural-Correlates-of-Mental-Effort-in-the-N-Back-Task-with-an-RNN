@@ -149,8 +149,8 @@ class LSTMTrainer:
     def visualize_results(self):
         
         # Plot history for accuracies
-        plt.plot(self.training_history.history["accuracy"])
-        plt.plot(self.training_history.history["val_accuracy"])
+        plt.plot(self.training_history.history["accuracy"], color = "purple")
+        plt.plot(self.training_history.history["val_accuracy"], color = "green")
         plt.title("Model Accuracy")
 
         plt.xlabel("Epoch")
@@ -159,8 +159,8 @@ class LSTMTrainer:
         plt.show()
 
         # Plot history for losses
-        plt.plot(self.training_history.history["loss"])
-        plt.plot(training_history.history["val_loss"])
+        plt.plot(self.training_history.history["loss"], color = "purple")
+        plt.plot(training_history.history["val_loss"], color = "green")
         plt.title("Model Loss")
 
         plt.xlabel("Epoch")
@@ -181,9 +181,9 @@ if __name__ == "__main__":
     print("Validation dataset shape:", X_val.shape, y_val.shape)
     print("Test dataset shape:", X_test.shape, y_test.shape)
 
-    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 128, learning_rate = 0.01)
+    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, n_batch = 64, learning_rate = 0.01)
     lstm_trainer.initialize_model()
-    cce_history, model, training_history = lstm_trainer.train_model(epochs = 200)
+    cce_history, model, training_history = lstm_trainer.train_model(epochs = 100)
     eval_results = lstm_trainer.eval_model()
     display_acc_loss = lstm_trainer.visualize_results()
 
