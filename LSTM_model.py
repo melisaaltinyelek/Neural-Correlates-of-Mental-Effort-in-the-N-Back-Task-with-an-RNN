@@ -41,12 +41,13 @@ class DataPreprocessor:
   
     def create_sequences(self, df, n_steps = 4):
 
+        X, y = [], []
+
         letters = np.array(df["letter"].tolist())
         responses = np.array(df["response"].tolist())
 
-        X, y = [], []
-
-        # Create chunks or sequences of 4 consesutive letters, store them in X
+        
+        # Create chunks or sequences of 4 consecutive letters, store them in X
         # For each sequence in X, store the response for the last letter in that sequence
         for i in range(len(letters) - n_steps):
             X.append(letters[i:i + n_steps])
@@ -54,19 +55,28 @@ class DataPreprocessor:
             y.append(responses[i + n_steps - 1])
             #print(y)
 
-        # print(f"Thef X: {len(X)}")
-        
-        print(f"The X array: {np.array(X)}")
-        return np.array(X), np.array(y)
+        # Reshape the X (letters) as (num_samples, 1, num_features) so that LSTM can receive 1 letter at a time
+        X = np.array(X)
+        y = np.array(y)
 
-    def split_data(self, data, train_ratio = 0.8, val_ratio = 0.2):
+        # print(f"The shape of the letters: {letters.shape}") # 6 --> the number of features/letters
+        # print("-" * 50)
+        # print(f"The shape of the responses: {responses.shape}") 
+        print(f"This is the X (letters): {X}")
+        print("-" * 50)
+        print(f"This is the length of X: {len(X)}")
+        print("-" * 50)
+        print(f"This is the y (responses): {y}")
+        print("-" * 50)
+        print(f"This is the length of y: {len(y)}")
+        print("-" * 50)
+
+        return X, y
+
+    def split_data(self, data, train_ratio = 0.8):
 
         X, y = self.create_sequences(data)
-        # print(f"This is X (letters): {X}")
-        # print(f"The shape of X: {X.shape}")
-        # print(f"This is y (responses): {y}")
-        # print(f"The shape of y: {y.shape}")
-
+        
         total_samples = len(X)
         # print(total_samples)
         train_size = int(train_ratio * total_samples)
@@ -104,9 +114,9 @@ class LSTMTrainer:
     def initialize_model(self):
 
         self.model = tf.keras.Sequential([
-            tf.keras.layers.LSTM(12, input_shape = (self.X_train.shape[1], self.X_train.shape[2])),
-            tf.keras.layers.Dropout(0.2),  
-            tf.keras.layers.Dense(24, activation = "relu"),
+            tf.keras.layers.LSTM(6, input_shape = (1, self.X_train.shape[2])),
+            # tf.keras.layers.Dropout(0.2),  
+            tf.keras.layers.Dense(12, activation = "relu"),
             tf.keras.layers.Dense(3, activation = "softmax")
         ])
         
@@ -116,15 +126,21 @@ class LSTMTrainer:
 
     def train_model(self, epochs):
 
-        cce_history = []
+        cce_history = []    
+
+        class_weights_dict = {
+            0: 0.5, # Lure
+            1: 1.0, # Nontarget
+            2: 1.0 # Target
+        }
 
         self.training_history = self.model.fit(self.X_train, self.y_train,
                                           epochs = epochs,
                                           batch_size = self.n_batch,
                                           validation_data = (self.X_val, self.y_val),
+                                          class_weight = class_weights_dict,
                                           shuffle = True)
                                         
-
         cce_history.append(self.training_history.history)
 
         # print(training_history.history.keys())
