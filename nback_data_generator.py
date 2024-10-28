@@ -107,4 +107,5 @@ for csv_file in csv_files:
 
 combined_df.dropna(inplace = True)
 
-combined_df.to_csv("raw_data.csv", index = False)
+combined_df.to_csv("raw_data_with_lure.csv", index = False)
+#%%
