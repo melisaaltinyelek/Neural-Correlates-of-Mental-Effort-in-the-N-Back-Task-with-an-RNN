@@ -164,7 +164,7 @@ class LSTMTrainer:
     def initialize_model(self):
 
         self.model = tf.keras.Sequential([
-            tf.keras.layers.LSTM(6, input_shape = (1, self.X_train.shape[2])),
+            tf.keras.layers.SimpleRNN(6, input_shape = (1, self.X_train.shape[2])),
             # tf.keras.layers.Dropout(0.2),  
             tf.keras.layers.Dense(12, activation = "relu"),
             tf.keras.layers.Dense(1, activation = "sigmoid")
