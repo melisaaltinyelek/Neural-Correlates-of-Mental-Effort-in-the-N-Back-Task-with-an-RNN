@@ -195,6 +195,8 @@ class LSTMTrainer:
 
         # print(training_history.history.keys())
 
+        self.model.save("saved_model/rnn_model.keras")
+
         return bce_history, self.model, self.training_history
     
     def visualize_results(self):
