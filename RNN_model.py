@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from ast import literal_eval
 import pandas as pd
 import numpy as np
+import os
 import glob
 
 # %%
@@ -45,7 +46,7 @@ class DataPreprocessor:
         
         self.df = df
 
-        # df.to_csv("nback_data_without_lure.csv", index = False)
+        # df.to_csv("3-back task/nback_data_without_lure.csv", index = False)
 
         # print(self.df)
 
@@ -70,7 +71,7 @@ class DataPreprocessor:
         
         self.df_with_lures = df_with_lures
 
-        # df_with_lures.to_csv("nback_data_with_lures.csv", index = False)
+        # df_with_lures.to_csv("3-back task/nback_data_with_lures.csv", index = False)
 
         return self.df_with_lures
         
@@ -195,7 +196,10 @@ class LSTMTrainer:
 
         # print(training_history.history.keys())
 
-        self.model.save("saved_model/rnn_model.keras")
+        if not os.path.exists("saved_model"):
+            os.mkdir("saved_model")
+
+            self.model.save("saved_model/rnn_model.keras")
 
         return bce_history, self.model, self.training_history
     
@@ -261,7 +265,7 @@ class LSTMTrainer:
 
                 print(f"Lure Trial {i + 1}:")
                 print(f"Letters (sequence): {letters_sequence}")
-                print(f"True Label: Lure")
+                print(f"True Label: lure")
                 print(f"Predicted Response: {predicted_response}")
                 print("-" * 50)
         
@@ -271,7 +275,7 @@ class LSTMTrainer:
 
 if __name__ == "__main__":
 
-    data_processor = DataPreprocessor(data_path_bin_cl = "raw_data_with_lure.csv", data_path_multiclass_pred = "raw_data_with_lure_test.csv")  
+    data_processor = DataPreprocessor(data_path_bin_cl = "3-back task/raw_data_with_lure.csv", data_path_multiclass_pred = "3-back task/raw_data_with_lure_test.csv")  
     preprocessed_data_bin_cl = data_processor.preprocess_data_for_bin_cl()
     preprocessed_data_multic_pred = data_processor.preprocess_data_for_multic_pred()
 
