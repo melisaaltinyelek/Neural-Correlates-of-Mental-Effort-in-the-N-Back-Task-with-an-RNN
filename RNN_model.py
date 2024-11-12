@@ -4,6 +4,7 @@ import tensorflow as tf
 import tensorflow_datasets as tfds
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
+from sklearn import metrics
 import matplotlib.pyplot as plt
 from ast import literal_eval
 import pandas as pd
@@ -248,7 +249,7 @@ class LSTMTrainer:
             print(f"Predicted Response: {'target' if predicted_response == 1 else 'nontarget'}")
             print("-" * 50)
         
-        return self.predictions, self.predicted_responses
+        return self.predictions, self.predicted_responses, 
     
     def visualize_without_lures(self):
         
@@ -300,9 +301,15 @@ class LSTMTrainer:
 
         plt.figure(figsize = (6, 7))
         plt.bar(labels, acc_list, color = ["#C3B1E1", "#77DD77"])
-        plt.xlabel("Response categories")
+        plt.xlabel("Response Categories")
         plt.ylabel("Accuracy")
         plt.show()
+
+        confusion_matrix = metrics.confusion_matrix(self.y_test, self.predicted_responses)
+        cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix, display_labels = [0, 1])
+        cm_display.plot()
+        plt.show()
+
     
     def eval_model_with_lures(self):
 
