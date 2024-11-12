@@ -231,17 +231,17 @@ class LSTMTrainer:
         eval_results = self.model.evaluate(self.X_test, self.y_test, batch_size = 128)
         print(f"Overall Test Loss, Test Accuracy: {eval_results}")
 
-        self.predictions = self.model.predict(self.X_test)
-        self.predicted_responses = (self.predictions >= 0.5).astype(int).flatten()
+        self.predictions_wo_lures = self.model.predict(self.X_test)
+        self.pred_resp_wo_lures = (self.predictions_wo_lures >= 0.5).astype(int).flatten()
 
-        print(f"The predicted responses are: {self.predicted_responses}")
+        print(f"The predicted responses are: {self.pred_resp_wo_lures}")
 
         for i in range(10):
             letters_sequence = self.X_test[i]
 
             true_response = self.y_test[i]
 
-            predicted_response = self.predicted_responses[i]
+            predicted_response = self.pred_resp_wo_lures[i]
 
             print(f"Trial {i + 1}:")
             print(f"Letters : {letters_sequence}")
@@ -249,49 +249,49 @@ class LSTMTrainer:
             print(f"Predicted Response: {'target' if predicted_response == 1 else 'nontarget'}")
             print("-" * 50)
         
-        return self.predictions, self.predicted_responses, 
+        return self.pred_resp_wo_lures 
     
-    def visualize_without_lures(self):
+    def visualize_wo_lures(self):
         
         # Calculate the total number of target trials and correctly predicted target trials
-        self.num_target_trials = 0
-        self.num_corr_pred_target_trials = 0
+        self.num_target_wo_lures = 0
+        self.num_corr_pred_target_wo_lures = 0
 
         for i in range(len(self.y_test)):
             target_response = self.y_test[i]
-            pred_target_resp = self.predicted_responses[i]
+            pred_target_resp = self.pred_resp_wo_lures[i]
 
             if target_response == 1:
-                self.num_target_trials += 1
+                self.num_target_wo_lures += 1
 
             if target_response == 1: 
                 if pred_target_resp == target_response:
-                    self.num_corr_pred_target_trials += 1
+                    self.num_corr_pred_target_wo_lures += 1
 
         # print(f"The number target trials: {self.num_target_trials}")
         # print(f"The number of correctly predicted target trials: {self.num_corr_pred_target_trials}")
 
         # Calculate the total number of nontarget trials and correctly predicted nontarget trials
-        self.num_nontarget_trials = 0
-        self.num_corr_pred_nontarget_trials = 0
+        self.num_nontarget_wo_lures = 0
+        self.num_corr_pred_nontarget_wo_lures = 0
 
         for i in range(len(self.y_test)):
             nontarget_response = self.y_test[i]
-            pred_nontarget_resp = self.predicted_responses[i]
+            pred_nontarget_resp = self.pred_resp_wo_lures[i]
 
             if nontarget_response == 0:
-                self.num_nontarget_trials += 1
+                self.num_nontarget_wo_lures += 1
 
             if nontarget_response == 0:
                 if pred_nontarget_resp == nontarget_response:
-                    self.num_corr_pred_nontarget_trials += 1
+                    self.num_corr_pred_nontarget_wo_lures += 1
 
         # print(f"The number of nontarget trials: {self.num_nontarget_trials}")
         # print(f"The number of correctly predicted nontarget trials: {self.num_corr_pred_nontarget_trials}")
 
         # Calculate the accuracies for both nontarget and target trials for visualization
-        acc_target = self.num_corr_pred_target_trials / self.num_target_trials
-        acc_nontarget = self.num_corr_pred_nontarget_trials / self.num_nontarget_trials
+        acc_target = self.num_corr_pred_target_wo_lures / self.num_target_wo_lures
+        acc_nontarget = self.num_corr_pred_nontarget_wo_lures / self.num_nontarget_wo_lures
 
         print(f"Accuracy score for the target trials: {acc_target}")
         print(f"Accuracy score for the nontarget trials: {acc_nontarget}")
@@ -305,21 +305,20 @@ class LSTMTrainer:
         plt.ylabel("Accuracy")
         plt.show()
 
-        confusion_matrix = metrics.confusion_matrix(self.y_test, self.predicted_responses)
-        cm_display = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix, display_labels = [0, 1])
-        cm_display.plot()
+        confusion_matrix_wo_lures = metrics.confusion_matrix(self.y_test, self.pred_resp_wo_lures)
+        cm_display_wo_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_wo_lures, display_labels = [0, 1])
+        cm_display_wo_lures.plot()
         plt.show()
 
-    
     def eval_model_with_lures(self):
 
-        predictions_with_lures = self.model.predict(self.X_test_with_lures)
-        predicted_labels = (predictions_with_lures >= 0.5).astype(int).flatten()
+        self.predictions_w_lures = self.model.predict(self.X_test_with_lures)
+        self.pred_resp_w_lures = (self.predictions_w_lures >= 0.5).astype(int).flatten()
 
         print("All true labels in y_test_with_lures:", self.y_test_with_lures)
 
         lure_count = 0 
-        for i, (pred, true_label) in enumerate(zip(predicted_labels, self.y_test_with_lures)):
+        for i, (pred, true_label) in enumerate(zip(self.pred_resp_w_lures, self.y_test_with_lures)):
             if true_label == 2:  
                 lure_count += 1
                 letters_sequence = self.X_test_with_lures[i]
@@ -333,8 +332,51 @@ class LSTMTrainer:
         
         print(f"Total lure trials found: {lure_count}")
 
+        return self.pred_resp_w_lures
+
     def visualize_w_lures(self):
-        pass
+
+        self.num_corr_pred_nontarget_w_lures = 0
+        self.num_corr_pred_target_w_lures = 0
+        self.num_corr_pred_lure = 0
+
+        self.num_incorr_pred_nontarget_to_target = 0
+        self.num_incorr_pred_nontarget_to_lure = 0
+
+        self.num_incorr_pred_target_to_nontarget = 0
+        self.num_incorr_pred_target_to_lure = 0
+
+        self.num_incorr_pred_lure_to_nontarget = 0
+        self.num_incorr_pred_lure_to_target = 0
+
+        for i in range(len(self.y_test_with_lures)):
+            true_response = self.y_test_with_lures[i]
+            pred_target_resp = self.pred_resp_w_lures[i]
+
+            if true_response == 0 and true_response == pred_target_resp:
+                self.num_corr_pred_nontarget_w_lures += 1
+            elif true_response == 1 and true_response == pred_target_resp:
+                self.num_corr_pred_target_w_lures += 1
+            elif true_response == 2 and true_response == pred_target_resp:
+                self.num_corr_pred_lure += 1
+
+            if true_response == 0 and pred_target_resp == 1:
+                self.num_incorr_pred_nontarget_to_target += 1
+            elif true_response == 0 and pred_target_resp == 2:
+                self.num_incorr_pred_nontarget_to_lure += 1
+            elif true_response == 1 and pred_target_resp == 0:
+                self.num_incorr_pred_target_to_nontarget += 1
+            elif true_response == 1 and pred_target_resp == 2:
+                self.num_incorr_pred_target_to_lure += 1
+            elif true_response == 2 and pred_target_resp == 0:
+                self.num_incorr_pred_lure_to_nontarget += 1
+            elif true_response == 2 and pred_target_resp == 1:
+                self.num_incorr_pred_lure_to_target += 1
+        
+        confusion_matrix_w_lures = metrics.confusion_matrix(self.y_test_with_lures, self.pred_resp_w_lures)
+        cm_display_w_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_w_lures, display_labels = [0, 1, 2])
+        cm_display_w_lures.plot()
+        plt.show()
 
 #%%
 
@@ -356,9 +398,10 @@ if __name__ == "__main__":
     lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, X_test_with_lures = X_test_with_lures, y_test_with_lures = y_test_with_lures, n_batch = 64, learning_rate = 0.01)
     lstm_trainer.initialize_model()
     bce_history, model, training_history = lstm_trainer.train_model(epochs = 100)
-    display_acc_loss = lstm_trainer.visualize_results()
-    eval_results_wo_lures = lstm_trainer.eval_model_without_lures()
-    visualize_wo_lures = lstm_trainer.visualize_without_lures()
-    eval_results_with_lures = lstm_trainer.eval_model_with_lures()
+    lstm_trainer.visualize_results()
+    lstm_trainer.eval_model_without_lures()
+    lstm_trainer.visualize_wo_lures()
+    lstm_trainer.eval_model_with_lures()
+    lstm_trainer.visualize_w_lures()
 
 # %%
