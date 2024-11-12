@@ -230,16 +230,17 @@ class LSTMTrainer:
         eval_results = self.model.evaluate(self.X_test, self.y_test, batch_size = 128)
         print(f"Overall Test Loss, Test Accuracy: {eval_results}")
 
-        predictions = self.model.predict(self.X_test)
+        self.predictions = self.model.predict(self.X_test)
+        self.predicted_responses = (self.predictions >= 0.5).astype(int).flatten()
 
-        predicted_responses = (predictions >= 0.5).astype(int).flatten()
+        print(f"The predicted responses are: {self.predicted_responses}")
 
         for i in range(10):
-            letters_sequence = X_test[i]
+            letters_sequence = self.X_test[i]
 
-            true_response = y_test[i]
+            true_response = self.y_test[i]
 
-            predicted_response = predicted_responses[i]
+            predicted_response = self.predicted_responses[i]
 
             print(f"Trial {i + 1}:")
             print(f"Letters : {letters_sequence}")
@@ -247,14 +248,68 @@ class LSTMTrainer:
             print(f"Predicted Response: {'target' if predicted_response == 1 else 'nontarget'}")
             print("-" * 50)
         
-        return eval_results
+        return self.predictions, self.predicted_responses
+    
+    def visualize_without_lures(self):
+        
+        # Calculate the total number of target trials and correctly predicted target trials
+        self.num_target_trials = 0
+        self.num_corr_pred_target_trials = 0
 
+        for i in range(len(self.y_test)):
+            target_response = self.y_test[i]
+            pred_target_resp = self.predicted_responses[i]
+
+            if target_response == 1:
+                self.num_target_trials += 1
+
+            if target_response == 1: 
+                if pred_target_resp == target_response:
+                    self.num_corr_pred_target_trials += 1
+
+        # print(f"The number target trials: {self.num_target_trials}")
+        # print(f"The number of correctly predicted target trials: {self.num_corr_pred_target_trials}")
+
+        # Calculate the total number of nontarget trials and correctly predicted nontarget trials
+        self.num_nontarget_trials = 0
+        self.num_corr_pred_nontarget_trials = 0
+
+        for i in range(len(self.y_test)):
+            nontarget_response = self.y_test[i]
+            pred_nontarget_resp = self.predicted_responses[i]
+
+            if nontarget_response == 0:
+                self.num_nontarget_trials += 1
+
+            if nontarget_response == 0:
+                if pred_nontarget_resp == nontarget_response:
+                    self.num_corr_pred_nontarget_trials += 1
+
+        # print(f"The number of nontarget trials: {self.num_nontarget_trials}")
+        # print(f"The number of correctly predicted nontarget trials: {self.num_corr_pred_nontarget_trials}")
+
+        # Calculate the accuracies for both nontarget and target trials for visualization
+        acc_target = self.num_corr_pred_target_trials / self.num_target_trials
+        acc_nontarget = self.num_corr_pred_nontarget_trials / self.num_nontarget_trials
+
+        print(f"Accuracy score for the target trials: {acc_target}")
+        print(f"Accuracy score for the nontarget trials: {acc_nontarget}")
+        
+        labels = ["nontarget", "target"]
+        acc_list = [acc_nontarget, acc_target]
+
+        plt.figure(figsize = (6, 7))
+        plt.bar(labels, acc_list, color = ["#C3B1E1", "#77DD77"])
+        plt.xlabel("Response categories")
+        plt.ylabel("Accuracy")
+        plt.show()
+    
     def eval_model_with_lures(self):
 
         predictions_with_lures = self.model.predict(self.X_test_with_lures)
         predicted_labels = (predictions_with_lures >= 0.5).astype(int).flatten()
 
-        # print("All true labels in y_test_with_lures:", self.y_test_with_lures)
+        print("All true labels in y_test_with_lures:", self.y_test_with_lures)
 
         lure_count = 0 
         for i, (pred, true_label) in enumerate(zip(predicted_labels, self.y_test_with_lures)):
@@ -270,6 +325,9 @@ class LSTMTrainer:
                 print("-" * 50)
         
         print(f"Total lure trials found: {lure_count}")
+
+    def visualize_w_lures(self):
+        pass
 
 #%%
 
@@ -293,6 +351,7 @@ if __name__ == "__main__":
     bce_history, model, training_history = lstm_trainer.train_model(epochs = 100)
     display_acc_loss = lstm_trainer.visualize_results()
     eval_results_wo_lures = lstm_trainer.eval_model_without_lures()
+    visualize_wo_lures = lstm_trainer.visualize_without_lures()
     eval_results_with_lures = lstm_trainer.eval_model_with_lures()
 
 # %%
