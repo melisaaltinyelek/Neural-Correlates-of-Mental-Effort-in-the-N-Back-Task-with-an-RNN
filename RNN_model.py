@@ -12,7 +12,7 @@ import numpy as np
 import os
 import glob
 
-# %%
+#%%
 
 class DataPreprocessor:
     def __init__(self, data_path_bin_cl, data_path_multiclass_pred):
@@ -340,14 +340,14 @@ class LSTMTrainer:
         self.num_corr_pred_target_w_lures = 0
         self.num_corr_pred_lure = 0
 
-        self.num_incorr_pred_nontarget_to_target = 0
-        self.num_incorr_pred_nontarget_to_lure = 0
+        self.num_incorr_pred_nontarget_as_target = 0
+        self.num_incorr_pred_nontarget_as_lure = 0
 
-        self.num_incorr_pred_target_to_nontarget = 0
-        self.num_incorr_pred_target_to_lure = 0
+        self.num_incorr_pred_target_as_nontarget = 0
+        self.num_incorr_pred_target_as_lure = 0
 
-        self.num_incorr_pred_lure_to_nontarget = 0
-        self.num_incorr_pred_lure_to_target = 0
+        self.num_incorr_pred_lure_as_nontarget = 0
+        self.num_incorr_pred_lure_as_target = 0
 
         for i in range(len(self.y_test_with_lures)):
             true_response = self.y_test_with_lures[i]
@@ -361,18 +361,40 @@ class LSTMTrainer:
                 self.num_corr_pred_lure += 1
 
             if true_response == 0 and pred_target_resp == 1:
-                self.num_incorr_pred_nontarget_to_target += 1
+                self.num_incorr_pred_nontarget_as_target += 1
             elif true_response == 0 and pred_target_resp == 2:
-                self.num_incorr_pred_nontarget_to_lure += 1
+                self.num_incorr_pred_nontarget_as_lure += 1
             elif true_response == 1 and pred_target_resp == 0:
-                self.num_incorr_pred_target_to_nontarget += 1
+                self.num_incorr_pred_target_as_nontarget += 1
             elif true_response == 1 and pred_target_resp == 2:
-                self.num_incorr_pred_target_to_lure += 1
+                self.num_incorr_pred_target_as_lure += 1
             elif true_response == 2 and pred_target_resp == 0:
-                self.num_incorr_pred_lure_to_nontarget += 1
+                self.num_incorr_pred_lure_as_nontarget += 1
             elif true_response == 2 and pred_target_resp == 1:
-                self.num_incorr_pred_lure_to_target += 1
-        
+                self.num_incorr_pred_lure_as_target += 1
+
+        all_labels = ["nontarget", "target", "lure"]
+
+        nontarget_data = [self.num_corr_pred_nontarget_w_lures, self.num_incorr_pred_nontarget_as_target, self.num_incorr_pred_nontarget_as_lure]
+        target_data = [self.num_corr_pred_target_w_lures, self.num_incorr_pred_target_as_nontarget, self.num_incorr_pred_target_as_lure]
+        lure_data = [self.num_corr_pred_lure, self.num_incorr_pred_lure_as_nontarget, self.num_incorr_pred_lure_as_target]
+
+        plt.figure(figsize = (10, 12))
+        x = range(len(all_labels))  
+
+        plt.bar(x, [nontarget_data[0], target_data[0], lure_data[0]], color = "#77DD77", label = "Correct")
+
+        plt.bar(x, [nontarget_data[1], target_data[1], lure_data[1]], bottom = [nontarget_data[0], target_data[0], lure_data[0]], color = "#C3B1E1", label = "Misclassified as nontarget")
+
+        plt.bar(x, [nontarget_data[2], target_data[2], lure_data[2]], bottom = [nontarget_data[0] + nontarget_data[1], target_data[0] + target_data[1], lure_data[0] + lure_data[1]], color = "#FFB347", label = "Misclassified as target")
+
+        plt.xticks(x, all_labels) 
+        plt.xlabel("Trial Type")
+        plt.ylabel("Number of Trials")
+        plt.title("Model Prediction Across Trial Types")
+        plt.legend(loc = "upper right", bbox_to_anchor = (1.32, 1))
+        plt.show()
+
         confusion_matrix_w_lures = metrics.confusion_matrix(self.y_test_with_lures, self.pred_resp_w_lures)
         cm_display_w_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_w_lures, display_labels = [0, 1, 2])
         cm_display_w_lures.plot()
@@ -403,5 +425,4 @@ if __name__ == "__main__":
     lstm_trainer.visualize_wo_lures()
     lstm_trainer.eval_model_with_lures()
     lstm_trainer.visualize_w_lures()
-
 # %%
