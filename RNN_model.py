@@ -180,17 +180,10 @@ class LSTMTrainer:
 
         bce_history = []    
 
-        # class_weights_dict = {
-        #     0: 0.5, # Lure
-        #     1: 1.0, # Nontarget
-        #     2: 1.0 # Target
-        # }
-
         self.training_history = self.model.fit(self.X_train, self.y_train,
                                           epochs = epochs,
                                           batch_size = self.n_batch,
                                           validation_data = (self.X_val, self.y_val),
-                                          # class_weight = class_weights_dict,
                                           shuffle = True)
                                         
         bce_history.append(self.training_history.history)
@@ -303,6 +296,7 @@ class LSTMTrainer:
         plt.bar(labels, acc_list, color = ["#C3B1E1", "#77DD77"])
         plt.xlabel("Response Categories")
         plt.ylabel("Accuracy")
+        plt.title("Model Prediction Across Trial Types")
         plt.show()
 
         confusion_matrix_wo_lures = metrics.confusion_matrix(self.y_test, self.pred_resp_wo_lures)
@@ -375,24 +369,50 @@ class LSTMTrainer:
 
         all_labels = ["nontarget", "target", "lure"]
 
-        nontarget_data = [self.num_corr_pred_nontarget_w_lures, self.num_incorr_pred_nontarget_as_target, self.num_incorr_pred_nontarget_as_lure]
-        target_data = [self.num_corr_pred_target_w_lures, self.num_incorr_pred_target_as_nontarget, self.num_incorr_pred_target_as_lure]
-        lure_data = [self.num_corr_pred_lure, self.num_incorr_pred_lure_as_nontarget, self.num_incorr_pred_lure_as_target]
+        corr_classifications = [
+            self.num_corr_pred_nontarget_w_lures,
+            self.num_corr_pred_target_w_lures,
+            self.num_corr_pred_lure
+            ]
+        
+        misclassifications = [
+            self.num_incorr_pred_target_as_nontarget,
+            self.num_incorr_pred_lure_as_nontarget,
+            self.num_incorr_pred_nontarget_as_target,
+            self.num_incorr_pred_lure_as_target,
+            self.num_incorr_pred_nontarget_as_lure,
+            self.num_incorr_pred_target_as_lure
+             ]
 
-        plt.figure(figsize = (10, 12))
-        x = range(len(all_labels))  
+        misclassified_as_target_for_nontarget = misclassifications[2]  # Misclassified as target when true label is nontarget
+        misclassified_as_lure_for_nontarget = misclassifications[1]    # Misclassified as lure when true label is nontarget
 
-        plt.bar(x, [nontarget_data[0], target_data[0], lure_data[0]], color = "#77DD77", label = "Correct")
+        misclassified_as_nontarget_for_target = misclassifications[0]  # Misclassified as nontarget when true label is target
+        misclassified_as_lure_for_target = misclassifications[3]       # Misclassified as lure when true label is target
 
-        plt.bar(x, [nontarget_data[1], target_data[1], lure_data[1]], bottom = [nontarget_data[0], target_data[0], lure_data[0]], color = "#C3B1E1", label = "Misclassified as nontarget")
+        misclassified_as_nontarget_for_lure = misclassifications[4]    # Misclassified as nontarget when true label is lure
+        misclassified_as_target_for_lure = misclassifications[5]       # Misclassified as target when true label is lure
 
-        plt.bar(x, [nontarget_data[2], target_data[2], lure_data[2]], bottom = [nontarget_data[0] + nontarget_data[1], target_data[0] + target_data[1], lure_data[0] + lure_data[1]], color = "#FFB347", label = "Misclassified as target")
+        x = np.arange(len(all_labels))
+        bar_width = 0.50
 
-        plt.xticks(x, all_labels) 
+        plt.figure(figsize = (10, 6))
+     
+        plt.bar(x[0], misclassified_as_target_for_nontarget, width = bar_width, color = "#77DD77", label = "Misclassified as target")
+        plt.bar(x[0], misclassified_as_lure_for_nontarget, width = bar_width, bottom = misclassified_as_target_for_nontarget, color = "#C3B1E1", label = "Misclassified as lure")
+
+        plt.bar(x[1], misclassified_as_nontarget_for_target, width = bar_width, color = "#FFB7CE", label = "Misclassified as nontarget")
+        plt.bar(x[1], misclassified_as_lure_for_target, width = bar_width, bottom = misclassified_as_nontarget_for_target, color = "#87CEFA", label = "Misclassified as lure")
+
+        plt.bar(x[2], misclassified_as_nontarget_for_lure, width = bar_width, color = "#FFDAB9", label = "Misclassified as nontarget")
+        plt.bar(x[2], misclassified_as_target_for_lure, width = bar_width, bottom = misclassified_as_nontarget_for_lure, color = "#66CDAA", label = "Misclassified as target")
+
+        plt.xticks(x, all_labels)
         plt.xlabel("Trial Type")
         plt.ylabel("Number of Trials")
-        plt.title("Model Prediction Across Trial Types")
-        plt.legend(loc = "upper right", bbox_to_anchor = (1.32, 1))
+        plt.title("Misclassifications Across Trial Types")
+        plt.legend(loc = "upper right")
+        plt.tight_layout()
         plt.show()
 
         confusion_matrix_w_lures = metrics.confusion_matrix(self.y_test_with_lures, self.pred_resp_w_lures)
@@ -404,7 +424,7 @@ class LSTMTrainer:
 
 if __name__ == "__main__":
 
-    data_processor = DataPreprocessor(data_path_bin_cl = "3-back task/raw_data_with_lure.csv", data_path_multiclass_pred = "3-back task/raw_data_with_lure_test.csv")  
+    data_processor = DataPreprocessor(data_path_bin_cl = "3-back data/raw_data_with_lure.csv", data_path_multiclass_pred = "3-back data/raw_data_with_lure_test.csv")  
     preprocessed_data_bin_cl = data_processor.preprocess_data_for_bin_cl()
     preprocessed_data_multic_pred = data_processor.preprocess_data_for_multic_pred()
 
@@ -425,4 +445,5 @@ if __name__ == "__main__":
     lstm_trainer.visualize_wo_lures()
     lstm_trainer.eval_model_with_lures()
     lstm_trainer.visualize_w_lures()
-# %%
+
+#%%
