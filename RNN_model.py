@@ -398,14 +398,14 @@ class LSTMTrainer:
 
         plt.figure(figsize = (10, 6))
      
-        plt.bar(x[0], misclassified_as_target_for_nontarget, width = bar_width, color = "#77DD77", label = "Misclassified as target")
+        plt.bar(x[0], misclassified_as_target_for_nontarget, width = bar_width, color = "#22CE83", label = "Misclassified as target")
         plt.bar(x[0], misclassified_as_lure_for_nontarget, width = bar_width, bottom = misclassified_as_target_for_nontarget, color = "#C3B1E1", label = "Misclassified as lure")
 
         plt.bar(x[1], misclassified_as_nontarget_for_target, width = bar_width, color = "#FFB7CE", label = "Misclassified as nontarget")
-        plt.bar(x[1], misclassified_as_lure_for_target, width = bar_width, bottom = misclassified_as_nontarget_for_target, color = "#87CEFA", label = "Misclassified as lure")
+        plt.bar(x[1], misclassified_as_lure_for_target, width = bar_width, bottom = misclassified_as_nontarget_for_target, color = "#38ACEC", label = "Misclassified as lure")
 
-        plt.bar(x[2], misclassified_as_nontarget_for_lure, width = bar_width, color = "#FFDAB9", label = "Misclassified as nontarget")
-        plt.bar(x[2], misclassified_as_target_for_lure, width = bar_width, bottom = misclassified_as_nontarget_for_lure, color = "#66CDAA", label = "Misclassified as target")
+        plt.bar(x[2], misclassified_as_nontarget_for_lure, width = bar_width, color = "#FFEF00", label = "Misclassified as nontarget")
+        plt.bar(x[2], misclassified_as_target_for_lure, width = bar_width, bottom = misclassified_as_nontarget_for_lure, color = "#FF7F50", label = "Misclassified as target")
 
         plt.xticks(x, all_labels)
         plt.xlabel("Trial Type")
@@ -424,12 +424,12 @@ class LSTMTrainer:
 
 if __name__ == "__main__":
 
-    data_processor = DataPreprocessor(data_path_bin_cl = "3-back data/raw_data_with_lure.csv", data_path_multiclass_pred = "3-back data/raw_data_with_lure_test.csv")  
-    preprocessed_data_bin_cl = data_processor.preprocess_data_for_bin_cl()
-    preprocessed_data_multic_pred = data_processor.preprocess_data_for_multic_pred()
+    data_preprocessor = DataPreprocessor(data_path_bin_cl = "3-back data/raw_data_with_lure.csv", data_path_multiclass_pred = "3-back data/raw_data_with_lure_test.csv")  
+    preprocessed_data_bin_cl = data_preprocessor.preprocess_data_for_bin_cl()
+    preprocessed_data_multic_pred = data_preprocessor.preprocess_data_for_multic_pred()
 
-    X_train, y_train, X_val, y_val, X_test, y_test = data_processor.split_data_for_bin_pred(preprocessed_data_bin_cl)
-    X_test_with_lures, y_test_with_lures = data_processor.split_data_for_multic_pred(preprocessed_data_multic_pred)
+    X_train, y_train, X_val, y_val, X_test, y_test = data_preprocessor.split_data_for_bin_pred(preprocessed_data_bin_cl)
+    X_test_with_lures, y_test_with_lures = data_preprocessor.split_data_for_multic_pred(preprocessed_data_multic_pred)
 
     print("Training dataset shape:", X_train.shape, y_train.shape)
     print("Validation dataset shape:", X_val.shape, y_val.shape)
