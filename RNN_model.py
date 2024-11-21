@@ -424,7 +424,10 @@ class LSTMTrainer:
 
 if __name__ == "__main__":
 
-    data_preprocessor = DataPreprocessor(data_path_bin_cl = "3-back data/raw_data_with_lure.csv", data_path_multiclass_pred = "3-back data/raw_data_with_lure_test.csv")  
+    data_preprocessor = DataPreprocessor(
+        data_path_bin_cl = "3-back data/raw_data_with_lure.csv",
+        data_path_multiclass_pred = "3-back data/raw_data_with_lure_test.csv") 
+     
     preprocessed_data_bin_cl = data_preprocessor.preprocess_data_for_bin_cl()
     preprocessed_data_multic_pred = data_preprocessor.preprocess_data_for_multic_pred()
 
