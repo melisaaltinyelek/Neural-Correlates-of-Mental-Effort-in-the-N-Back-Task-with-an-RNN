@@ -24,9 +24,10 @@ class DataPreprocessor_2back():
 
     def prep_2back_data_wo_lures(self):
 
-        self.df = DataPreprocessor.preprocess_data_for_bin_cl(self, df = self.data_path_2back_bin,
-                                                                lure_replacement = "nontarget",
-                                                                output_path = "2-back data/nback_data_without_lure.csv")
+        self.df = DataPreprocessor.preprocess_data(self, df = self.data_path_2back_bin,
+                                                            mode = "binary",
+                                                            lure_replacement = "nontarget",
+                                                            output_path = "2-back data/test_nback_data_without_lure.csv")
 
         return self.df
     

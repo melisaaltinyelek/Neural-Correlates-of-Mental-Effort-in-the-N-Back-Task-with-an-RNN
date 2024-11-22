@@ -18,21 +18,28 @@ class DataPreprocessor:
     def __init__(self):
 
         self.df = None
-        self.df_with_lures = None
-
-    def preprocess_data_for_bin_cl(self, df, lure_replacement = "nontarget", output_path = None):
+    
+    def preprocess_data(self, df, mode = "binary", lure_replacement = "nontarget", output_path = None):
 
         df = pd.read_csv(df)
 
-        if lure_replacement:
-            df.replace(to_replace = "lure", value = lure_replacement, inplace = True)
+        if mode == "binary":
+            if lure_replacement:
+                df.replace(to_replace = "lure", value = lure_replacement, inplace = True)
 
-        response_binary_mapping = {
+            response_mapping = {
+                "nontarget": 0,
+                "target": 1
+            }
+
+        elif mode == "multiclass":
+            response_mapping = {
             "nontarget": 0,
-            "target": 1
+            "target": 1,
+            "lure": 2
         }
-        
-        df["response"] = df["response"].map(response_binary_mapping)
+
+        df["response"] = df["response"].map(response_mapping)
 
         letter_encoder = OneHotEncoder(sparse_output = False) # sparse_output = False returns a NumPy array
         encoded_letters = letter_encoder.fit_transform(df[["letter"]])
@@ -42,37 +49,13 @@ class DataPreprocessor:
         
         self.df = df
 
-        # if output_path:
-        #     df.to_csv(output_path, index = False)
+        if output_path:
+            df.to_csv(output_path, index = False)
 
         print(self.df)
 
         return self.df
     
-    def preprocess_data_for_multic_pred(self, df_with_lures, output_path = None):
-
-        df_with_lures = pd.read_csv(df_with_lures)
-
-        response_multiclass_mapping = {
-            "nontarget": 0,
-            "target": 1,
-            "lure": 2
-        }
-
-        df_with_lures["response"] = df_with_lures["response"].map(response_multiclass_mapping)
-
-        test_letter_encoder = OneHotEncoder(sparse_output = False)
-        test_encoded_letters = test_letter_encoder.fit_transform(df_with_lures[["letter"]])
-
-        df_with_lures["letter"] = test_encoded_letters.tolist()
-        
-        self.df_with_lures = df_with_lures
-
-        if output_path:
-            df_with_lures.to_csv(output_path, index = False)
-
-        return self.df_with_lures
-        
     def create_sequences(self, df, n_steps = 4):
 
         X, y = [], []
@@ -421,12 +404,22 @@ class LSTMTrainer:
 
 if __name__ == "__main__":
     data_preprocessor = DataPreprocessor()
-     
-    preprocessed_data_bin_cl = data_preprocessor.preprocess_data_for_bin_cl(df = "3-back data/raw_data_with_lure.csv", output_path = "3-back data/nback_data_without_lure.csv")
-    preprocessed_data_multic_pred = data_preprocessor.preprocess_data_for_multic_pred(df_with_lures = "3-back data/raw_data_with_lure_test.csv", output_path = "3-back data/nback_data_with_lure.csv") 
 
-    X_train, y_train, X_val, y_val, X_test, y_test = data_preprocessor.split_data_for_bin_pred(preprocessed_data_bin_cl)
-    X_test_with_lures, y_test_with_lures = data_preprocessor.split_data_for_multic_pred(preprocessed_data_multic_pred)
+    processed_binary_df = data_preprocessor.preprocess_data(
+        df = "3-back data/raw_data_with_lure.csv",
+        mode = "binary",
+        lure_replacement = "nontarget",
+        output_path = "3-back data/test_nback_data_without_lure.csv"
+    )
+
+    processed_multiclass_df = data_preprocessor.preprocess_data(
+        df = "3-back data/raw_data_with_lure_test.csv",
+        mode = "multiclass",
+        output_path = "3-back data/test_nback_data_with_lure.csv"
+    )
+     
+    X_train, y_train, X_val, y_val, X_test, y_test = data_preprocessor.split_data_for_bin_pred(processed_binary_df)
+    X_test_with_lures, y_test_with_lures = data_preprocessor.split_data_for_multic_pred(processed_multiclass_df)
 
     print("Training dataset shape:", X_train.shape, y_train.shape)
     print("Validation dataset shape:", X_val.shape, y_val.shape)
