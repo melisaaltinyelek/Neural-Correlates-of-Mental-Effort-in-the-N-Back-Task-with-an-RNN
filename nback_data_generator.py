@@ -32,25 +32,30 @@ class NBackDataGen:
     def is_target(self, letter):
         
         return letter[0] == letter[-self.N]
-
+    
     def is_lure(self, letter):
-        
-        return (letter[0] == letter[-(self.N - 1)] or letter[0] == letter[-(self.N - 2)]) and not self.is_target(letter)
 
+        if self.N == 2:
+            return (letter[0] == letter[-(self.N - 1)]) and not self.is_target(letter)
+        elif self.N == 3:
+            return (letter[0] == letter[-(self.N - 1)] or letter[0] == letter[-(self.N - 2)]) and not self.is_target(letter)
+    
     def is_no_target(self, letter):
         
         return not self.is_target(letter) and not self.is_lure(letter)
-
-    def create_response_factor(self):
         
+    def create_response_factor(self):
+
+        window_size = self.N + 1
+
         return Factor("response", [
-            DerivedLevel("target", Window(self.is_target, [self.curr_letter], 4, 1)),
-            DerivedLevel("nontarget", Window(self.is_no_target, [self.curr_letter], 4, 1)),
-            DerivedLevel("lure", Window(self.is_lure, [self.curr_letter], 4, 1))
+            DerivedLevel("target", Window(self.is_target, [self.curr_letter], window_size, 1)),
+            DerivedLevel("nontarget", Window(self.is_no_target, [self.curr_letter], window_size, 1)),
+            DerivedLevel("lure", Window(self.is_lure, [self.curr_letter], window_size, 1))
         ])
 
-    def run_experiment(self):
-        
+    def gen_and_save_data(self):
+
         experiments = synthesize_trials(self.block, self.num_sequences, CMSGen)
 
         print_experiments(self.block, experiments)
@@ -76,6 +81,9 @@ class NBackDataGen:
     
 if __name__ == "__main__":
     
-    experiment = NBackDataGen(N = 3, num_sequences = 150, num_minimum_trials = 57, letters = ["A", "B", "C", "D", "E", "F"])
-    experiment.run_experiment()
+    experiment = NBackDataGen(N = 2, num_sequences = 150, num_minimum_trials = 38, letters = ["A", "B", "C", "D", "E", "F"])
+    experiment.gen_and_save_data()
+
+    # num_minimum_trials = 57 counterbalances all letter - response pairs
+    # num_minimum_trials = 38 counterbalances all letter - response pairs
 #%%
