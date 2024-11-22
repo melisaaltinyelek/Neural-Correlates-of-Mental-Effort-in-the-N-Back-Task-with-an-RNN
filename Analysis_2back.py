@@ -34,13 +34,49 @@ class DataPreprocessor_2back():
     def prep_2back_data_w_lures(self):
         pass
 
+    def create_sequence_and_split_data(self):
+
+        self.X_test_2back_wo_lures, self.y_test_2back_wo_lures = DataPreprocessor.create_sequences(self, df = self.df, n_steps = 3)
+
+        # print(f"This is the X (letters): {X_test_2back_wo_lures}")
+        # print(f"This is the y (responses): {y_test_2back_wo_lures}")
+
+        return self.X_test_2back_wo_lures, self.y_test_2back_wo_lures
+    
+class AnalyzeRNNon2back():
+    def __init__(self):
+        self.saved_model = tf.keras.models.load_model("saved_model/rnn_model.keras")
+
+    def eval_model(self, X_test, y_test):
+
+        eval_results = self.saved_model.evaluate(X_test, y_test, batch_size=128)
+        print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
+
+        predictions = self.saved_model.predict(X_test)
+        pred_resp = (predictions >= 0.5).astype(int).flatten()
+
+        for i in range(10):
+            letters_sequence = X_test[i]
+
+            true_response = y_test[i]
+            predicted_response = pred_resp[i]
+
+            print(f"Trial {i + 1}:")
+            print(f"Letters : {letters_sequence}")
+            print(f"True Response: {'target' if true_response == 1 else 'nontarget'}")
+            print(f"Predicted Response: {'target' if predicted_response == 1 else 'nontarget'}")
+            print("-" * 50)
+
+        return pred_resp
+
 #%%
 
 if __name__ == "__main__":
 
-    # loaded_model = tf.keras.models.load_model("saved_model/rnn_model.keras")
-    # print(loaded_model)
-
     data_preprocessor = DataPreprocessor_2back(data_path_2back_bin = "2-back data/raw_data_with_lure.csv", data_path_2back_mc = None)
     data_preprocessor.prep_2back_data_wo_lures()
+    X_test_2_back_wo_lures, y_test_2back_wo_lures = data_preprocessor.create_sequence_and_split_data()
+
+    rnn_model = AnalyzeRNNon2back()
+    rnn_model.eval_model(X_test_2_back_wo_lures, y_test_2back_wo_lures)
 #%%

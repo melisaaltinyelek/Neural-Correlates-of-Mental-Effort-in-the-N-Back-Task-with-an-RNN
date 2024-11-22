@@ -49,8 +49,8 @@ class DataPreprocessor:
         
         self.df = df
 
-        if output_path:
-            df.to_csv(output_path, index = False)
+        # if output_path:
+        #     df.to_csv(output_path, index = False)
 
         print(self.df)
 
@@ -198,31 +198,34 @@ class LSTMTrainer:
         plt.ylabel("Loss")
         plt.legend(["Train", "Test"], loc = "upper right")
         plt.show()
+        
+    def eval_model_without_lures(self, X_test, y_test):
+
     
-    def eval_model_without_lures(self):
+        eval_results = self.model.evaluate(X_test, y_test, batch_size = 128)
+        print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
 
-        eval_results = self.model.evaluate(self.X_test, self.y_test, batch_size = 128)
-        print(f"Overall Test Loss, Test Accuracy: {eval_results}")
+        predictions = self.model.predict(X_test)
+        predicted_responses = (predictions >= 0.5).astype(int).flatten()
 
-        self.predictions_wo_lures = self.model.predict(self.X_test)
-        self.pred_resp_wo_lures = (self.predictions_wo_lures >= 0.5).astype(int).flatten()
-
-        print(f"The predicted responses are: {self.pred_resp_wo_lures}")
+        print(f"The predicted responses are: {predicted_responses}")
 
         for i in range(10):
-            letters_sequence = self.X_test[i]
+            letters_sequence = X_test[i]
 
-            true_response = self.y_test[i]
+            true_response = y_test[i]
 
-            predicted_response = self.pred_resp_wo_lures[i]
+            predicted_response = predicted_responses[i]
 
             print(f"Trial {i + 1}:")
             print(f"Letters : {letters_sequence}")
             print(f"True Response: {'target' if true_response == 1 else 'nontarget'}")
             print(f"Predicted Response: {'target' if predicted_response == 1 else 'nontarget'}")
             print("-" * 50)
+
+        self.predicted_responses = predicted_responses
         
-        return self.pred_resp_wo_lures 
+        return self.predicted_responses 
     
     def visualize_wo_lures(self):
         
@@ -232,7 +235,7 @@ class LSTMTrainer:
 
         for i in range(len(self.y_test)):
             target_response = self.y_test[i]
-            pred_target_resp = self.pred_resp_wo_lures[i]
+            pred_target_resp = self.predicted_responses[i]
 
             if target_response == 1:
                 self.num_target_wo_lures += 1
@@ -250,7 +253,7 @@ class LSTMTrainer:
 
         for i in range(len(self.y_test)):
             nontarget_response = self.y_test[i]
-            pred_nontarget_resp = self.pred_resp_wo_lures[i]
+            pred_nontarget_resp = self.predicted_responses[i]
 
             if nontarget_response == 0:
                 self.num_nontarget_wo_lures += 1
@@ -279,20 +282,20 @@ class LSTMTrainer:
         plt.title("Model Prediction Across Trial Types")
         plt.show()
 
-        confusion_matrix_wo_lures = metrics.confusion_matrix(self.y_test, self.pred_resp_wo_lures)
+        confusion_matrix_wo_lures = metrics.confusion_matrix(self.y_test, self.predicted_responses)
         cm_display_wo_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_wo_lures, display_labels = [0, 1])
         cm_display_wo_lures.plot()
         plt.show()
 
-    def eval_model_with_lures(self):
+    def eval_model_with_lures(self, X_test_with_lures, y_test_with_lures):
 
-        self.predictions_w_lures = self.model.predict(self.X_test_with_lures)
+        self.predictions_w_lures = self.model.predict(X_test_with_lures)
         self.pred_resp_w_lures = (self.predictions_w_lures >= 0.5).astype(int).flatten()
 
-        print("All true labels in y_test_with_lures:", self.y_test_with_lures)
+        print("All true labels in y_test_with_lures:", y_test_with_lures)
 
         lure_count = 0 
-        for i, (pred, true_label) in enumerate(zip(self.pred_resp_w_lures, self.y_test_with_lures)):
+        for i, (pred, true_label) in enumerate(zip(self.pred_resp_w_lures, y_test_with_lures)):
             if true_label == 2:  
                 lure_count += 1
                 letters_sequence = self.X_test_with_lures[i]
@@ -431,9 +434,9 @@ if __name__ == "__main__":
     lstm_trainer.initialize_model()
     bce_history, model, training_history = lstm_trainer.train_model(epochs = 100)
     lstm_trainer.visualize_results()
-    lstm_trainer.eval_model_without_lures()
+    lstm_trainer.eval_model_without_lures(X_test, y_test)
     lstm_trainer.visualize_wo_lures()
-    lstm_trainer.eval_model_with_lures()
+    lstm_trainer.eval_model_with_lures(X_test_with_lures, y_test_with_lures)
     lstm_trainer.visualize_w_lures()
 
 #%%
