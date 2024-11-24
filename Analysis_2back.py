@@ -1,6 +1,6 @@
 #%%
 
-from RNN_model import DataPreprocessor, LSTMTrainer
+from RNN_model import DataPreprocessor, RNNTrainer
 import tensorflow as tf
 import tensorflow_datasets as tfds
 from sklearn.model_selection import train_test_split
@@ -16,67 +16,93 @@ import glob
 #%%
 
 class DataPreprocessor_2back():
-    def __init__(self, data_path_2back_bin, data_path_2back_mc):
+    def __init__(self):
 
-        self.data_path_2back_bin = data_path_2back_bin
-        self.data_path_2back_mc = data_path_2back_mc
-        self.df = None
+        self.df_wo_lures = None
+        self.df_w_lures = None
 
-    def prep_2back_data_wo_lures(self):
+    def prep_2back_data_wo_lures(self, data_path_2back_bin):
 
-        self.df = DataPreprocessor.preprocess_data(self, df = self.data_path_2back_bin,
+        self.df_wo_lures = DataPreprocessor.preprocess_data(self, df = data_path_2back_bin,
                                                             mode = "binary",
                                                             lure_replacement = "nontarget",
-                                                            output_path = "2-back data/test_nback_data_without_lure.csv")
+                                                            output_path = "2-back data/nback_data_without_lures.csv")
 
-        return self.df
+        return self.df_wo_lures
     
-    def prep_2back_data_w_lures(self):
-        pass
+    def prep_2back_data_w_lures(self, data_path_2back_mc):
+        
+        self.df_w_lures = DataPreprocessor.preprocess_data(self, df = data_path_2back_mc,
+                                                           mode = "multiclass",
+                                                           lure_replacement = None,
+                                                           output_path = "2-back data/nback_data_with_lures.csv")
+        
+        return self.df_w_lures
 
-    def create_sequence_and_split_data(self):
+    def create_seq_and_split_data(self):
 
-        self.X_test_2back_wo_lures, self.y_test_2back_wo_lures = DataPreprocessor.create_sequences(self, df = self.df, n_steps = 3)
-
-        # print(f"This is the X (letters): {X_test_2back_wo_lures}")
-        # print(f"This is the y (responses): {y_test_2back_wo_lures}")
-
+        self.X_test_2back_wo_lures, self.y_test_2back_wo_lures = DataPreprocessor.create_sequences(self, df = self.df_wo_lures, n_steps = 3)
+       
         return self.X_test_2back_wo_lures, self.y_test_2back_wo_lures
     
-class AnalyzeRNNon2back():
-    def __init__(self):
+    def create_seq_and_split_lure_data(self):
+
+        self.X_test_2back_w_lures, self.y_test_2back_w_lures = DataPreprocessor.create_sequences(self, df = self.df_w_lures, n_steps = 3)
+        
+        return self.X_test_2back_w_lures, self.y_test_2back_w_lures
+    
+class AnalyzeRNNon2backData():
+    def __init__(self, rnn_trainer):
+
+        self.rnn_trainer = rnn_trainer
         self.saved_model = tf.keras.models.load_model("saved_model/rnn_model.keras")
+    
+    def eval_model_wo_lures(self, X_test, y_test):
 
-    def eval_model(self, X_test, y_test):
+        predicted_responses = self.rnn_trainer.eval_model_wo_lures(X_test, y_test, self.saved_model)
+        
+        self.pred_resp = predicted_responses
+        
+        return predicted_responses
+    
+    def visualize_preds_wo_lures(self, y_test, predicted_responses):
+        
+        self.rnn_trainer.visualize_preds_wo_lures(y_test, predicted_responses)
+    
+    def eval_model_with_lures(self, X_test_w_lures, y_test_w_lures):
 
-        eval_results = self.saved_model.evaluate(X_test, y_test, batch_size=128)
-        print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
+        pred_resp_w_lures = self.rnn_trainer.eval_model_w_lures(X_test_w_lures, y_test_w_lures, self.saved_model)
 
-        predictions = self.saved_model.predict(X_test)
-        pred_resp = (predictions >= 0.5).astype(int).flatten()
+        self.pred_resp_w_lures = pred_resp_w_lures
 
-        for i in range(10):
-            letters_sequence = X_test[i]
+        return pred_resp_w_lures
+    
+    def visualize_preds_with_lures(self, y_test_w_lures, pred_responses_w_lures):
 
-            true_response = y_test[i]
-            predicted_response = pred_resp[i]
-
-            print(f"Trial {i + 1}:")
-            print(f"Letters : {letters_sequence}")
-            print(f"True Response: {'target' if true_response == 1 else 'nontarget'}")
-            print(f"Predicted Response: {'target' if predicted_response == 1 else 'nontarget'}")
-            print("-" * 50)
-
-        return pred_resp
+        self.rnn_trainer.visualize_preds_w_lures(y_test_w_lures, pred_responses_w_lures)
 
 #%%
 
 if __name__ == "__main__":
 
-    data_preprocessor = DataPreprocessor_2back(data_path_2back_bin = "2-back data/raw_data_with_lure.csv", data_path_2back_mc = None)
-    data_preprocessor.prep_2back_data_wo_lures()
-    X_test_2_back_wo_lures, y_test_2back_wo_lures = data_preprocessor.create_sequence_and_split_data()
+    data_preprocessor = DataPreprocessor_2back()
+    data_preprocessor.prep_2back_data_wo_lures(data_path_2back_bin = "2-back data/raw_data_with_lure.csv")
+    data_preprocessor.prep_2back_data_w_lures(data_path_2back_mc = "2-back data/raw_data_with_lures_test.csv")
 
-    rnn_model = AnalyzeRNNon2back()
-    rnn_model.eval_model(X_test_2_back_wo_lures, y_test_2back_wo_lures)
+    X_test_2back_wo_lures, y_test_2back_wo_lures = data_preprocessor.create_seq_and_split_data() 
+    X_test_2back_w_lures, y_test_2back_w_lures = data_preprocessor.create_seq_and_split_lure_data()
+
+    rnn_model = AnalyzeRNNon2backData(
+        lstm_trainer = RNNTrainer(
+            X_train = None, y_train = None, X_val = None, y_val = None, 
+            X_test = None, y_test = None, X_test_w_lures = None, y_test_w_lures = None,
+            n_batch = 64, learning_rate = 0.01
+    ))
+
+    pred_responses = rnn_model.eval_model_wo_lures(X_test_2back_wo_lures, y_test_2back_wo_lures)
+    rnn_model.visualize_preds_wo_lures(y_test_2back_wo_lures, pred_responses)
+    
+    pred_responses_w_lures = rnn_model.eval_model_with_lures(X_test_2back_w_lures, y_test_2back_w_lures)
+    rnn_model.visualize_preds_with_lures(y_test_2back_w_lures, pred_responses_w_lures)
+
 #%%

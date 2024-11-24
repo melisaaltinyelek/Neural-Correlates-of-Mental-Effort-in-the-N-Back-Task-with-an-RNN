@@ -113,7 +113,7 @@ class DataPreprocessor:
 
         return X_train, y_train, X_val, y_val, X_test, y_test
     
-    def split_data_for_multic_pred(self, data):
+    def split_data_for_mc_pred(self, data):
 
         X_test_with_lures, y_test_with_lures = self.create_sequences(data)
 
@@ -128,8 +128,8 @@ class DataPreprocessor:
 
         return X_test_with_lures, y_test_with_lures
 
-class LSTMTrainer:
-    def __init__(self, X_train, y_train, X_val, y_val, X_test, y_test, X_test_with_lures, y_test_with_lures, n_batch, learning_rate):
+class RNNTrainer:
+    def __init__(self, X_train, y_train, X_val, y_val, X_test, y_test, X_test_w_lures, y_test_w_lures, n_batch, learning_rate):
 
         self.X_train = X_train
         self.y_train = y_train
@@ -137,10 +137,11 @@ class LSTMTrainer:
         self.y_val = y_val
         self.X_test = X_test
         self.y_test = y_test
-        self.X_test_with_lures = X_test_with_lures
-        self.y_test_with_lures = y_test_with_lures
+        self.X_test_w_lures = X_test_w_lures
+        self.y_test_w_lures = y_test_w_lures
         self.n_batch = n_batch
         self.learning_rate = learning_rate
+        self.predicted_responses = None
         self.model = None
 
     def initialize_model(self):
@@ -177,7 +178,7 @@ class LSTMTrainer:
 
         return bce_history, self.model, self.training_history
     
-    def visualize_results(self):
+    def visualize_training_results(self):
         
         # Plot history for accuracies
         plt.plot(self.training_history.history["accuracy"], color = "purple")
@@ -199,13 +200,14 @@ class LSTMTrainer:
         plt.legend(["Train", "Test"], loc = "upper right")
         plt.show()
         
-    def eval_model_without_lures(self, X_test, y_test):
+    def eval_model_wo_lures(self, X_test, y_test, model = None):
 
-    
-        eval_results = self.model.evaluate(X_test, y_test, batch_size = 128)
+        model_to_use = model if model else self.model
+
+        eval_results = model_to_use.evaluate(X_test, y_test, batch_size = 128)
         print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
 
-        predictions = self.model.predict(X_test)
+        predictions = model_to_use.predict(X_test)
         predicted_responses = (predictions >= 0.5).astype(int).flatten()
 
         print(f"The predicted responses are: {predicted_responses}")
@@ -224,18 +226,18 @@ class LSTMTrainer:
             print("-" * 50)
 
         self.predicted_responses = predicted_responses
-        
-        return self.predicted_responses 
+
+        return predicted_responses
     
-    def visualize_wo_lures(self):
-        
+    def visualize_preds_wo_lures(self, y_test, predicted_responses):
+           
         # Calculate the total number of target trials and correctly predicted target trials
         self.num_target_wo_lures = 0
         self.num_corr_pred_target_wo_lures = 0
 
-        for i in range(len(self.y_test)):
-            target_response = self.y_test[i]
-            pred_target_resp = self.predicted_responses[i]
+        for i in range(len(y_test)):
+            target_response = y_test[i]
+            pred_target_resp = predicted_responses[i]
 
             if target_response == 1:
                 self.num_target_wo_lures += 1
@@ -244,16 +246,16 @@ class LSTMTrainer:
                 if pred_target_resp == target_response:
                     self.num_corr_pred_target_wo_lures += 1
 
-        # print(f"The number target trials: {self.num_target_trials}")
-        # print(f"The number of correctly predicted target trials: {self.num_corr_pred_target_trials}")
+        print(f"The number target trials: {self.num_target_wo_lures}")
+        print(f"The number of correctly predicted target trials: {self.num_corr_pred_target_wo_lures}")
 
         # Calculate the total number of nontarget trials and correctly predicted nontarget trials
         self.num_nontarget_wo_lures = 0
         self.num_corr_pred_nontarget_wo_lures = 0
 
-        for i in range(len(self.y_test)):
-            nontarget_response = self.y_test[i]
-            pred_nontarget_resp = self.predicted_responses[i]
+        for i in range(len(y_test)):
+            nontarget_response = y_test[i]
+            pred_nontarget_resp = predicted_responses[i]
 
             if nontarget_response == 0:
                 self.num_nontarget_wo_lures += 1
@@ -262,8 +264,8 @@ class LSTMTrainer:
                 if pred_nontarget_resp == nontarget_response:
                     self.num_corr_pred_nontarget_wo_lures += 1
 
-        # print(f"The number of nontarget trials: {self.num_nontarget_trials}")
-        # print(f"The number of correctly predicted nontarget trials: {self.num_corr_pred_nontarget_trials}")
+        print(f"The number of nontarget trials: {self.num_nontarget_wo_lures}")
+        print(f"The number of correctly predicted nontarget trials: {self.num_corr_pred_nontarget_wo_lures}")
 
         # Calculate the accuracies for both nontarget and target trials for visualization
         acc_target = self.num_corr_pred_target_wo_lures / self.num_target_wo_lures
@@ -282,23 +284,25 @@ class LSTMTrainer:
         plt.title("Model Prediction Across Trial Types")
         plt.show()
 
-        confusion_matrix_wo_lures = metrics.confusion_matrix(self.y_test, self.predicted_responses)
+        confusion_matrix_wo_lures = metrics.confusion_matrix(y_test, predicted_responses)
         cm_display_wo_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_wo_lures, display_labels = [0, 1])
         cm_display_wo_lures.plot()
         plt.show()
 
-    def eval_model_with_lures(self, X_test_with_lures, y_test_with_lures):
+    def eval_model_w_lures(self, X_test_w_lures, y_test_w_lures, model = None):
 
-        self.predictions_w_lures = self.model.predict(X_test_with_lures)
-        self.pred_resp_w_lures = (self.predictions_w_lures >= 0.5).astype(int).flatten()
+        model_to_use = model if model else self.model
 
-        print("All true labels in y_test_with_lures:", y_test_with_lures)
+        predictions_w_lures = model_to_use.predict(X_test_w_lures)
+        pred_resp_w_lures = (predictions_w_lures >= 0.5).astype(int).flatten()
+
+        print("All true labels in y_test_with_lures:", y_test_w_lures)
 
         lure_count = 0 
-        for i, (pred, true_label) in enumerate(zip(self.pred_resp_w_lures, y_test_with_lures)):
+        for i, (pred, true_label) in enumerate(zip(pred_resp_w_lures, y_test_w_lures)):
             if true_label == 2:  
                 lure_count += 1
-                letters_sequence = self.X_test_with_lures[i]
+                letters_sequence = X_test_w_lures[i]
                 predicted_response = 'target' if pred == 1 else 'nontarget'
 
                 print(f"Lure Trial {i + 1}:")
@@ -309,62 +313,64 @@ class LSTMTrainer:
         
         print(f"Total lure trials found: {lure_count}")
 
-        return self.pred_resp_w_lures
+        self.pred_resp_w_lures = pred_resp_w_lures
 
-    def visualize_w_lures(self):
+        return pred_resp_w_lures
 
-        self.num_corr_pred_nontarget_w_lures = 0
-        self.num_corr_pred_target_w_lures = 0
-        self.num_corr_pred_lure = 0
+    def visualize_preds_w_lures(self, y_test_w_lures, pred_resp_w_lures):
 
-        self.num_incorr_pred_nontarget_as_target = 0
-        self.num_incorr_pred_nontarget_as_lure = 0
+        num_corr_pred_nontarget_w_lures = 0
+        num_corr_pred_target_w_lures = 0
+        num_corr_pred_lure = 0
 
-        self.num_incorr_pred_target_as_nontarget = 0
-        self.num_incorr_pred_target_as_lure = 0
+        num_incorr_pred_nontarget_as_target = 0
+        num_incorr_pred_nontarget_as_lure = 0
 
-        self.num_incorr_pred_lure_as_nontarget = 0
-        self.num_incorr_pred_lure_as_target = 0
+        num_incorr_pred_target_as_nontarget = 0
+        num_incorr_pred_target_as_lure = 0
 
-        for i in range(len(self.y_test_with_lures)):
-            true_response = self.y_test_with_lures[i]
-            pred_target_resp = self.pred_resp_w_lures[i]
+        num_incorr_pred_lure_as_nontarget = 0
+        num_incorr_pred_lure_as_target = 0
+
+        for i in range(len(y_test_w_lures)):
+            true_response = y_test_w_lures[i]
+            pred_target_resp = pred_resp_w_lures[i]
 
             if true_response == 0 and true_response == pred_target_resp:
-                self.num_corr_pred_nontarget_w_lures += 1
+                num_corr_pred_nontarget_w_lures += 1
             elif true_response == 1 and true_response == pred_target_resp:
-                self.num_corr_pred_target_w_lures += 1
+                num_corr_pred_target_w_lures += 1
             elif true_response == 2 and true_response == pred_target_resp:
-                self.num_corr_pred_lure += 1
+                num_corr_pred_lure += 1
 
             if true_response == 0 and pred_target_resp == 1:
-                self.num_incorr_pred_nontarget_as_target += 1
+                num_incorr_pred_nontarget_as_target += 1
             elif true_response == 0 and pred_target_resp == 2:
-                self.num_incorr_pred_nontarget_as_lure += 1
+                num_incorr_pred_nontarget_as_lure += 1
             elif true_response == 1 and pred_target_resp == 0:
-                self.num_incorr_pred_target_as_nontarget += 1
+                num_incorr_pred_target_as_nontarget += 1
             elif true_response == 1 and pred_target_resp == 2:
-                self.num_incorr_pred_target_as_lure += 1
+                num_incorr_pred_target_as_lure += 1
             elif true_response == 2 and pred_target_resp == 0:
-                self.num_incorr_pred_lure_as_nontarget += 1
+                num_incorr_pred_lure_as_nontarget += 1
             elif true_response == 2 and pred_target_resp == 1:
-                self.num_incorr_pred_lure_as_target += 1
+                num_incorr_pred_lure_as_target += 1
 
         all_labels = ["nontarget", "target", "lure"]
 
         corr_classifications = [
-            self.num_corr_pred_nontarget_w_lures,
-            self.num_corr_pred_target_w_lures,
-            self.num_corr_pred_lure
+            num_corr_pred_nontarget_w_lures,
+            num_corr_pred_target_w_lures,
+            num_corr_pred_lure
             ]
         
         misclassifications = [
-            self.num_incorr_pred_target_as_nontarget,
-            self.num_incorr_pred_lure_as_nontarget,
-            self.num_incorr_pred_nontarget_as_target,
-            self.num_incorr_pred_lure_as_target,
-            self.num_incorr_pred_nontarget_as_lure,
-            self.num_incorr_pred_target_as_lure
+            num_incorr_pred_target_as_nontarget,
+            num_incorr_pred_lure_as_nontarget,
+            num_incorr_pred_nontarget_as_target,
+            num_incorr_pred_lure_as_target,
+            num_incorr_pred_nontarget_as_lure,
+            num_incorr_pred_target_as_lure
              ]
 
         misclassified_as_target_for_nontarget = misclassifications[2]  # Misclassified as target when true label is nontarget
@@ -398,7 +404,7 @@ class LSTMTrainer:
         plt.tight_layout()
         plt.show()
 
-        confusion_matrix_w_lures = metrics.confusion_matrix(self.y_test_with_lures, self.pred_resp_w_lures)
+        confusion_matrix_w_lures = metrics.confusion_matrix(y_test_w_lures, pred_resp_w_lures)
         cm_display_w_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_w_lures, display_labels = [0, 1, 2])
         cm_display_w_lures.plot()
         plt.show()
@@ -409,34 +415,34 @@ if __name__ == "__main__":
     data_preprocessor = DataPreprocessor()
 
     processed_binary_df = data_preprocessor.preprocess_data(
-        df = "3-back data/raw_data_with_lure.csv",
+        df = "3-back data/raw_data_with_lures.csv",
         mode = "binary",
         lure_replacement = "nontarget",
-        output_path = "3-back data/test_nback_data_without_lure.csv"
+        output_path = "3-back data/test_nback_data_without_lures.csv"
     )
 
     processed_multiclass_df = data_preprocessor.preprocess_data(
-        df = "3-back data/raw_data_with_lure_test.csv",
+        df = "3-back data/raw_data_with_lures_test.csv",
         mode = "multiclass",
-        output_path = "3-back data/test_nback_data_with_lure.csv"
+        output_path = "3-back data/test_nback_data_with_lures.csv"
     )
      
     X_train, y_train, X_val, y_val, X_test, y_test = data_preprocessor.split_data_for_bin_pred(processed_binary_df)
-    X_test_with_lures, y_test_with_lures = data_preprocessor.split_data_for_multic_pred(processed_multiclass_df)
+    X_test_with_lures, y_test_with_lures = data_preprocessor.split_data_for_mc_pred(processed_multiclass_df)
 
     print("Training dataset shape:", X_train.shape, y_train.shape)
     print("Validation dataset shape:", X_val.shape, y_val.shape)
     print("Test dataset shape:", X_test.shape, y_test.shape)
-    print("X test with lures shape", X_test_with_lures.shape)
-    print("y test with lures shape", y_test_with_lures.shape)
+    print("X_test with lures shape", X_test_with_lures.shape)
+    print("y_test with lures shape", y_test_with_lures.shape)
 
-    lstm_trainer = LSTMTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, X_test_with_lures = X_test_with_lures, y_test_with_lures = y_test_with_lures, n_batch = 64, learning_rate = 0.01)
+    lstm_trainer = RNNTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, X_test_w_lures = X_test_with_lures, y_test_w_lures = y_test_with_lures, n_batch = 64, learning_rate = 0.01)
     lstm_trainer.initialize_model()
     bce_history, model, training_history = lstm_trainer.train_model(epochs = 100)
-    lstm_trainer.visualize_results()
-    lstm_trainer.eval_model_without_lures(X_test, y_test)
-    lstm_trainer.visualize_wo_lures()
-    lstm_trainer.eval_model_with_lures(X_test_with_lures, y_test_with_lures)
-    lstm_trainer.visualize_w_lures()
+    lstm_trainer.visualize_training_results()
+    pred_responses = lstm_trainer.eval_model_wo_lures(X_test, y_test)
+    lstm_trainer.visualize_preds_wo_lures(y_test, pred_responses)
+    pred_responses_w_lures = lstm_trainer.eval_model_w_lures(X_test_with_lures, y_test_with_lures)
+    lstm_trainer.visualize_preds_w_lures(y_test_with_lures, pred_responses_w_lures)
 
 #%%
