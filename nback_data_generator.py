@@ -78,7 +78,9 @@ class NBackDataGen:
 
         combined_df.dropna(inplace = True)
         combined_df.to_csv("raw_data.csv", index = False)
-    
+
+#%% 
+
 if __name__ == "__main__":
     
     experiment = NBackDataGen(N = 2, num_sequences = 150, num_minimum_trials = 38, letters = ["A", "B", "C", "D", "E", "F"])

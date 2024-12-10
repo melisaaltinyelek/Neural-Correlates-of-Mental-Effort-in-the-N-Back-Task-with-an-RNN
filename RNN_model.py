@@ -3,6 +3,8 @@
 import tensorflow as tf
 import tensorflow_datasets as tfds
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, roc_curve, auc
+from sklearn.preprocessing import label_binarize
 from sklearn.preprocessing import OneHotEncoder
 from sklearn import metrics
 import matplotlib.pyplot as plt
@@ -225,6 +227,21 @@ class RNNTrainer:
             print(f"Predicted Response: {'target' if predicted_response == 1 else 'nontarget'}")
             print("-" * 50)
 
+        print("Classification Report:")
+        print(classification_report(y_test, predicted_responses, target_names = ["nontarget", "target"]))
+        
+        fpr, tpr, thresholds = roc_curve(y_test, predictions)
+        roc_auc = auc(fpr, tpr)
+
+        plt.figure(figsize = (10, 6))
+        plt.plot(fpr, tpr, color = 'darkorange', lw = 2, label = f"ROC curve (AUC = {roc_auc:.2f})")
+        plt.plot([0, 1], [0, 1], color='navy', lw = 2, linestyle = '--', label = "Chance Level")
+        plt.xlabel("False Positive Rate")
+        plt.ylabel("True Positive Rate")
+        plt.title("Receiver Operating Characteristic (ROC)")
+        plt.legend(loc = "lower right")
+        plt.show()
+
         self.predicted_responses = predicted_responses
 
         return predicted_responses
@@ -232,50 +249,41 @@ class RNNTrainer:
     def visualize_preds_wo_lures(self, y_test, predicted_responses):
            
         # Calculate the total number of target trials and correctly predicted target trials
-        self.num_target_wo_lures = 0
-        self.num_corr_pred_target_wo_lures = 0
+        num_targets_wo_lures = 0
+        num_corr_pred_targets_wo_lures = 0
 
         for i in range(len(y_test)):
             target_response = y_test[i]
             pred_target_resp = predicted_responses[i]
 
             if target_response == 1:
-                self.num_target_wo_lures += 1
+                num_targets_wo_lures += 1
 
             if target_response == 1: 
                 if pred_target_resp == target_response:
-                    self.num_corr_pred_target_wo_lures += 1
-
-        print(f"The number target trials: {self.num_target_wo_lures}")
-        print(f"The number of correctly predicted target trials: {self.num_corr_pred_target_wo_lures}")
+                    num_corr_pred_targets_wo_lures += 1
 
         # Calculate the total number of nontarget trials and correctly predicted nontarget trials
-        self.num_nontarget_wo_lures = 0
-        self.num_corr_pred_nontarget_wo_lures = 0
+        num_nontargets_wo_lures = 0
+        num_corr_pred_nontargets_wo_lures = 0
 
         for i in range(len(y_test)):
             nontarget_response = y_test[i]
             pred_nontarget_resp = predicted_responses[i]
 
             if nontarget_response == 0:
-                self.num_nontarget_wo_lures += 1
+                num_nontargets_wo_lures += 1
 
             if nontarget_response == 0:
                 if pred_nontarget_resp == nontarget_response:
-                    self.num_corr_pred_nontarget_wo_lures += 1
-
-        print(f"The number of nontarget trials: {self.num_nontarget_wo_lures}")
-        print(f"The number of correctly predicted nontarget trials: {self.num_corr_pred_nontarget_wo_lures}")
+                    num_corr_pred_nontargets_wo_lures += 1
 
         # Calculate the accuracies for both nontarget and target trials for visualization
-        acc_target = self.num_corr_pred_target_wo_lures / self.num_target_wo_lures
-        acc_nontarget = self.num_corr_pred_nontarget_wo_lures / self.num_nontarget_wo_lures
+        target_acc = num_corr_pred_targets_wo_lures / num_targets_wo_lures
+        nontarget_acc = num_corr_pred_nontargets_wo_lures / num_nontargets_wo_lures
 
-        print(f"Accuracy score for the target trials: {acc_target}")
-        print(f"Accuracy score for the nontarget trials: {acc_nontarget}")
-        
         labels = ["nontarget", "target"]
-        acc_list = [acc_nontarget, acc_target]
+        acc_list = [nontarget_acc, target_acc]
 
         plt.figure(figsize = (6, 7))
         plt.bar(labels, acc_list, color = ["#C3B1E1", "#77DD77"])
@@ -288,6 +296,15 @@ class RNNTrainer:
         cm_display_wo_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_wo_lures, display_labels = [0, 1])
         cm_display_wo_lures.plot()
         plt.show()
+
+        print(f"The number of nontarget trials: {num_nontargets_wo_lures}")
+        print(f"The number of correctly predicted nontarget trials: {num_corr_pred_nontargets_wo_lures}")
+
+        print(f"The number target trials: {num_targets_wo_lures}")
+        print(f"The number of correctly predicted target trials: {num_corr_pred_targets_wo_lures}")
+
+        print(f"Accuracy score for the target trials: {target_acc}")
+        print(f"Accuracy score for the nontarget trials: {nontarget_acc}")
 
     def eval_model_w_lures(self, X_test_w_lures, y_test_w_lures, model = None):
 
@@ -311,66 +328,121 @@ class RNNTrainer:
                 print(f"Predicted Response: {predicted_response}")
                 print("-" * 50)
         
-        print(f"Total lure trials found: {lure_count}")
+        # print(f"Total lure trials found: {lure_count}")
 
+        print("Classification Report (with lures):")
+        print(classification_report(y_test_w_lures, pred_resp_w_lures, target_names = ["nontarget", "target", "lure"]))
+
+        classes = [0, 1, 2]
+        y_test_binarized = label_binarize(y_test_w_lures, classes = [0, 1, 2])
+        predictions_w_lures_expanded = np.zeros((len(predictions_w_lures), 3)) 
+
+        predictions_w_lures_expanded[:, 1] = predictions_w_lures.flatten()  # Probability for 'target'
+
+        predictions_w_lures_expanded[:, 0] = 1 - predictions_w_lures.flatten()  # Probability for 'nontarget'
+
+        predictions_w_lures_expanded[:, 2] = 0  # Placeholder for 'lure'
+
+        plt.figure(figsize = (10, 6))
+
+        for i, class_label in enumerate(classes):
+            fpr, tpr, _ = roc_curve(y_test_binarized[:, i], predictions_w_lures_expanded[:, i])
+            roc_auc = auc(fpr, tpr)
+
+            plt.plot(fpr, tpr, lw = 2, label = f"Class {class_label} (AUC = {roc_auc:.2f})")
+
+        plt.plot([0, 1], [0, 1], color = "navy", lw=2, linestyle = "--", label = "Chance Level")
+
+        plt.xlabel("False Positive Rate")
+        plt.ylabel("True Positive Rate")
+        plt.title("ROC Curve for Multiclass")
+        plt.legend(loc = "lower right")
+        plt.show()
+
+        # print("Shape of predictions_w_lures:", predictions_w_lures.shape)
+        # print("Shape of y_test_binarized:", y_test_binarized.shape)
+        
         self.pred_resp_w_lures = pred_resp_w_lures
 
         return pred_resp_w_lures
 
     def visualize_preds_w_lures(self, y_test_w_lures, pred_resp_w_lures):
 
-        num_corr_pred_nontarget_w_lures = 0
-        num_corr_pred_target_w_lures = 0
-        num_corr_pred_lure = 0
+        num_nontargets_w_lures = 0
+        num_targets_w_lures = 0
+        num_lures = 0
 
-        num_incorr_pred_nontarget_as_target = 0
-        num_incorr_pred_nontarget_as_lure = 0
+        num_corr_pred_nontargets_w_lures = 0
+        num_corr_pred_targets_w_lures = 0
+        num_corr_pred_lures = 0
 
-        num_incorr_pred_target_as_nontarget = 0
-        num_incorr_pred_target_as_lure = 0
+        num_incorr_pred_nontargets_as_target = 0
+        num_incorr_pred_nontargets_as_lure = 0
 
-        num_incorr_pred_lure_as_nontarget = 0
-        num_incorr_pred_lure_as_target = 0
+        num_incorr_pred_targets_as_nontarget = 0
+        num_incorr_pred_targets_as_lure = 0
+
+        num_incorr_pred_lures_as_nontarget = 0
+        num_incorr_pred_lures_as_target = 0
 
         for i in range(len(y_test_w_lures)):
+
+            nontarget_resp_w_lures = y_test_w_lures[i]
+
+            if nontarget_resp_w_lures == 0:
+                num_nontargets_w_lures += 1
+
+            if nontarget_resp_w_lures == 1:
+                num_targets_w_lures += 1
+
+            if nontarget_resp_w_lures == 2:
+                num_lures += 1
+
+        for i in range(len(y_test_w_lures)):
+            
             true_response = y_test_w_lures[i]
             pred_target_resp = pred_resp_w_lures[i]
 
             if true_response == 0 and true_response == pred_target_resp:
-                num_corr_pred_nontarget_w_lures += 1
+                num_corr_pred_nontargets_w_lures += 1
             elif true_response == 1 and true_response == pred_target_resp:
-                num_corr_pred_target_w_lures += 1
+                num_corr_pred_targets_w_lures += 1
             elif true_response == 2 and true_response == pred_target_resp:
-                num_corr_pred_lure += 1
+                num_corr_pred_lures += 1
 
             if true_response == 0 and pred_target_resp == 1:
-                num_incorr_pred_nontarget_as_target += 1
+                num_incorr_pred_nontargets_as_target += 1
             elif true_response == 0 and pred_target_resp == 2:
-                num_incorr_pred_nontarget_as_lure += 1
+                num_incorr_pred_nontargets_as_lure += 1
             elif true_response == 1 and pred_target_resp == 0:
-                num_incorr_pred_target_as_nontarget += 1
+                num_incorr_pred_targets_as_nontarget += 1
             elif true_response == 1 and pred_target_resp == 2:
-                num_incorr_pred_target_as_lure += 1
+                num_incorr_pred_targets_as_lure += 1
             elif true_response == 2 and pred_target_resp == 0:
-                num_incorr_pred_lure_as_nontarget += 1
+                num_incorr_pred_lures_as_nontarget += 1
             elif true_response == 2 and pred_target_resp == 1:
-                num_incorr_pred_lure_as_target += 1
+                num_incorr_pred_lures_as_target += 1
+
+        # Calculate the accuracies for nontarget, target and lure 
+        target_acc_w_lures = num_corr_pred_targets_w_lures / num_targets_w_lures
+        nontarget_acc_w_lures = num_corr_pred_nontargets_w_lures / num_nontargets_w_lures
+        lure_acc = num_corr_pred_lures / num_lures
 
         all_labels = ["nontarget", "target", "lure"]
 
         corr_classifications = [
-            num_corr_pred_nontarget_w_lures,
-            num_corr_pred_target_w_lures,
-            num_corr_pred_lure
+            num_corr_pred_nontargets_w_lures,
+            num_corr_pred_targets_w_lures,
+            num_corr_pred_lures
             ]
         
         misclassifications = [
-            num_incorr_pred_target_as_nontarget,
-            num_incorr_pred_lure_as_nontarget,
-            num_incorr_pred_nontarget_as_target,
-            num_incorr_pred_lure_as_target,
-            num_incorr_pred_nontarget_as_lure,
-            num_incorr_pred_target_as_lure
+            num_incorr_pred_targets_as_nontarget,
+            num_incorr_pred_lures_as_nontarget,
+            num_incorr_pred_nontargets_as_target,
+            num_incorr_pred_lures_as_target,
+            num_incorr_pred_nontargets_as_lure,
+            num_incorr_pred_targets_as_lure
              ]
 
         misclassified_as_target_for_nontarget = misclassifications[2]  # Misclassified as target when true label is nontarget
@@ -382,25 +454,39 @@ class RNNTrainer:
         misclassified_as_nontarget_for_lure = misclassifications[4]    # Misclassified as nontarget when true label is lure
         misclassified_as_target_for_lure = misclassifications[5]       # Misclassified as target when true label is lure
 
+
+        label_colors = {
+            "Misclassified as nontarget": "#FFB7CE",
+            "Misclassified as target": "#22CE83",  
+            "Misclassified as lure": "#9172EC",  
+        }
+
         x = np.arange(len(all_labels))
         bar_width = 0.50
 
         plt.figure(figsize = (10, 6))
      
-        plt.bar(x[0], misclassified_as_target_for_nontarget, width = bar_width, color = "#22CE83", label = "Misclassified as target")
-        plt.bar(x[0], misclassified_as_lure_for_nontarget, width = bar_width, bottom = misclassified_as_target_for_nontarget, color = "#C3B1E1", label = "Misclassified as lure")
+        plt.bar(x[0], misclassified_as_target_for_nontarget, width = bar_width, color = label_colors["Misclassified as target"], label = "Misclassified as target")
+        plt.bar(x[0], misclassified_as_lure_for_nontarget, width = bar_width, bottom = misclassified_as_target_for_nontarget, color = label_colors["Misclassified as lure"], label = "Misclassified as lure")
 
-        plt.bar(x[1], misclassified_as_nontarget_for_target, width = bar_width, color = "#FFB7CE", label = "Misclassified as nontarget")
-        plt.bar(x[1], misclassified_as_lure_for_target, width = bar_width, bottom = misclassified_as_nontarget_for_target, color = "#38ACEC", label = "Misclassified as lure")
+        plt.bar(x[1], misclassified_as_nontarget_for_target, width = bar_width, color = label_colors["Misclassified as nontarget"], label = "Misclassified as nontarget")
+        plt.bar(x[1], misclassified_as_lure_for_target, width = bar_width, bottom = misclassified_as_nontarget_for_target, color = label_colors["Misclassified as lure"], label = "Misclassified as lure")
 
-        plt.bar(x[2], misclassified_as_nontarget_for_lure, width = bar_width, color = "#FFEF00", label = "Misclassified as nontarget")
-        plt.bar(x[2], misclassified_as_target_for_lure, width = bar_width, bottom = misclassified_as_nontarget_for_lure, color = "#FF7F50", label = "Misclassified as target")
+        plt.bar(x[2], misclassified_as_nontarget_for_lure, width = bar_width, color = label_colors["Misclassified as nontarget"], label = "Misclassified as nontarget")
+        plt.bar(x[2], misclassified_as_target_for_lure, width = bar_width, bottom = misclassified_as_nontarget_for_lure, color = label_colors["Misclassified as target"], label = "Misclassified as target")
 
         plt.xticks(x, all_labels)
-        plt.xlabel("Trial Type")
+        plt.xlabel("Correct Labels")
         plt.ylabel("Number of Trials")
-        plt.title("Misclassifications Across Trial Types")
-        plt.legend(loc = "upper right")
+        plt.title("Model Predictions Across Trial Types")
+
+        custom_legend = [
+            plt.Line2D([0], [0], color = label_colors["Misclassified as nontarget"], lw = 10, label = "nontarget"),
+            plt.Line2D([0], [0], color = label_colors["Misclassified as target"], lw = 10, label = "target"),
+            plt.Line2D([0], [0], color = label_colors["Misclassified as lure"], lw = 10, label = "lure")
+        ]
+
+        plt.legend(handles = custom_legend, loc = "upper right", title = "Trial Types", frameon = False)
         plt.tight_layout()
         plt.show()
 
@@ -408,6 +494,19 @@ class RNNTrainer:
         cm_display_w_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_w_lures, display_labels = [0, 1, 2])
         cm_display_w_lures.plot()
         plt.show()
+
+        print(f"The number of nontarget trials: {num_nontargets_w_lures}")
+        print(f"The number of correctly predicted nontarget trials: {num_corr_pred_nontargets_w_lures}")
+
+        print(f"The number of target trials: {num_targets_w_lures}")
+        print(f"The number of correctly predicted target trials: {num_corr_pred_targets_w_lures}")
+
+        print(f"The number of lure trials: {num_lures}")
+        print(f"The number of correctly predicted lure trials: {num_corr_pred_lures}")
+
+        print(f"Accuracy score for the nontarget trials: {nontarget_acc_w_lures}")
+        print(f"Accuracy score for the target trials: {target_acc_w_lures}")
+        print(f"Accuracy score for the lure trials: {lure_acc}")
 
 #%%
 
@@ -436,13 +535,13 @@ if __name__ == "__main__":
     print("X_test with lures shape", X_test_with_lures.shape)
     print("y_test with lures shape", y_test_with_lures.shape)
 
-    lstm_trainer = RNNTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, X_test_w_lures = X_test_with_lures, y_test_w_lures = y_test_with_lures, n_batch = 64, learning_rate = 0.01)
-    lstm_trainer.initialize_model()
-    bce_history, model, training_history = lstm_trainer.train_model(epochs = 100)
-    lstm_trainer.visualize_training_results()
-    pred_responses = lstm_trainer.eval_model_wo_lures(X_test, y_test)
-    lstm_trainer.visualize_preds_wo_lures(y_test, pred_responses)
-    pred_responses_w_lures = lstm_trainer.eval_model_w_lures(X_test_with_lures, y_test_with_lures)
-    lstm_trainer.visualize_preds_w_lures(y_test_with_lures, pred_responses_w_lures)
+    rnn_trainer = RNNTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, X_test_w_lures = X_test_with_lures, y_test_w_lures = y_test_with_lures, n_batch = 64, learning_rate = 0.01)
+    rnn_trainer.initialize_model()
+    bce_history, model, training_history = rnn_trainer.train_model(epochs = 100)
+    rnn_trainer.visualize_training_results()
+    pred_responses = rnn_trainer.eval_model_wo_lures(X_test, y_test)
+    rnn_trainer.visualize_preds_wo_lures(y_test, pred_responses)
+    pred_responses_w_lures = rnn_trainer.eval_model_w_lures(X_test_with_lures, y_test_with_lures)
+    rnn_trainer.visualize_preds_w_lures(y_test_with_lures, pred_responses_w_lures)
 
 #%%

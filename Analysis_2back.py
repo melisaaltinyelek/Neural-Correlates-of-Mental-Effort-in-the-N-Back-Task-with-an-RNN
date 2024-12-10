@@ -57,7 +57,7 @@ class AnalyzeRNNon2backData():
         self.rnn_trainer = rnn_trainer
         self.saved_model = tf.keras.models.load_model("saved_model/rnn_model.keras")
     
-    def eval_model_wo_lures(self, X_test, y_test):
+    def eval_model_without_lures(self, X_test, y_test):
 
         predicted_responses = self.rnn_trainer.eval_model_wo_lures(X_test, y_test, self.saved_model)
         
@@ -65,7 +65,7 @@ class AnalyzeRNNon2backData():
         
         return predicted_responses
     
-    def visualize_preds_wo_lures(self, y_test, predicted_responses):
+    def visualize_preds_without_lures(self, y_test, predicted_responses):
         
         self.rnn_trainer.visualize_preds_wo_lures(y_test, predicted_responses)
     
@@ -93,14 +93,14 @@ if __name__ == "__main__":
     X_test_2back_w_lures, y_test_2back_w_lures = data_preprocessor.create_seq_and_split_lure_data()
 
     rnn_model = AnalyzeRNNon2backData(
-        lstm_trainer = RNNTrainer(
+        rnn_trainer = RNNTrainer(
             X_train = None, y_train = None, X_val = None, y_val = None, 
             X_test = None, y_test = None, X_test_w_lures = None, y_test_w_lures = None,
             n_batch = 64, learning_rate = 0.01
     ))
 
-    pred_responses = rnn_model.eval_model_wo_lures(X_test_2back_wo_lures, y_test_2back_wo_lures)
-    rnn_model.visualize_preds_wo_lures(y_test_2back_wo_lures, pred_responses)
+    pred_responses = rnn_model.eval_model_without_lures(X_test_2back_wo_lures, y_test_2back_wo_lures)
+    rnn_model.visualize_preds_without_lures(y_test_2back_wo_lures, pred_responses)
     
     pred_responses_w_lures = rnn_model.eval_model_with_lures(X_test_2back_w_lures, y_test_2back_w_lures)
     rnn_model.visualize_preds_with_lures(y_test_2back_w_lures, pred_responses_w_lures)
