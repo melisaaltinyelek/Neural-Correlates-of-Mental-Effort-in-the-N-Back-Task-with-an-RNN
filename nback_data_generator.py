@@ -23,8 +23,7 @@ class NBackDataGen:
         self.letters = letters
         self.curr_letter = Factor("letter", letters)
         self.response = self.create_response_factor()
-        self.constraints = [MinimumTrials(self.num_minimum_trials),
-                            AtMostKInARow(3, self.response)]
+        self.constraints = [MinimumTrials(self.num_minimum_trials)]
         self.design = [self.curr_letter, self.response]
         self.crossing = [self.curr_letter, self.response]
         self.block = CrossBlock(self.design, self.crossing, self.constraints)
@@ -39,7 +38,11 @@ class NBackDataGen:
             return (letter[0] == letter[-(self.N - 1)]) and not self.is_target(letter)
         elif self.N == 3:
             return (letter[0] == letter[-(self.N - 1)] or letter[0] == letter[-(self.N - 2)]) and not self.is_target(letter)
-    
+        elif self.N == 4:
+            return (letter[0] == letter[-(self.N - 1)] or letter[0] == letter[-(self.N - 2)] or letter[0] == letter[-(self.N - 3)]) and not self.is_target(letter)
+        elif self.N == 5:
+            return (letter[0] == letter[-(self.N - 1)] or letter[0] == letter[-(self.N - 2)] or letter[0] == letter[-(self.N - 3)] or letter[0] == letter[-(self.N - 4)]) and not self.is_target(letter)
+                        
     def is_no_target(self, letter):
         
         return not self.is_target(letter) and not self.is_lure(letter)
@@ -83,9 +86,11 @@ class NBackDataGen:
 
 if __name__ == "__main__":
     
-    experiment = NBackDataGen(N = 2, num_sequences = 150, num_minimum_trials = 38, letters = ["A", "B", "C", "D", "E", "F"])
+    experiment = NBackDataGen(N = 5, num_sequences = 200, num_minimum_trials = 41, letters = ["A", "B", "C", "D", "E", "F"])
     experiment.gen_and_save_data()
 
-    # num_minimum_trials = 57 counterbalances all letter - response pairs
-    # num_minimum_trials = 38 counterbalances all letter - response pairs
+    # num_minimum_trials = 38 counterbalances all letter - response pairs (2-back) 
+    # num_minimum_trials = 39 counterbalances all letter - response pairs (3-back)
+    # num_minimum_trials = 40 counterbalances all letter - response pairs (4-back)
+    # num_minimum_trials = 41 counterbalances all letter - response pairs (5-back)
 #%%

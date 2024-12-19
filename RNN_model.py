@@ -2,6 +2,8 @@
 
 import tensorflow as tf
 import tensorflow_datasets as tfds
+from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
+from tensorflow.keras.regularizers import l2
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, roc_curve, auc
 from sklearn.preprocessing import label_binarize
@@ -21,14 +23,12 @@ class DataPreprocessor:
 
         self.df = None
     
-    def preprocess_data(self, df, mode = "binary", lure_replacement = "nontarget", output_path = None):
+    def preprocess_data(self, df, mode = "binary", output_path = None):
 
         df = pd.read_csv(df)
 
         if mode == "binary":
-            if lure_replacement:
-                df.replace(to_replace = "lure", value = lure_replacement, inplace = True)
-
+     
             response_mapping = {
                 "nontarget": 0,
                 "target": 1
@@ -74,7 +74,7 @@ class DataPreprocessor:
             #print(y)
 
         X = np.array(X)
-        y = np.array(y)
+        y = np.array(y) 
 
         # print(f"The shape of the letters: {letters.shape}") # 6 --> the number of features/letters
         # print("-" * 50)
@@ -149,9 +149,8 @@ class RNNTrainer:
     def initialize_model(self):
 
         self.model = tf.keras.Sequential([
-            tf.keras.layers.SimpleRNN(6, input_shape = (1, self.X_train.shape[2])),
-            # tf.keras.layers.Dropout(0.2),  
-            tf.keras.layers.Dense(12, activation = "relu"),
+            tf.keras.layers.SimpleRNN(1, input_shape = (1, self.X_train.shape[2])),
+            tf.keras.layers.Dense(2, activation = "tanh"),
             tf.keras.layers.Dense(1, activation = "sigmoid")
         ])
         
@@ -162,6 +161,12 @@ class RNNTrainer:
     def train_model(self, epochs):
 
         bce_history = []    
+
+        # early_stopping = EarlyStopping(
+        #     monitor = "val_loss",  
+        #     patience = 5,         
+        #     restore_best_weights = True 
+        #     )
 
         self.training_history = self.model.fit(self.X_train, self.y_train,
                                           epochs = epochs,
@@ -206,7 +211,7 @@ class RNNTrainer:
 
         model_to_use = model if model else self.model
 
-        eval_results = model_to_use.evaluate(X_test, y_test, batch_size = 128)
+        eval_results = model_to_use.evaluate(X_test, y_test)
         print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
 
         predictions = model_to_use.predict(X_test)
@@ -337,11 +342,11 @@ class RNNTrainer:
         y_test_binarized = label_binarize(y_test_w_lures, classes = [0, 1, 2])
         predictions_w_lures_expanded = np.zeros((len(predictions_w_lures), 3)) 
 
-        predictions_w_lures_expanded[:, 1] = predictions_w_lures.flatten()  # Probability for 'target'
+        predictions_w_lures_expanded[:, 1] = predictions_w_lures.flatten()  
 
-        predictions_w_lures_expanded[:, 0] = 1 - predictions_w_lures.flatten()  # Probability for 'nontarget'
+        predictions_w_lures_expanded[:, 0] = 1 - predictions_w_lures.flatten() 
 
-        predictions_w_lures_expanded[:, 2] = 0  # Placeholder for 'lure'
+        predictions_w_lures_expanded[:, 2] = 0 
 
         plt.figure(figsize = (10, 6))
 
@@ -351,7 +356,7 @@ class RNNTrainer:
 
             plt.plot(fpr, tpr, lw = 2, label = f"Class {class_label} (AUC = {roc_auc:.2f})")
 
-        plt.plot([0, 1], [0, 1], color = "navy", lw=2, linestyle = "--", label = "Chance Level")
+        plt.plot([0, 1], [0, 1], color = "navy", lw = 2, linestyle = "--", label = "Chance Level")
 
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
@@ -514,16 +519,15 @@ if __name__ == "__main__":
     data_preprocessor = DataPreprocessor()
 
     processed_binary_df = data_preprocessor.preprocess_data(
-        df = "3-back data/raw_data_with_lures.csv",
+        df = "3-back data/training_3back_data_wo_lures.csv",
         mode = "binary",
-        lure_replacement = "nontarget",
-        output_path = "3-back data/test_nback_data_without_lures.csv"
+        output_path = "3-back data/test_3back_data_wo_lures.csv"
     )
 
     processed_multiclass_df = data_preprocessor.preprocess_data(
-        df = "3-back data/raw_data_with_lures_test.csv",
+        df = "3-back data/training_3back_data_w_lures.csv",
         mode = "multiclass",
-        output_path = "3-back data/test_nback_data_with_lures.csv"
+        output_path = "3-back data/test_3back_data_w_lures.csv"
     )
      
     X_train, y_train, X_val, y_val, X_test, y_test = data_preprocessor.split_data_for_bin_pred(processed_binary_df)
@@ -535,7 +539,7 @@ if __name__ == "__main__":
     print("X_test with lures shape", X_test_with_lures.shape)
     print("y_test with lures shape", y_test_with_lures.shape)
 
-    rnn_trainer = RNNTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, X_test_w_lures = X_test_with_lures, y_test_w_lures = y_test_with_lures, n_batch = 64, learning_rate = 0.01)
+    rnn_trainer = RNNTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, X_test_w_lures = X_test_with_lures, y_test_w_lures = y_test_with_lures, n_batch = 128, learning_rate = 0.001)
     rnn_trainer.initialize_model()
     bce_history, model, training_history = rnn_trainer.train_model(epochs = 100)
     rnn_trainer.visualize_training_results()
