@@ -1,20 +1,14 @@
 #%%
 
 import tensorflow as tf
-import tensorflow_datasets as tfds
-from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
-from tensorflow.keras.regularizers import l2
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, roc_curve, auc
 from sklearn.preprocessing import label_binarize
 from sklearn.preprocessing import OneHotEncoder
 from sklearn import metrics
 import matplotlib.pyplot as plt
-from ast import literal_eval
 import pandas as pd
 import numpy as np
 import os
-import glob
 
 #%%
 
@@ -162,12 +156,6 @@ class RNNTrainer:
 
         bce_history = []    
 
-        # early_stopping = EarlyStopping(
-        #     monitor = "val_loss",  
-        #     patience = 5,         
-        #     restore_best_weights = True 
-        #     )
-
         self.training_history = self.model.fit(self.X_train, self.y_train,
                                           epochs = epochs,
                                           batch_size = self.n_batch,
@@ -212,6 +200,8 @@ class RNNTrainer:
         model_to_use = model if model else self.model
 
         eval_results = model_to_use.evaluate(X_test, y_test)
+        test_acc = f"{eval_results[1]:.2f}"
+        # print(test_acc)
         print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
 
         predictions = model_to_use.predict(X_test)
@@ -243,13 +233,13 @@ class RNNTrainer:
         plt.plot([0, 1], [0, 1], color='navy', lw = 2, linestyle = '--', label = "Chance Level")
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
-        plt.title("Receiver Operating Characteristic (ROC)")
+        plt.title("Receiver Operating Characteristic (ROC) for Binary Classification")
         plt.legend(loc = "lower right")
         plt.show()
 
         self.predicted_responses = predicted_responses
 
-        return predicted_responses
+        return test_acc, predicted_responses
     
     def visualize_preds_wo_lures(self, y_test, predicted_responses):
            
@@ -294,7 +284,7 @@ class RNNTrainer:
         plt.bar(labels, acc_list, color = ["#C3B1E1", "#77DD77"])
         plt.xlabel("Response Categories")
         plt.ylabel("Accuracy")
-        plt.title("Model Prediction Across Trial Types")
+        plt.title("Model Prediction Across Trials for Binary Classification")
         plt.show()
 
         confusion_matrix_wo_lures = metrics.confusion_matrix(y_test, predicted_responses)
@@ -314,6 +304,11 @@ class RNNTrainer:
     def eval_model_w_lures(self, X_test_w_lures, y_test_w_lures, model = None):
 
         model_to_use = model if model else self.model
+
+        eval_results = model_to_use.evaluate(X_test_w_lures, y_test_w_lures)
+        test_acc_w_lures = f"{eval_results[1]:.2f}"
+        # print(test_acc)
+        print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
 
         predictions_w_lures = model_to_use.predict(X_test_w_lures)
         pred_resp_w_lures = (predictions_w_lures >= 0.5).astype(int).flatten()
@@ -360,7 +355,7 @@ class RNNTrainer:
 
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
-        plt.title("ROC Curve for Multiclass")
+        plt.title("Receiver Operating Characteristic (ROC) for Multiclass Classification")
         plt.legend(loc = "lower right")
         plt.show()
 
@@ -369,7 +364,7 @@ class RNNTrainer:
         
         self.pred_resp_w_lures = pred_resp_w_lures
 
-        return pred_resp_w_lures
+        return test_acc_w_lures, pred_resp_w_lures
 
     def visualize_preds_w_lures(self, y_test_w_lures, pred_resp_w_lures):
 
@@ -483,7 +478,7 @@ class RNNTrainer:
         plt.xticks(x, all_labels)
         plt.xlabel("Correct Labels")
         plt.ylabel("Number of Trials")
-        plt.title("Model Predictions Across Trial Types")
+        plt.title("Model Prediction Across Trials for Multiclass Classification")
 
         custom_legend = [
             plt.Line2D([0], [0], color = label_colors["Misclassified as nontarget"], lw = 10, label = "nontarget"),
@@ -543,9 +538,9 @@ if __name__ == "__main__":
     rnn_trainer.initialize_model()
     bce_history, model, training_history = rnn_trainer.train_model(epochs = 100)
     rnn_trainer.visualize_training_results()
-    pred_responses = rnn_trainer.eval_model_wo_lures(X_test, y_test)
+    test_acc, pred_responses = rnn_trainer.eval_model_wo_lures(X_test, y_test)
     rnn_trainer.visualize_preds_wo_lures(y_test, pred_responses)
-    pred_responses_w_lures = rnn_trainer.eval_model_w_lures(X_test_with_lures, y_test_with_lures)
+    test_acc_w_lures, pred_responses_w_lures = rnn_trainer.eval_model_w_lures(X_test_with_lures, y_test_with_lures)
     rnn_trainer.visualize_preds_w_lures(y_test_with_lures, pred_responses_w_lures)
 
 #%%
