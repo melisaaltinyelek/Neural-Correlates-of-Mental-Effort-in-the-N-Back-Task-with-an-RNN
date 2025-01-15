@@ -8,12 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 from sklearn import metrics
 import matplotlib.pyplot as plt
-from ast import literal_eval
 import pandas as pd
 import numpy as np
-import json
-import os
-import glob
 
 #%%
 

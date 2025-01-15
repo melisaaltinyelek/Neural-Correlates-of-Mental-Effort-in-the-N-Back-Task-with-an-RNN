@@ -1,3 +1,35 @@
-.DS_Store
+# Byte-compiled Python files
 __pycache__/
 
+# Environment and dependency files
+.env
+.venv/
+env/
+venv/
+
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+*.bak
+
+# Testing and coverage
+.coverage
+.cache
+nosetests.xml
+*.cover
+coverage.xml
+*.pytest_cache/
+
+# Build files
+build/
+dist/
+*.egg-info/
+*.egg
