@@ -1,6 +1,8 @@
 #%%
 
 import tensorflow as tf
+from tensorflow.keras.models import Model
+import keras
 from sklearn.metrics import classification_report, roc_curve, auc
 from sklearn.preprocessing import label_binarize
 from sklearn.preprocessing import OneHotEncoder
@@ -195,7 +197,7 @@ class RNNTrainer:
         plt.legend(["Train", "Test"], loc = "upper right")
         plt.show()
         
-    def eval_model_wo_lures(self, X_test, y_test, model = None):
+    def eval_model_wo_lures(self, X_test, y_test, n_back, model = None):
 
         model_to_use = model if model else self.model
 
@@ -233,7 +235,8 @@ class RNNTrainer:
         plt.plot([0, 1], [0, 1], color='navy', lw = 2, linestyle = '--', label = "Chance Level")
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
-        plt.title("Receiver Operating Characteristic (ROC) for Binary Classification")
+        title = f"Binary Classification ROC: {n_back}-Back Task"
+        plt.title(title)
         plt.legend(loc = "lower right")
         plt.show()
 
@@ -241,7 +244,7 @@ class RNNTrainer:
 
         return test_acc, predicted_responses
     
-    def visualize_preds_wo_lures(self, y_test, predicted_responses):
+    def visualize_preds_wo_lures(self, y_test, predicted_responses, n_back):
            
         # Calculate the total number of target trials and correctly predicted target trials
         num_targets_wo_lures = 0
@@ -284,12 +287,15 @@ class RNNTrainer:
         plt.bar(labels, acc_list, color = ["#C3B1E1", "#77DD77"])
         plt.xlabel("Response Categories")
         plt.ylabel("Accuracy")
-        plt.title("Model Prediction Across Trials for Binary Classification")
+        title = f"Model Predictions Over Trials: {n_back}-Back Binary Classification"
+        plt.title(title)
         plt.show()
 
         confusion_matrix_wo_lures = metrics.confusion_matrix(y_test, predicted_responses)
         cm_display_wo_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_wo_lures, display_labels = [0, 1])
-        cm_display_wo_lures.plot()
+        cm_title = f"Confusion Matrix for {n_back}-Back Task (Without Lures)"
+        ax = cm_display_wo_lures.plot().ax_
+        ax.set_title(cm_title)
         plt.show()
 
         print(f"The number of nontarget trials: {num_nontargets_wo_lures}")
@@ -301,7 +307,7 @@ class RNNTrainer:
         print(f"Accuracy score for the target trials: {target_acc}")
         print(f"Accuracy score for the nontarget trials: {nontarget_acc}")
 
-    def eval_model_w_lures(self, X_test_w_lures, y_test_w_lures, model = None):
+    def eval_model_w_lures(self, X_test_w_lures, y_test_w_lures, n_back, model = None):
 
         model_to_use = model if model else self.model
 
@@ -320,7 +326,7 @@ class RNNTrainer:
             if true_label == 2:  
                 lure_count += 1
                 letters_sequence = X_test_w_lures[i]
-                predicted_response = 'target' if pred == 1 else 'nontarget'
+                predicted_response = "target" if pred == 1 else "nontarget"
 
                 print(f"Lure Trial {i + 1}:")
                 print(f"Letters (sequence): {letters_sequence}")
@@ -328,7 +334,7 @@ class RNNTrainer:
                 print(f"Predicted Response: {predicted_response}")
                 print("-" * 50)
         
-        # print(f"Total lure trials found: {lure_count}")
+        print(f"Total lure trials found: {lure_count}")
 
         print("Classification Report (with lures):")
         print(classification_report(y_test_w_lures, pred_resp_w_lures, target_names = ["nontarget", "target", "lure"]))
@@ -355,7 +361,8 @@ class RNNTrainer:
 
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
-        plt.title("Receiver Operating Characteristic (ROC) for Multiclass Classification")
+        title = f"Multiclass Classification ROC: {n_back}-Back Task"
+        plt.title(title)
         plt.legend(loc = "lower right")
         plt.show()
 
@@ -366,7 +373,7 @@ class RNNTrainer:
 
         return test_acc_w_lures, pred_resp_w_lures
 
-    def visualize_preds_w_lures(self, y_test_w_lures, pred_resp_w_lures):
+    def visualize_preds_w_lures(self, y_test_w_lures, pred_resp_w_lures, n_back):
 
         num_nontargets_w_lures = 0
         num_targets_w_lures = 0
@@ -478,7 +485,8 @@ class RNNTrainer:
         plt.xticks(x, all_labels)
         plt.xlabel("Correct Labels")
         plt.ylabel("Number of Trials")
-        plt.title("Model Prediction Across Trials for Multiclass Classification")
+        title = f"Model Predictions Over Trials: {n_back}-Back Multiclass Classification"
+        plt.title(title)
 
         custom_legend = [
             plt.Line2D([0], [0], color = label_colors["Misclassified as nontarget"], lw = 10, label = "nontarget"),
@@ -492,7 +500,9 @@ class RNNTrainer:
 
         confusion_matrix_w_lures = metrics.confusion_matrix(y_test_w_lures, pred_resp_w_lures)
         cm_display_w_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_w_lures, display_labels = [0, 1, 2])
-        cm_display_w_lures.plot()
+        cm_title = f"Confusion Matrix for {n_back}-Back Task (With Lures)"
+        ax = cm_display_w_lures.plot().ax_
+        ax.set_title(cm_title)
         plt.show()
 
         print(f"The number of nontarget trials: {num_nontargets_w_lures}")
@@ -507,6 +517,58 @@ class RNNTrainer:
         print(f"Accuracy score for the nontarget trials: {nontarget_acc_w_lures}")
         print(f"Accuracy score for the target trials: {target_acc_w_lures}")
         print(f"Accuracy score for the lure trials: {lure_acc}")
+    
+    def create_submodel(self, X_test_w_lures, y_test_w_lures, n_back):
+
+        trained_model = tf.keras.models.load_model("saved_model/rnn_model.keras")
+
+        for i, layer in enumerate(trained_model.layers):
+            print(f"Layer {i}: {layer.name}, Type: {type(layer)}")
+
+        input_shape = tf.keras.layers.Input(shape = (None, trained_model.input_shape[2]))
+        print(f"The input shape: {input_shape}")
+
+        rnn_output = trained_model.layers[0](input_shape)
+        print(f"The RNN layer output shape (embedding): {rnn_output}")
+
+        embedding_model = Model(
+            inputs = input_shape,
+            outputs = rnn_output
+            )
+
+        embeddings = embedding_model.predict(X_test_w_lures)
+
+        print("Embeddings shape:", embeddings.shape)
+        print(f"Embeddings length: {len(embeddings)}")
+        print("Embeddings data type:", embeddings.dtype)
+        print("Sample embeddings:", embeddings[:5])  
+
+        target_embeddings = []
+        lure_embeddings = []
+
+        for embedding, true_label in zip(embeddings, y_test_w_lures):
+            if true_label == 1:
+                target_embeddings.append(embedding)
+            elif true_label == 2:
+                lure_embeddings.append(embedding)
+
+        print(f"Target embeddings: {target_embeddings}")
+        print(f"Lure embeddings: {lure_embeddings}")
+    
+        target_embeddings = np.array(target_embeddings)
+        lure_embeddings = np.array(lure_embeddings)
+
+        plt.hist(target_embeddings, bins = 50, alpha = 0.6, label = "Targets", color = "#14A3C7")
+        plt.hist(lure_embeddings, bins = 50, alpha = 0.4, label = "Lures", color = "#7B68EE")
+
+        title = f"Embedding Distributions for {n_back}-Back Task"
+        plt.title(title)
+        plt.xlabel("Embedding values")
+        plt.ylabel("Frequency")
+        plt.legend(loc = "upper right", bbox_to_anchor = (1.25, 1))
+        plt.show()
+
+        return embedding_model
 
 #%%
 
@@ -538,9 +600,9 @@ if __name__ == "__main__":
     rnn_trainer.initialize_model()
     bce_history, model, training_history = rnn_trainer.train_model(epochs = 100)
     rnn_trainer.visualize_training_results()
-    test_acc, pred_responses = rnn_trainer.eval_model_wo_lures(X_test, y_test)
-    rnn_trainer.visualize_preds_wo_lures(y_test, pred_responses)
-    test_acc_w_lures, pred_responses_w_lures = rnn_trainer.eval_model_w_lures(X_test_with_lures, y_test_with_lures)
-    rnn_trainer.visualize_preds_w_lures(y_test_with_lures, pred_responses_w_lures)
-
+    test_acc, pred_responses = rnn_trainer.eval_model_wo_lures(X_test, y_test, 3)
+    rnn_trainer.visualize_preds_wo_lures(y_test, pred_responses, 3)
+    test_acc_w_lures, pred_responses_w_lures = rnn_trainer.eval_model_w_lures(X_test_with_lures, y_test_with_lures, 3)
+    rnn_trainer.visualize_preds_w_lures(y_test_with_lures, pred_responses_w_lures, 3)
+    rnn_trainer.create_submodel(X_test_with_lures, y_test_with_lures, 3)
 #%%

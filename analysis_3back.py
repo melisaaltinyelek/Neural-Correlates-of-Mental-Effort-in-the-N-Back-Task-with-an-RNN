@@ -1,7 +1,7 @@
 #%%
 
 from RNN_model import DataPreprocessor, RNNTrainer
-from save_accuracies import save_acc_to_json
+from save_and_plot_accuracies import save_acc_to_json
 import tensorflow as tf
 import tensorflow_datasets as tfds
 from sklearn.model_selection import train_test_split
@@ -57,31 +57,35 @@ class AnalyzeRNNon3backData():
         self.saved_model = tf.keras.models.load_model("saved_model/rnn_model.keras")
         self.saved_model.summary()
     
-    def eval_model_without_lures(self, X_test, y_test):
+    def eval_model_without_lures(self, X_test, y_test, n_back):
 
-        test_acc_wo_lures, predicted_responses = self.rnn_trainer.eval_model_wo_lures(X_test, y_test, self.saved_model)
+        test_acc_wo_lures, predicted_responses = self.rnn_trainer.eval_model_wo_lures(X_test, y_test, n_back, self.saved_model)
         
         self.pred_resp = predicted_responses
         self.test_acc = test_acc_wo_lures
         
         return test_acc_wo_lures, predicted_responses
     
-    def visualize_preds_without_lures(self, y_test, predicted_responses):
+    def visualize_preds_without_lures(self, y_test, predicted_responses, n_back):
         
-        self.rnn_trainer.visualize_preds_wo_lures(y_test, predicted_responses)
+        self.rnn_trainer.visualize_preds_wo_lures(y_test, predicted_responses, n_back)
     
-    def eval_model_with_lures(self, X_test_w_lures, y_test_w_lures):
+    def eval_model_with_lures(self, X_test_w_lures, y_test_w_lures, n_back):
 
-        test_acc_w_lures, pred_resp_w_lures = self.rnn_trainer.eval_model_w_lures(X_test_w_lures, y_test_w_lures, self.saved_model)
+        test_acc_w_lures, pred_resp_w_lures = self.rnn_trainer.eval_model_w_lures(X_test_w_lures, y_test_w_lures, n_back, self.saved_model)
 
         self.pred_resp_w_lures = pred_resp_w_lures
         self.test_acc_w_lures = test_acc_w_lures
 
         return test_acc_w_lures, pred_resp_w_lures
     
-    def visualize_preds_with_lures(self, y_test_w_lures, pred_responses_w_lures):
+    def visualize_preds_with_lures(self, y_test_w_lures, pred_responses_w_lures, n_back):
 
-        self.rnn_trainer.visualize_preds_w_lures(y_test_w_lures, pred_responses_w_lures)
+        self.rnn_trainer.visualize_preds_w_lures(y_test_w_lures, pred_responses_w_lures, n_back)
+
+    def visualize_embeddings(self, X_test_w_lures, y_test_w_lures, n_back):
+
+        self.rnn_trainer.create_submodel(X_test_w_lures, y_test_w_lures, n_back)
 
 #%%
 
@@ -101,10 +105,13 @@ if __name__ == "__main__":
             n_batch = None, learning_rate = None
     ))
 
-    test_acc_wo_lures, pred_responses = rnn_model.eval_model_without_lures(X_test_3back_wo_lures, y_test_3back_wo_lures)
-    rnn_model.visualize_preds_without_lures(y_test_3back_wo_lures, pred_responses)
+    test_acc_wo_lures, pred_responses = rnn_model.eval_model_without_lures(X_test_3back_wo_lures, y_test_3back_wo_lures, 3)
+    rnn_model.visualize_preds_without_lures(y_test_3back_wo_lures, pred_responses, 3)
     
-    test_acc_w_lures, pred_responses_w_lures = rnn_model.eval_model_with_lures(X_test_3back_w_lures, y_test_3back_w_lures)
-    rnn_model.visualize_preds_with_lures(y_test_3back_w_lures, pred_responses_w_lures)
+    test_acc_w_lures, pred_responses_w_lures = rnn_model.eval_model_with_lures(X_test_3back_w_lures, y_test_3back_w_lures, 3)
+    rnn_model.visualize_preds_with_lures(y_test_3back_w_lures, pred_responses_w_lures, 3)
 
     save_acc_to_json("3-back", test_acc_wo_lures, test_acc_w_lures)
+
+    rnn_model.visualize_embeddings(X_test_3back_w_lures, y_test_3back_w_lures, 3)
+    #%%
