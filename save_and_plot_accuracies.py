@@ -64,7 +64,7 @@ def plot_accuracies(load_factors, accuracies_wo_lures, accuracies_w_lures):
                     (bar.get_x() + bar.get_width() / 2, bar.get_height()),
                     ha = 'center', va = 'bottom', fontsize = 8)
 
-    ax.set_title("Comparison of Model Accuracy With and Without Lures Across N-Back Tasks")
+    ax.set_title("Model Accuracy in Binary vs. Multiclass N-Back Classifications: Lures vs. No Lures")
     ax.yaxis.grid(True, linestyle = "--", linewidth = 0.5, color = "gray", alpha = 0.5)
     ax.set_xlabel("Cognitive Load Levels")
     ax.set_ylabel("Model Accuracy")

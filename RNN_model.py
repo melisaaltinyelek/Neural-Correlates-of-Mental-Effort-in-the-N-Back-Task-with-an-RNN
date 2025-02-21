@@ -204,7 +204,7 @@ class RNNTrainer:
         eval_results = model_to_use.evaluate(X_test, y_test)
         test_acc = f"{eval_results[1]:.2f}"
         # print(test_acc)
-        print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
+        print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]} for Binary Classification")
 
         predictions = model_to_use.predict(X_test)
         predicted_responses = (predictions >= 0.5).astype(int).flatten()
@@ -280,6 +280,9 @@ class RNNTrainer:
         target_acc = num_corr_pred_targets_wo_lures / num_targets_wo_lures
         nontarget_acc = num_corr_pred_nontargets_wo_lures / num_nontargets_wo_lures
 
+        print(f"Target accuracy: {target_acc}")
+        print(f"Nontarget accuracy: {nontarget_acc}")
+
         labels = ["nontarget", "target"]
         acc_list = [nontarget_acc, target_acc]
 
@@ -293,7 +296,7 @@ class RNNTrainer:
 
         confusion_matrix_wo_lures = metrics.confusion_matrix(y_test, predicted_responses)
         cm_display_wo_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_wo_lures, display_labels = [0, 1])
-        cm_title = f"Confusion Matrix for {n_back}-Back Task (Without Lures)"
+        cm_title = f"Confusion Matrix for {n_back}-Back Task for Binary Classification"
         ax = cm_display_wo_lures.plot().ax_
         ax.set_title(cm_title)
         plt.show()
@@ -304,8 +307,8 @@ class RNNTrainer:
         print(f"The number target trials: {num_targets_wo_lures}")
         print(f"The number of correctly predicted target trials: {num_corr_pred_targets_wo_lures}")
 
-        print(f"Accuracy score for the target trials: {target_acc}")
-        print(f"Accuracy score for the nontarget trials: {nontarget_acc}")
+        print(f"Accuracy score for the target trials: {target_acc} (Binary Classification)")
+        print(f"Accuracy score for the nontarget trials: {nontarget_acc} (Binary Classification)")
 
     def eval_model_w_lures(self, X_test_w_lures, y_test_w_lures, n_back, model = None):
 
@@ -314,7 +317,7 @@ class RNNTrainer:
         eval_results = model_to_use.evaluate(X_test_w_lures, y_test_w_lures)
         test_acc_w_lures = f"{eval_results[1]:.2f}"
         # print(test_acc)
-        print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]}")
+        print(f"Overall Test Loss: {eval_results[0]}, Test Accuracy: {eval_results[1]} for Multiclass Classification")
 
         predictions_w_lures = model_to_use.predict(X_test_w_lures)
         pred_resp_w_lures = (predictions_w_lures >= 0.5).astype(int).flatten()
@@ -484,7 +487,7 @@ class RNNTrainer:
 
         plt.xticks(x, all_labels)
         plt.xlabel("Correct Labels")
-        plt.ylabel("Number of Trials")
+        plt.ylabel("Number of Samples")
         title = f"Model Predictions Over Trials: {n_back}-Back Multiclass Classification"
         plt.title(title)
 
@@ -500,7 +503,7 @@ class RNNTrainer:
 
         confusion_matrix_w_lures = metrics.confusion_matrix(y_test_w_lures, pred_resp_w_lures)
         cm_display_w_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_w_lures, display_labels = [0, 1, 2])
-        cm_title = f"Confusion Matrix for {n_back}-Back Task (With Lures)"
+        cm_title = f"Confusion Matrix for {n_back}-Back Task for Multiclass Classification"
         ax = cm_display_w_lures.plot().ax_
         ax.set_title(cm_title)
         plt.show()
@@ -514,9 +517,9 @@ class RNNTrainer:
         print(f"The number of lure trials: {num_lures}")
         print(f"The number of correctly predicted lure trials: {num_corr_pred_lures}")
 
-        print(f"Accuracy score for the nontarget trials: {nontarget_acc_w_lures}")
-        print(f"Accuracy score for the target trials: {target_acc_w_lures}")
-        print(f"Accuracy score for the lure trials: {lure_acc}")
+        print(f"Accuracy score for the nontarget trials: {nontarget_acc_w_lures} (Multiclass Classification)")
+        print(f"Accuracy score for the target trials: {target_acc_w_lures} (Multiclass Classification)")
+        print(f"Accuracy score for the lure trials: {lure_acc} (Multiclass Classification)")
     
     def create_submodel(self, X_test_w_lures, y_test_w_lures, n_back):
 
