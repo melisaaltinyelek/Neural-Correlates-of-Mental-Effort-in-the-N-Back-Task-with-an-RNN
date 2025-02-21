@@ -15,11 +15,40 @@ import os
 #%%
 
 class DataPreprocessor:
+    """
+    A class for preprocessing n-back task data, creating sequential inputs, and splitting data for 
+    binary and multiclass classification tasks using a Recurrent Neural Network (RNN).
+    """
+
     def __init__(self):
 
         self.df = None
     
     def preprocess_data(self, df, mode = "binary", output_path = None):
+        """
+        Preprocesses the input CSV file by encoding categorical responses into numerical values
+        and transforming letter features into one-hot encoded vectors.
+
+        Parameters
+        ----------
+        df : str
+            The file path of the CSV dataset.
+        mode : str
+            The type of classification task, either "binary" (default) or "multiclass".
+        output_path : str
+            The file path to save the processed dataset.
+
+        Returns
+        ----------
+        df : pandas.DataFrame
+            The preprocessed DataFrame with numerical response labels and one-hot encoded letters.
+
+        Notes
+        ----------
+        - In binary mode, the response values are mapped to {nontarget: 0, target: 1}.
+        - In multiclass mode, the response values are mapped to {nontarget: 0, target: 1, lure: 2}.
+        - The `letter` column is one-hot encoded and stored as a list of vectors.
+        """
 
         df = pd.read_csv(df)
 
@@ -55,6 +84,28 @@ class DataPreprocessor:
         return self.df
     
     def create_sequences(self, df, n_steps = 4):
+        """
+        Creates input sequences of letters and their corresponding target responses for training the RNN.
+
+        Parameters
+        ----------
+        df : pandas.DataFrame
+            The preprocessed dataset containing one-hot encoded letters and response labels.
+        n_steps : int
+            The number of previous time steps to include in each input sequence.
+
+        Returns
+        ----------
+        X : numpy.ndarray
+            A 3D array of input sequences representing n-back letter sequences.
+        y : numpy.ndarray
+            A 1D array of corresponding response labels.
+
+        Notes
+        ----------
+        - Each sequence consists of `n_steps` consecutive letter vectors.
+        - The response for the last letter in each sequence serves as the target label.
+        """
 
         X, y = [], []
 
@@ -87,6 +138,25 @@ class DataPreprocessor:
         return X, y
 
     def split_data_for_bin_pred(self, data, train_ratio = 0.8):
+        """
+        Splits the dataset into training, validation, and test sets for binary classification.
+
+        Parameters
+        ----------
+        data : pandas.DataFrame
+            The preprocessed dataset.
+        train_ratio : float
+            The proportion of data to use for training.
+
+        Returns
+        ----------
+        X_train, y_train : numpy.ndarray
+            Training set features and labels.
+        X_val, y_val : numpy.ndarray
+            Validation set features and labels.
+        X_test, y_test : numpy.ndarray
+            Test set features and labels.
+        """
 
         X, y = self.create_sequences(data)
         
@@ -112,6 +182,21 @@ class DataPreprocessor:
         return X_train, y_train, X_val, y_val, X_test, y_test
     
     def split_data_for_mc_pred(self, data):
+        """
+        Creates test samples for multiclass classification, including lure trials.
+
+        Parameters
+        ----------
+        data : pandas.DataFrame
+            The preprocessed dataset.
+
+        Returns
+        ----------
+        X_test_with_lures : numpy.ndarray
+            Test set features, including lure trials.
+        y_test_with_lures : numpy.ndarray
+            Test set labels, including lure trials.
+        """
 
         X_test_with_lures, y_test_with_lures = self.create_sequences(data)
 
@@ -127,7 +212,30 @@ class DataPreprocessor:
         return X_test_with_lures, y_test_with_lures
 
 class RNNTrainer:
+    """
+    A class for training and evaluating a simple Recurrent Neural Network (RNN) 
+    on the n-back task for both binary and multiclass classification.
+    """
+
     def __init__(self, X_train, y_train, X_val, y_val, X_test, y_test, X_test_w_lures, y_test_w_lures, n_batch, learning_rate):
+        """
+        Initializes the RNNTrainer class with dataset partitions, model parameters, and placeholders.
+
+        Parameters
+        ----------
+        X_train, y_train : numpy.ndarray
+            Training data.
+        X_val, y_val : numpy.ndarray
+            Validation data.
+        X_test, y_test : numpy.ndarray
+            Test data (binary classification).
+        X_test_w_lures, y_test_w_lures : numpy.ndarray
+            Test data including lure trials (multiclass classification).
+        n_batch : int
+            Batch size for training.
+        learning_rate : float
+            Learning rate for the Adam optimizer.
+        """
 
         self.X_train = X_train
         self.y_train = y_train
@@ -143,6 +251,9 @@ class RNNTrainer:
         self.model = None
 
     def initialize_model(self):
+        """
+        Initializes and compiles base RNN model.
+        """
 
         self.model = tf.keras.Sequential([
             tf.keras.layers.SimpleRNN(1, input_shape = (1, self.X_train.shape[2])),
@@ -155,6 +266,23 @@ class RNNTrainer:
                            metrics = ["accuracy"])
 
     def train_model(self, epochs):
+        """
+        Trains the RNN model and saves training history.
+
+        Parameters
+        ----------
+        epochs : int
+            Number of training epochs.
+
+        Returns
+        ----------
+        bce_history : list
+            List of training history metrics for each epoch.
+        model : tf.keras.Sequential
+            The trained RNN model.
+        training_history : History
+            The history object containing accuracy and loss over epochs.
+        """
 
         bce_history = []    
 
@@ -176,6 +304,9 @@ class RNNTrainer:
         return bce_history, self.model, self.training_history
     
     def visualize_training_results(self):
+        """
+        Plots the training and validation accuracy/loss over epochs.
+        """
         
         # Plot history for accuracies
         plt.plot(self.training_history.history["accuracy"], color = "purple")
@@ -198,6 +329,25 @@ class RNNTrainer:
         plt.show()
         
     def eval_model_wo_lures(self, X_test, y_test, n_back, model = None):
+        """
+        Evaluates the model on the test set without lure trials.
+
+        Parameters
+        ----------
+        X_test, y_test : numpy.ndarray
+            Test dataset features and labels.
+        n_back : int
+            The n-back task level.
+        model : tf.keras.Sequential
+            Custom model for evaluation (default is the trained model).
+
+        Returns
+        ----------
+        test_acc : float
+            The accuracy of the model on the test set.
+        predicted_responses : numpy.ndarray
+            The model's predicted responses.
+        """
 
         model_to_use = model if model else self.model
 
@@ -245,6 +395,22 @@ class RNNTrainer:
         return test_acc, predicted_responses
     
     def visualize_preds_wo_lures(self, y_test, predicted_responses, n_back):
+        """
+        Visualizes accuracy for target and nontarget trials in binary classification.
+
+        Parameters
+        ----------
+        y_test : numpy.ndarray
+            The true test labels.
+        predicted_responses : numpy.ndarray
+            The model's predicted responses.
+        n_back : int
+            The n-back task level.
+
+        Returns
+        ----------
+        None
+        """
            
         # Calculate the total number of target trials and correctly predicted target trials
         num_targets_wo_lures = 0
@@ -311,6 +477,27 @@ class RNNTrainer:
         print(f"Accuracy score for the nontarget trials: {nontarget_acc} (Binary Classification)")
 
     def eval_model_w_lures(self, X_test_w_lures, y_test_w_lures, n_back, model = None):
+        """
+        Evaluates the trained RNN model on test data including lure trials (multiclass classification).
+
+        Parameters
+        ----------
+        X_test_w_lures : numpy.ndarray
+            Test dataset features including lure trials.
+        y_test_w_lures : numpy.ndarray
+            True labels for the test dataset including lures.
+        n_back : int
+            The n-back task level being evaluated.
+        model : tf.keras.Sequential
+            A custom model to use for evaluation instead of the trained model.
+
+        Returns
+        ----------
+        test_acc_w_lures : float
+            Accuracy of the model on the test set including lure trials.
+        pred_resp_w_lures : numpy.ndarray
+            Predicted responses of the model.
+        """
 
         model_to_use = model if model else self.model
 
@@ -377,6 +564,22 @@ class RNNTrainer:
         return test_acc_w_lures, pred_resp_w_lures
 
     def visualize_preds_w_lures(self, y_test_w_lures, pred_resp_w_lures, n_back):
+        """
+        Visualizes prediction accuracy and misclassifications for nontarget, target, and lure trials.
+
+        Parameters
+        ----------
+        y_test_w_lures : numpy.ndarray
+            True test labels including lures.
+        pred_resp_w_lures : numpy.ndarray
+            Model-predicted labels.
+        n_back : int
+            The n-back task level.
+
+        Returns
+        ----------
+        None
+        """
 
         num_nontargets_w_lures = 0
         num_targets_w_lures = 0
@@ -522,6 +725,24 @@ class RNNTrainer:
         print(f"Accuracy score for the lure trials: {lure_acc} (Multiclass Classification)")
     
     def create_submodel(self, X_test_w_lures, y_test_w_lures, n_back):
+        """
+        Extracts embeddings from the trained RNN model and visualizes their distribution.
+
+        Parameters
+        ----------
+        X_test_w_lures : numpy.ndarray
+            Test dataset features including lure trials.
+        y_test_w_lures : numpy.ndarray
+            True labels for the test dataset.
+        n_back : int
+            The n-back task level.
+
+        Returns
+        ----------
+        embedding_model : tf.keras.Model
+            A submodel that extracts RNN layer embeddings.
+        """
+
 
         trained_model = tf.keras.models.load_model("saved_model/rnn_model.keras")
 
@@ -576,29 +797,37 @@ class RNNTrainer:
 #%%
 
 if __name__ == "__main__":
+
+    # Initialize data preprocessor instance
     data_preprocessor = DataPreprocessor()
 
+    # Preprocess 3-back training data without lures for binary classification
     processed_binary_df = data_preprocessor.preprocess_data(
         df = "3-back data/training_3back_data_wo_lures.csv",
         mode = "binary",
         output_path = "3-back data/test_3back_data_wo_lures.csv"
     )
 
+    # Preprocess 3-back training data with lures for multiclass classification
     processed_multiclass_df = data_preprocessor.preprocess_data(
         df = "3-back data/training_3back_data_w_lures.csv",
         mode = "multiclass",
         output_path = "3-back data/test_3back_data_w_lures.csv"
     )
-     
+    
+    # Split binary classification dataset into training, validation, and test sets
     X_train, y_train, X_val, y_val, X_test, y_test = data_preprocessor.split_data_for_bin_pred(processed_binary_df)
+    # Prepare test dataset with lures for multiclass classification
     X_test_with_lures, y_test_with_lures = data_preprocessor.split_data_for_mc_pred(processed_multiclass_df)
 
+    # Print dataset shapes for verification
     print("Training dataset shape:", X_train.shape, y_train.shape)
     print("Validation dataset shape:", X_val.shape, y_val.shape)
     print("Test dataset shape:", X_test.shape, y_test.shape)
     print("X_test with lures shape", X_test_with_lures.shape)
     print("y_test with lures shape", y_test_with_lures.shape)
 
+    # Initialize the RNNTrainer with preprocessed data and training parameters
     rnn_trainer = RNNTrainer(X_train = X_train, y_train = y_train, X_val = X_val, y_val = y_val, X_test = X_test, y_test = y_test, X_test_w_lures = X_test_with_lures, y_test_w_lures = y_test_with_lures, n_batch = 128, learning_rate = 0.001)
     rnn_trainer.initialize_model()
     bce_history, model, training_history = rnn_trainer.train_model(epochs = 100)
