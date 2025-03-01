@@ -13,7 +13,7 @@ The research aims to model working memory (WM) processes using a simple recurren
 
 ## 📂 Repository Structure  
 
-    📁 n-back/                      # Main project directory
+    📁 n-back/                          # Main project directory
 
         ├── 📁 2-back data/             # Datasets for 2-back trials
 
@@ -39,13 +39,13 @@ The research aims to model working memory (WM) processes using a simple recurren
 
         ├── 📄 analysis_5back.py        # Analysis script for 5-back condition
 
-        ├── 📄 nback_accuracies.json    # Stores model accuracy metrics
+        ├── 📄 nback_accuracies.json    # Stores RNN accuracy metrics
 
         ├── 📄 nback_data_gen.py        # Script to generate synthetic n-back task data
 
         ├── 📄 requirements.txt         # Dependencies required for running the project
 
-        ├── 📄 save_and_plot_accuracies.py      # Script for saving and plotting accuracies
+        ├── 📄 save_and_plot_accuracies.py      # Script for saving and plotting RNN accuracies
 
 ---
 
