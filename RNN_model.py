@@ -371,12 +371,11 @@ class RNNTrainer:
         roc_auc = auc(fpr, tpr)
 
         plt.figure(figsize = (10, 6))
-        plt.plot(fpr, tpr, color = 'darkorange', lw = 2, label = f"ROC curve (AUC = {roc_auc:.2f})")
-        plt.plot([0, 1], [0, 1], color='navy', lw = 2, linestyle = '--', label = "Chance Level")
-        plt.xlabel("False Positive Rate")
-        plt.ylabel("True Positive Rate")
-        title = f"Binary Classification ROC: {n_back}-Back Task"
-        plt.title(title)
+        plt.plot(fpr, tpr, color = 'darkorange', lw = 2, label = f"ROC curve (AUC = {roc_auc:.2f}) - Target vs. Nontarget")
+        plt.plot([0, 1], [0, 1], color = 'navy', lw = 2, linestyle = '--', label = "Chance Level")
+        plt.xlabel("False Positive Rate", fontsize = 15)
+        plt.ylabel("True Positive Rate", fontsize = 15)
+        plt.title(f"Binary Classification ROC: {n_back}-Back Task", fontsize = 20)
         plt.legend(loc = "lower right")
         plt.show()
 
@@ -440,17 +439,23 @@ class RNNTrainer:
 
         plt.figure(figsize = (6, 7))
         plt.bar(labels, acc_list, color = ["#C3B1E1", "#77DD77"])
-        plt.xlabel("Response Categories")
-        plt.ylabel("Accuracy")
-        title = f"Model Predictions Over Trials: {n_back}-Back Binary Classification"
-        plt.title(title)
+        plt.xlabel("Response Categories", fontsize = 15)
+        plt.ylabel("Accuracy", fontsize = 15)
+        plt.title(f"Model Predictions Over Trials: {n_back}-Back Binary Classification", fontsize = 20)
         plt.show()
 
         confusion_matrix_wo_lures = metrics.confusion_matrix(y_test, predicted_responses)
-        cm_display_wo_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_wo_lures, display_labels = [0, 1])
-        cm_title = f"Confusion Matrix for {n_back}-Back Task for Binary Classification"
-        ax = cm_display_wo_lures.plot().ax_
-        ax.set_title(cm_title)
+        cm_display_wo_lures = metrics.ConfusionMatrixDisplay(
+            confusion_matrix = confusion_matrix_wo_lures,
+            display_labels = [0, 1])
+        
+        fig, ax = plt.subplots(figsize = (5, 5))
+        cm_display_wo_lures.plot(ax = ax, values_format = "d")
+        
+        ax.set_xlabel("Predicted Label\n(0 = Nontarget, 1 = Target)", fontsize = 12)
+        ax.set_ylabel("True Label\n(0 = Nontarget, 1 = Target)", fontsize = 12)
+        ax.set_title(f"Confusion Matrix for {n_back}-Back Task for Binary Classification", 
+             fontsize = 15, pad = 40, loc = 'center')
         plt.show()
 
         print(f"The number of nontarget trials: {num_nontargets_wo_lures}")
@@ -515,7 +520,10 @@ class RNNTrainer:
         print(classification_report(y_test_w_lures, pred_resp_w_lures, target_names = ["nontarget", "target", "lure"]))
 
         classes = [0, 1, 2]
-        y_test_binarized = label_binarize(y_test_w_lures, classes = [0, 1, 2])
+
+        class_labels = ["Nontarget", "Target", "Lure"]
+
+        y_test_binarized = label_binarize(y_test_w_lures, classes = classes)
         predictions_w_lures_expanded = np.zeros((len(predictions_w_lures), 3)) 
 
         predictions_w_lures_expanded[:, 1] = predictions_w_lures.flatten()  
@@ -528,14 +536,13 @@ class RNNTrainer:
             fpr, tpr, _ = roc_curve(y_test_binarized[:, i], predictions_w_lures_expanded[:, i])
             roc_auc = auc(fpr, tpr)
 
-            plt.plot(fpr, tpr, lw = 2, label = f"Class {class_label} (AUC = {roc_auc:.2f})")
+            plt.plot(fpr, tpr, lw = 2, label = f"{class_labels[i]} (AUC = {roc_auc:.2f})")
 
         plt.plot([0, 1], [0, 1], color = "navy", lw = 2, linestyle = "--", label = "Chance Level")
 
-        plt.xlabel("False Positive Rate")
-        plt.ylabel("True Positive Rate")
-        title = f"Multiclass Classification ROC: {n_back}-Back Task"
-        plt.title(title)
+        plt.xlabel("False Positive Rate", fontsize = 15)
+        plt.ylabel("True Positive Rate", fontsize = 15)
+        plt.title(f"Multiclass Classification ROC: {n_back}-Back Task", fontsize = 20)
         plt.legend(loc = "lower right")
         plt.show()
 
@@ -664,10 +671,9 @@ class RNNTrainer:
         plt.bar(x[2], misclassified_as_target_for_lure, width = bar_width, bottom = misclassified_as_nontarget_for_lure, color = label_colors["Misclassified as target"], label = "Misclassified as target")
 
         plt.xticks(x, all_labels)
-        plt.xlabel("Correct Labels")
-        plt.ylabel("Number of Samples")
-        title = f"Model Predictions Over Trials: {n_back}-Back Multiclass Classification"
-        plt.title(title)
+        plt.xlabel("Correct Labels", fontsize = 12)
+        plt.ylabel("Number of Samples", fontsize = 12)
+        plt.title(f"Model Predictions Over Trials: {n_back}-Back Multiclass Classification", fontsize = 20)
 
         custom_legend = [
             plt.Line2D([0], [0], color = label_colors["Misclassified as nontarget"], lw = 10, label = "nontarget"),
@@ -680,10 +686,17 @@ class RNNTrainer:
         plt.show()
 
         confusion_matrix_w_lures = metrics.confusion_matrix(y_test_w_lures, pred_resp_w_lures)
-        cm_display_w_lures = metrics.ConfusionMatrixDisplay(confusion_matrix = confusion_matrix_w_lures, display_labels = [0, 1, 2])
-        cm_title = f"Confusion Matrix for {n_back}-Back Task for Multiclass Classification"
-        ax = cm_display_w_lures.plot().ax_
-        ax.set_title(cm_title)
+        cm_display_w_lures = metrics.ConfusionMatrixDisplay(
+            confusion_matrix = confusion_matrix_w_lures,
+            display_labels = [0, 1, 2])
+        
+        fig, ax = plt.subplots(figsize = (5, 5))
+        cm_display_w_lures.plot(ax = ax, values_format = "d")
+        
+        ax.set_xlabel("Predicted Label\n(0 = Nontarget, 1 = Target, 2 = Lure)", fontsize = 12)
+        ax.set_ylabel("True Label\n(0 = Nontarget, 1 = Target, 2 = Lure)", fontsize = 12)
+        ax.set_title(f"Confusion Matrix for {n_back}-Back Task for Multiclass Classification", 
+             fontsize = 15, pad = 40, loc = 'center')
         plt.show()
 
         print(f"The number of nontarget trials: {num_nontargets_w_lures}")
@@ -758,11 +771,9 @@ class RNNTrainer:
 
         plt.hist(target_embeddings, bins = 50, alpha = 0.6, label = "Targets", color = "#14A3C7")
         plt.hist(lure_embeddings, bins = 50, alpha = 0.4, label = "Lures", color = "#7B68EE")
-
-        title = f"Embedding Distributions for {n_back}-Back Task"
-        plt.title(title)
-        plt.xlabel("Embedding values")
-        plt.ylabel("Frequency")
+        plt.title(f"Embedding Distributions for {n_back}-Back Task", fontsize = 15)
+        plt.xlabel("Embedding values", fontsize = 12)
+        plt.ylabel("Frequency", fontsize = 12)
         plt.legend(loc = "upper right", bbox_to_anchor = (1.25, 1))
         plt.show()
 
