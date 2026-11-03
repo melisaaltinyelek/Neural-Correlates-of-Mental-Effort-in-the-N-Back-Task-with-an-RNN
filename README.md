@@ -131,7 +131,7 @@ The repository contains separate scripts for data generation, model implementati
 
 ## Research Scope
 
-This project was developed as part of my Master's research in Cognitive Science, specializing in Artificial Intelligence and Neuroscience, at the University of Osnabrück.
+This project was developed as part of my Master's research in Cognitive Science, specializing in Artificial Intelligence and Neuroscience, at the Universität Osnabrück.
 
 Its primary focus is the computational investigation of working memory through neural network modeling, rather than the development of a production-ready AI application.
 
