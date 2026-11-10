@@ -12,8 +12,6 @@ The N-Back task is commonly used in cognitive neuroscience to study working memo
 
 The project implements and evaluates an RNN across multiple N-Back conditions to investigate how task complexity and trial characteristics relate to model performance.
 
-The research combines **deep learning, cognitive modeling, synthetic data generation, and statistical evaluation**.
-
 ## Research Objectives
 
 The project explores four main questions:
